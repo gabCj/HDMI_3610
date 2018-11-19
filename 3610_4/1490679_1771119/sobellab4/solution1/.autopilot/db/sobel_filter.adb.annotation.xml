@@ -1,0 +1,8 @@
+<annotationInfo>
+<annotationInfo>
+<item  id="9" filename="SobelLab4/Sobel.cpp" linenumber="45" name="exitcond1" contextFuncName="sobel_filter" moduleName="sobel_filter" rtlName="exitcond1_fu_77_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="18" fileDirectory="X:\Bureau\3610_4\1490679_1771119"></item>
+<item  id="11" filename="SobelLab4/Sobel.cpp" linenumber="45" name="i_1" contextFuncName="sobel_filter" moduleName="sobel_filter" rtlName="i_1_fu_83_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="28" fileDirectory="X:\Bureau\3610_4\1490679_1771119"></item>
+<item  id="17" filename="SobelLab4/Sobel.cpp" linenumber="47" name="tmp_1" contextFuncName="sobel_filter" moduleName="sobel_filter" rtlName="tmp_1_fu_89_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="X:\Bureau\3610_4\1490679_1771119"></item>
+<item  id="20" filename="SobelLab4/Sobel.cpp" linenumber="50" name="fourWide" contextFuncName="sobel_filter" moduleName="sobel_filter" rtlName="out_pix_d0" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="X:\Bureau\3610_4\1490679_1771119"></item>
+</annotationInfo>
+</annotationInfo>
