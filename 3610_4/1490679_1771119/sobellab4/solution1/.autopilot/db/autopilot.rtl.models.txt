@@ -1,1 +1,8 @@
+sobel_filter_mac_bkb
+sobel_filter_x_op
+sobel_filter_y_op
+sobel_filter_AXILiteS_s_axi
+sobel_filter_gmem0_m_axi
+sobel_filter_gmem1_m_axi
+getVal
 sobel_filter

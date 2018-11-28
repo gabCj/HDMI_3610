@@ -1,6 +1,6 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>inter_pix</name>
+<name>gmem0</name>
 <CType>
 <TypeName>unsigned char</TypeName>
 <TypeWidth>8</TypeWidth>
@@ -10,7 +10,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>out_pix</name>
+<name>gmem1</name>
 <CType>
 <TypeName>unsigned int</TypeName>
 <TypeWidth>32</TypeWidth>

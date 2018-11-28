@@ -1,0 +1,207 @@
+
+
+================================================================
+== Vivado HLS Report for 'getVal'
+================================================================
+* Date:           Tue Nov 27 16:15:47 2018
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        sobellab4
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    8|    8|    8|    8|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+
+* FSM state operations: 
+
+ <State 1> : 8.65ns
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%Y_offset_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Y_offset)"
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%yDiff_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %yDiff)"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%xDiff_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %xDiff)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%index_read = call i23 @_ssdm_op_Read.ap_auto.i23(i23 %index)"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%p_shl = call i13 @_ssdm_op_BitConcatenate.i13.i2.i11(i2 %yDiff_read, i11 0)" [SobelLab4/Sobel.cpp:13]
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%p_shl2 = call i9 @_ssdm_op_BitConcatenate.i9.i2.i7(i2 %yDiff_read, i7 0)" [SobelLab4/Sobel.cpp:13]
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%p_shl2_cast = sext i9 %p_shl2 to i13" [SobelLab4/Sobel.cpp:13]
+ST_1 : Operation 17 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp = sub i13 %p_shl, %p_shl2_cast" [SobelLab4/Sobel.cpp:13]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.90> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%xDiff_cast = sext i2 %xDiff_read to i13" [SobelLab4/Sobel.cpp:13]
+ST_1 : Operation 19 [1/1] (3.81ns) (root node of TernaryAdder)   --->   "%tmp1 = add i13 %tmp, %xDiff_cast" [SobelLab4/Sobel.cpp:13]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.90> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp1_cast = sext i13 %tmp1 to i23" [SobelLab4/Sobel.cpp:13]
+ST_1 : Operation 21 [1/1] (2.28ns)   --->   "%tmp_33 = add i23 %index_read, %tmp1_cast" [SobelLab4/Sobel.cpp:13]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_cast = sext i23 %tmp_33 to i33" [SobelLab4/Sobel.cpp:13]
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%sext_cast = sext i32 %Y_offset_read to i33"
+ST_1 : Operation 24 [1/1] (2.55ns)   --->   "%sum = add i33 %tmp_cast, %sext_cast" [SobelLab4/Sobel.cpp:13]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%sum_cast = sext i33 %sum to i64" [SobelLab4/Sobel.cpp:13]
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%Y_addr = getelementptr i8* %Y, i64 %sum_cast" [SobelLab4/Sobel.cpp:13]
+
+ <State 2> : 8.75ns
+ST_2 : Operation 27 [7/7] (8.75ns)   --->   "%Y_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %Y_addr, i32 1)" [SobelLab4/Sobel.cpp:13]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 3> : 8.75ns
+ST_3 : Operation 28 [6/7] (8.75ns)   --->   "%Y_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %Y_addr, i32 1)" [SobelLab4/Sobel.cpp:13]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 4> : 8.75ns
+ST_4 : Operation 29 [5/7] (8.75ns)   --->   "%Y_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %Y_addr, i32 1)" [SobelLab4/Sobel.cpp:13]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 5> : 8.75ns
+ST_5 : Operation 30 [4/7] (8.75ns)   --->   "%Y_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %Y_addr, i32 1)" [SobelLab4/Sobel.cpp:13]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 6> : 8.75ns
+ST_6 : Operation 31 [3/7] (8.75ns)   --->   "%Y_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %Y_addr, i32 1)" [SobelLab4/Sobel.cpp:13]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 7> : 8.75ns
+ST_7 : Operation 32 [2/7] (8.75ns)   --->   "%Y_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %Y_addr, i32 1)" [SobelLab4/Sobel.cpp:13]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 8> : 8.75ns
+ST_8 : Operation 33 [1/7] (8.75ns)   --->   "%Y_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %Y_addr, i32 1)" [SobelLab4/Sobel.cpp:13]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 9> : 8.75ns
+ST_9 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %Y, [6 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [6 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_9 : Operation 35 [1/1] (8.75ns)   --->   "%Y_addr_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %Y_addr)" [SobelLab4/Sobel.cpp:13]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 36 [1/1] (0.00ns)   --->   "ret i8 %Y_addr_read" [SobelLab4/Sobel.cpp:13]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.65ns
+The critical path consists of the following:
+	wire read on port 'yDiff' [8]  (0 ns)
+	'sub' operation ('tmp', SobelLab4/Sobel.cpp:13) [14]  (0 ns)
+	'add' operation ('tmp1', SobelLab4/Sobel.cpp:13) [16]  (3.82 ns)
+	'add' operation ('tmp_33', SobelLab4/Sobel.cpp:13) [18]  (2.28 ns)
+	'add' operation ('sum', SobelLab4/Sobel.cpp:13) [21]  (2.55 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Y' (SobelLab4/Sobel.cpp:13) [24]  (8.75 ns)
+
+ <State 3>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Y' (SobelLab4/Sobel.cpp:13) [24]  (8.75 ns)
+
+ <State 4>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Y' (SobelLab4/Sobel.cpp:13) [24]  (8.75 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Y' (SobelLab4/Sobel.cpp:13) [24]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Y' (SobelLab4/Sobel.cpp:13) [24]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Y' (SobelLab4/Sobel.cpp:13) [24]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Y' (SobelLab4/Sobel.cpp:13) [24]  (8.75 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'Y' (SobelLab4/Sobel.cpp:13) [25]  (8.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

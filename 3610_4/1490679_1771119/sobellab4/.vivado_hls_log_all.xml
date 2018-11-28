@@ -12,7 +12,7 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYNCHK 200-23] SobelLab4/Sobel.cpp:49: variable-indexed range selection may cause suboptimal QoR." projectName="sobellab4" solutionName="solution1" date="2018-11-18T22:40:59.035-0500" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] SobelLab4/Sobel.cpp:107: variable-indexed range selection may cause suboptimal QoR." projectName="sobellab4" solutionName="solution1" date="2018-11-27T16:15:46.006-0500" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

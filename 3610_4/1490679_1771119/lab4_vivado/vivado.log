@@ -2,61 +2,201 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sun Nov 18 22:04:37 2018
-# Process ID: 35540
-# Current directory: X:/Bureau/3610_4/1490679_1771119/lab4_vivado
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30440 X:\Bureau\3610_4\1490679_1771119\lab4_vivado\lab4_vivado.xpr
-# Log file: X:/Bureau/3610_4/1490679_1771119/lab4_vivado/vivado.log
-# Journal file: X:/Bureau/3610_4/1490679_1771119/lab4_vivado\vivado.jou
+# Start of session at: Tue Nov 27 16:05:02 2018
+# Process ID: 71252
+# Current directory: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent69924 X:\Bureau\HDMI_3610\3610_4\1490679_1771119\lab4_vivado\lab4_vivado.xpr
+# Log file: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/vivado.log
+# Journal file: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project X:/Bureau/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.xpr
+open_project X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.xpr
 INFO: [Project 1-313] Project file moved from 'C:/TEMP/3610_4/1490679_1771119/lab4_vivado' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'x:/Bureau/3610_4/1490679_1771119/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'x:/Bureau/HDMI_3610/3610_4/1490679_1771119/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Logiciels/Xilinx/Vivado/2018.1/data/ip'.
-open_project: Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 914.125 ; gain = 216.352
-open_hw
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 935.930 ; gain = 186.082
 update_compile_order -fileset sources_1
-connect_hw_server
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-2222] Launching hw_server...
-INFO: [Labtools 27-2221] Launch Output:
-
-****** Xilinx hw_server v2018.1
-  **** Build date : Apr  4 2018-19:32:53
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
-
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248685961
-open_hw_target: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1587.785 ; gain = 611.891
-set_property PROGRAM.FILE {X:/Bureau/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
-current_hw_device [get_hw_devices xc7z020_1]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
-INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3361] The debug hub core was not detected.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
-2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
-For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
-set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
-set_property PROGRAM.FILE {X:/Bureau/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
-program_hw_devices [get_hw_devices xc7z020_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
-INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3361] The debug hub core was not detected.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
-2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
-For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
-launch_sdk -workspace X:/Bureau/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk -hwspec X:/Bureau/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+open_bd_design {X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding cell -- xilinx.com:ip:axi_iic:2.0 - zed_hdmi_iic_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_76M
+Adding cell -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding cell -- xilinx.com:ip:axis_subset_converter:1.1 - axis_subset_converter_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - gnd
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset
+Adding cell -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding cell -- polymtl.ca:hls:CrappyButFreeChromaResampler:1.0 - v_cresample_0
+Adding cell -- xilinx.com:ip:v_rgb2ycrcb:7.1 - v_rgb2ycrcb_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - vcc
+Adding cell -- avnet:zedboard:zed_hdmi_out:2.0 - zed_hdmi_out_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <design_1> from BD file <X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1030.969 ; gain = 84.734
+launch_sdk -workspace X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk -hwspec X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
 INFO: [Vivado 12-393] Launching SDK...
-INFO: [Vivado 12-417] Running xsdk -workspace X:/Bureau/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk -hwspec X:/Bureau/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-417] Running xsdk -workspace X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk -hwspec X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+set_property  ip_repo_paths  {x:/Bureau/HDMI_3610/3610_4/1490679_1771119/ip_repo X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'x:/Bureau/HDMI_3610/3610_4/1490679_1771119/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'x:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4'.
+update_ip_catalog
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv polymtl.ca:hls:sobel_filter:1.0 sobel_filter_0
+endgroup
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+startgroup
+set_property -dict [list CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {100} CONFIG.PCW_USE_S_AXI_HP1 {1} CONFIG.PCW_USE_S_AXI_HP2 {1} CONFIG.PCW_EN_CLK3_PORT {1} CONFIG.PCW_EN_RST3_PORT {1}] [get_bd_cells processing_system7_0]
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK3 (100 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK1 (142 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK3 (100 MHz)} Master {/sobel_filter_0/m_axi_gmem0} Slave {/processing_system7_0/S_AXI_HP1} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins processing_system7_0/S_AXI_HP1]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+</processing_system7_0/S_AXI_HP1/HP1_DDR_LOWOCM> is being mapped into </sobel_filter_0/Data_m_axi_gmem0> at <0x00000000 [ 512M ]>
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK3 (100 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK1 (142 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK3 (100 MHz)} Master {/sobel_filter_0/m_axi_gmem1} Slave {/processing_system7_0/S_AXI_HP2} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins processing_system7_0/S_AXI_HP2]
+</processing_system7_0/S_AXI_HP2/HP2_DDR_LOWOCM> is being mapped into </sobel_filter_0/Data_m_axi_gmem1> at <0x00000000 [ 512M ]>
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (76 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK0 (76 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (76 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/sobel_filter_0/s_axi_AXILiteS} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sobel_filter_0/s_axi_AXILiteS]
+INFO: [polymtl.ca:hls:sobel_filter:1.0-1] /sobel_filter_0</sobel_filter_0/s_axi_AXILiteS> already has associated sink clock </sobel_filter_0/ap_clk> driven by clock source </processing_system7_0/FCLK_CLK3>. Specified clock </processing_system7_0/FCLK_CLK0> will not be used to connect associated sink clock pin of </ps7_0_axi_periph/M03_AXI> (if not connected already); </processing_system7_0/FCLK_CLK3> will be used instead.
+</sobel_filter_0/s_axi_AXILiteS/Reg> is being mapped into </processing_system7_0/Data> at <0x43C10000 [ 64K ]>
+apply_bd_automation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1280.559 ; gain = 6.887
+endgroup
+save_bd_design
+Wrote  : <X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+reset_run design_1_xbar_0_synth_1
+reset_run design_1_processing_system7_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1366.887 ; gain = 24.254
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1392.438 ; gain = 20.695
+WARNING: [xilinx.com:ip:v_axi4s_vid_out:4.0-307] /zed_hdmi_display/v_axi4s_vid_out_0 video_in-TDATA: Bus sub-field mismatch. /zed_hdmi_display/v_axi4s_vid_out_0 field count: 2. /zed_hdmi_display/v_cresample_0 video_out-TDATA field count: 1.
+INFO: [xilinx.com:ip:v_axi4s_vid_out:4.0-316] /zed_hdmi_display/v_axi4s_vid_out_0 video_in-TDATA: Sub-fields: rows_0_cols_0_Y(8:0), rows_0_cols_0_UV(16:8). /zed_hdmi_display/v_cresample_0 video_out-TDATA sub-fields: integer(16:0)
+INFO: [xilinx.com:ip:axi_vdma:6.3-16] /zed_hdmi_display/axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+Wrote  : <X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/design_1.bd> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_smc/S00_AXI_arlock'(1) to net 'sobel_filter_0_m_axi_gmem0_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_smc/S00_AXI_awlock'(1) to net 'sobel_filter_0_m_axi_gmem0_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_smc_1/S00_AXI_arlock'(1) to net 'sobel_filter_0_m_axi_gmem1_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_smc_1/S00_AXI_awlock'(1) to net 'sobel_filter_0_m_axi_gmem1_AWLOCK'(2) - Only lower order bits will be connected.
+VHDL Output written to : X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_smc/S00_AXI_arlock'(1) to net 'sobel_filter_0_m_axi_gmem0_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_smc/S00_AXI_awlock'(1) to net 'sobel_filter_0_m_axi_gmem0_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_smc_1/S00_AXI_arlock'(1) to net 'sobel_filter_0_m_axi_gmem1_ARLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_smc_1/S00_AXI_awlock'(1) to net 'sobel_filter_0_m_axi_gmem1_AWLOCK'(2) - Only lower order bits will be connected.
+VHDL Output written to : X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_iic_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_76M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/axis_subset_converter_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/gnd .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/proc_sys_reset .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/v_cresample_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/v_rgb2ycrcb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/vcc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/zed_hdmi_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sobel_filter_0 .
+Exporting to file x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+Exporting to file x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1_0/bd_0/hw_handoff/design_1_axi_smc_1_0.hwh
+Generated Block Design Tcl file x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1_0/bd_0/hw_handoff/design_1_axi_smc_1_0_bd.tcl
+Generated Hardware Definition File x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1_0/bd_0/synth/design_1_axi_smc_1_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc_1 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_hdmi_display/axi_mem_intercon/s00_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_auto_cc_0/design_1_auto_cc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m03_couplers/auto_cc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_v_axi4s_vid_out_0_0, cache-ID = 0d5ba2bfd7103616; cache size = 15.888 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_v_tc_0_0, cache-ID = dbb59d192805d627; cache size = 15.888 MB.
+config_ip_cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1669.336 ; gain = 4.145
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_1, cache-ID = 438c41dbed4d6dd7; cache size = 15.888 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 845bf546da735b7f; cache size = 15.888 MB.
+[Tue Nov 27 16:42:03 2018] Launched design_1_xbar_0_synth_1, design_1_processing_system7_0_0_synth_1, design_1_auto_cc_0_synth_1, design_1_axi_smc_1_0_synth_1, design_1_axi_smc_0_synth_1, design_1_rst_ps7_0_100M_0_synth_1, design_1_sobel_filter_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_xbar_0_synth_1: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/design_1_xbar_0_synth_1/runme.log
+design_1_processing_system7_0_0_synth_1: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/design_1_processing_system7_0_0_synth_1/runme.log
+design_1_auto_cc_0_synth_1: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/design_1_auto_cc_0_synth_1/runme.log
+design_1_axi_smc_1_0_synth_1: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/design_1_axi_smc_1_0_synth_1/runme.log
+design_1_axi_smc_0_synth_1: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/design_1_axi_smc_0_synth_1/runme.log
+design_1_rst_ps7_0_100M_0_synth_1: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/design_1_rst_ps7_0_100M_0_synth_1/runme.log
+design_1_sobel_filter_0_0_synth_1: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/design_1_sobel_filter_0_0_synth_1/runme.log
+synth_1: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/runme.log
+[Tue Nov 27 16:42:05 2018] Launched impl_1...
+Run output will be captured here: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:01:28 ; elapsed = 00:03:01 . Memory (MB): peak = 1678.223 ; gain = 389.688
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 653 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_1_i/clk_wiz_0/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [x:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.edf:276]
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2724.652 ; gain = 3.770
+Restored from archive | CPU: 3.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2724.652 ; gain = 3.770
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 107 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 104 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
+
+open_run: Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 2811.535 ; gain = 1023.316
+open_report: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 2863.438 ; gain = 42.484
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+file copy -force X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/impl_1/design_1_wrapper.sysdef X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+
+file copy -force X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/impl_1/design_1_wrapper.sysdef X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+
+file copy -force X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/impl_1/design_1_wrapper.sysdef X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk -hwspec X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk -hwspec X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Tue Nov 27 17:05:48 2018] Launched impl_1...
+Run output will be captured here: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/impl_1/runme.log
+file copy -force X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/impl_1/design_1_wrapper.sysdef X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk -hwspec X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk -hwspec X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_bd_design {X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/design_1.bd}
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 18 22:54:53 2018...
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 27 18:35:45 2018...

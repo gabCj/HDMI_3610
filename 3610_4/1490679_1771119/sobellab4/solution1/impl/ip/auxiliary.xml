@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="sobel_filter" xd:componentRef="sobel_filter" xd:initiationInterval="452864554" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="inter_pix[]" xd:originalName="inter_pix" xd:direction="inout" xd:interfaceRef="m_axi_gmem0" xd:busTypeRef="aximm" xd:arraySize="2073600" xd:dataWidth="8" xd:bufferDirection="in"/>
+  <xd:arg xd:name="out_pix[]" xd:originalName="out_pix" xd:direction="inout" xd:interfaceRef="m_axi_gmem1" xd:busTypeRef="aximm" xd:arraySize="2073600" xd:dataWidth="32" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="inter_pix" xd:originalName="inter_pix" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem0" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="out_pix" xd:originalName="out_pix" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem1" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="452864553" xd:worst-case="452864553" xd:average-case="452864553"/>
+  <xd:resourceEstimates xd:LUT="3304" xd:FF="2025" xd:BRAM="4" xd:DSP="2"/>
+</xd:acceleratorMap>

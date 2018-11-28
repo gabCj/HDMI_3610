@@ -1,0 +1,180 @@
+
+
+================================================================
+== Vivado HLS Report for 'getVal'
+================================================================
+* Date:           Tue Nov 27 16:15:50 2018
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        sobellab4
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    8|    8|    8|    8|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     96|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     74|
+|Register         |        -|      -|      42|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      42|    170|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------+----------+-------+---+----+------------+------------+
+    |   Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------+----------+-------+---+----+------------+------------+
+    |sum_fu_134_p2     |     +    |      0|  0|  40|          33|          33|
+    |tmp1_fu_110_p2    |     +    |      0|  0|  13|          13|          13|
+    |tmp_33_fu_120_p2  |     +    |      0|  0|  30|          23|          23|
+    |tmp_fu_100_p2     |     -    |      0|  0|  13|          13|          13|
+    +------------------+----------+-------+---+----+------------+------------+
+    |Total             |          |      0|  0|  96|          82|          82|
+    +------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------+----+-----------+-----+-----------+
+    |              Name              | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------+----+-----------+-----+-----------+
+    |Y_blk_n_AR                      |   9|          2|    1|          2|
+    |Y_blk_n_R                       |   9|          2|    1|          2|
+    |ap_NS_fsm                       |  47|         10|    1|         10|
+    |ap_sig_ioackin_m_axi_Y_ARREADY  |   9|          2|    1|          2|
+    +--------------------------------+----+-----------+-----+-----------+
+    |Total                           |  74|         16|    4|         16|
+    +--------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------+----+----+-----+-----------+
+    |              Name              | FF | LUT| Bits| Const Bits|
+    +--------------------------------+----+----+-----+-----------+
+    |Y_addr_reg_150                  |  32|   0|   32|          0|
+    |ap_CS_fsm                       |   9|   0|    9|          0|
+    |ap_reg_ioackin_m_axi_Y_ARREADY  |   1|   0|    1|          0|
+    +--------------------------------+----+----+-----+-----------+
+    |Total                           |  42|   0|   42|          0|
+    +--------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++------------------+-----+-----+------------+--------------+--------------+
+|ap_clk            |  in |    1| ap_ctrl_hs |    getVal    | return value |
+|ap_rst            |  in |    1| ap_ctrl_hs |    getVal    | return value |
+|ap_start          |  in |    1| ap_ctrl_hs |    getVal    | return value |
+|ap_done           | out |    1| ap_ctrl_hs |    getVal    | return value |
+|ap_idle           | out |    1| ap_ctrl_hs |    getVal    | return value |
+|ap_ready          | out |    1| ap_ctrl_hs |    getVal    | return value |
+|ap_return         | out |    8| ap_ctrl_hs |    getVal    | return value |
+|index             |  in |   23|   ap_none  |     index    |    scalar    |
+|xDiff             |  in |    2|   ap_none  |     xDiff    |    scalar    |
+|yDiff             |  in |    2|   ap_none  |     yDiff    |    scalar    |
+|m_axi_Y_AWVALID   | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWREADY   |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWADDR    | out |   32|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWID      | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWLEN     | out |   32|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWSIZE    | out |    3|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWBURST   | out |    2|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWLOCK    | out |    2|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWCACHE   | out |    4|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWPROT    | out |    3|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWQOS     | out |    4|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWREGION  | out |    4|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_AWUSER    | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_WVALID    | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_WREADY    |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_WDATA     | out |    8|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_WSTRB     | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_WLAST     | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_WID       | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_WUSER     | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARVALID   | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARREADY   |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARADDR    | out |   32|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARID      | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARLEN     | out |   32|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARSIZE    | out |    3|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARBURST   | out |    2|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARLOCK    | out |    2|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARCACHE   | out |    4|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARPROT    | out |    3|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARQOS     | out |    4|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARREGION  | out |    4|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_ARUSER    | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_RVALID    |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_RREADY    | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_RDATA     |  in |    8|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_RLAST     |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_RID       |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_RUSER     |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_RRESP     |  in |    2|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_BVALID    |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_BREADY    | out |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_BRESP     |  in |    2|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_BID       |  in |    1|    m_axi   |       Y      |    pointer   |
+|m_axi_Y_BUSER     |  in |    1|    m_axi   |       Y      |    pointer   |
+|Y_offset          |  in |   32|   ap_none  |   Y_offset   |    scalar    |
++------------------+-----+-----+------------+--------------+--------------+
+

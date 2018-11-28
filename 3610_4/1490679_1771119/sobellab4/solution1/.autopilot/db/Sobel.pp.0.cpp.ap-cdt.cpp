@@ -583,21 +583,95 @@ typedef union {
  unsigned full;
 } OneToFourPixels;
 #pragma empty_line
+static inline uint8_t getVal(int index, int xDiff, int yDiff, int img_width, uint8_t * Y)
+{
+ return Y[index + (yDiff * img_width) + xDiff];
+};
 #pragma empty_line
 uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 {
 #pragma HLS inline
-#pragma line 27 "SobelLab4/Sobel.cpp"
- return 0;
+#pragma line 32 "SobelLab4/Sobel.cpp"
+ int x_weight = 0;
+ int y_weight = 0;
+#pragma empty_line
+ unsigned edge_weight;
+ uint8_t edge_val;
+#pragma empty_line
+ const char x_op[3][3] = { { -1,0,1 },
+        { -2,0,2 },
+        { -1,0,1 } };
+_ssdm_SpecConstant(x_op);
+#pragma line 40 "SobelLab4/Sobel.cpp"
+
+#pragma empty_line
+ const char y_op[3][3] = { { 1,2,1 },
+        { 0,0,0 },
+        { -1,-2,-1 } };
+_ssdm_SpecConstant(y_op);
+#pragma line 44 "SobelLab4/Sobel.cpp"
+
+#pragma empty_line
+#pragma empty_line
+ for (int i = 0; i < 3; i++) {
+  for (int j = 0; j < 3; j++) {
+#pragma empty_line
+  x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, 1920, image) * x_op[i][j]);
+#pragma empty_line
+#pragma empty_line
+  y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1, 1920, image) * y_op[i][j]);
+  }
+ }
+#pragma empty_line
+ edge_weight = ((x_weight>0)? x_weight : -x_weight) + ((y_weight>0)? y_weight : -y_weight);
+#pragma empty_line
+ edge_val = (255 - (uint8_t)(edge_weight));
+#pragma empty_line
+#pragma empty_line
+ if (edge_val > 200)
+  edge_val = 255;
+ else if (edge_val < 100)
+  edge_val = 0;
+#pragma empty_line
+ return edge_val;
 }
 #pragma empty_line
 #pragma empty_line
 void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 {_ssdm_SpecArrayDimSize(out_pix,1920 * 1080);_ssdm_SpecArrayDimSize(inter_pix,1920 * 1080);
-#pragma line 45 "SobelLab4/Sobel.cpp"
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma HLS INTERFACE m_axi port=inter_pix offset=slave bundle=gmem0
+#pragma HLS INTERFACE m_axi port=out_pix offset=slave bundle=gmem1
+#pragma HLS INTERFACE s_axilite port=return
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+ ZerosFirstRow: for (unsigned int i = 0; i < 1920; ++i)
+  out_pix[i] = 0;
+ ZerosLastRow: for (unsigned int i = (1920 * 1080) - 1920; i < (1920 * 1080); ++i)
+  out_pix[i] = 0;
+ ZerosFirstLine: for (unsigned int i = 0; i < (1920 * 1080); i += 1920)
+  out_pix[i] = 0;
+ ZerosLastLine: for (unsigned int i = 1920 - 1; i < (1920 * 1080); i += 1920)
+  out_pix[i] = 0;
+#pragma empty_line
+#pragma empty_line
+ OperatorLines: for (unsigned int i = 1; i < 1080 - 1; ++i) {
+  OperatorRows: for (unsigned int j = 1; j < 1920 - 1; ++j) {
+   int fullIndex = i * 1920 + j;
+   out_pix[fullIndex] = sobel_operator(fullIndex, inter_pix);
+  }
+ }
+#pragma empty_line
 IMG: for (int i = 0; i < 1920 * 1080; ++i) {
-#pragma HLS pipeline
- uint8_t val = inter_pix[i];
+  uint8_t val = out_pix[i];
   OneToFourPixels fourWide;
 OneTo4: for (int j = 0; j < 4; ++j)
    fourWide.pix[j] = val;

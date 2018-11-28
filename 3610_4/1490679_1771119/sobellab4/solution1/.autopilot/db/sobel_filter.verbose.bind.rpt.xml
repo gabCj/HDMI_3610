@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sobel_filter'" level="0">
-<item name = "Date">Sun Nov 18 22:41:00 2018
+<item name = "Date">Tue Nov 27 16:15:49 2018
 </item>
 <item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
 <item name = "Project">sobellab4</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 6.51, 1.25</column>
+<column name="ap_clk">10.00, 8.75, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,18 +24,28 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">2073603, 2073603, 2073603, 2073603, none</column>
+<column name="">452864553, 452864553, 452864553, 452864553, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_getVal_fu_484">getVal, 8, 8, 8, 8, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- IMG">2073601, 2073601, 3, 1, 1, 2073600, yes</column>
+<column name="- ZerosFirstRow">1920, 1920, 1, -, -, 1920, no</column>
+<column name="- ZerosLastRow">1920, 1920, 1, -, -, 1920, no</column>
+<column name="- ZerosFirstLine">8640, 8640, 8, -, -, 1080, no</column>
+<column name="- ZerosLastLine">8640, 8640, 8, -, -, 1080, no</column>
+<column name="- OperatorLines">440401808, 440401808, 408536, -, -, 1078, no</column>
+<column name=" + OperatorRows">408534, 408534, 213, -, -, 1918, no</column>
+<column name="  ++ OperatorRows.1">204, 204, 68, -, -, 3, no</column>
+<column name="   +++ OperatorRows.1.1">66, 66, 22, -, -, 3, no</column>
+<column name="- IMG">12441600, 12441600, 6, -, -, 2073600, no</column>
+<column name=" + OneTo4">4, 4, 1, -, -, 4, no</column>
 </table>
 </item>
 </section>

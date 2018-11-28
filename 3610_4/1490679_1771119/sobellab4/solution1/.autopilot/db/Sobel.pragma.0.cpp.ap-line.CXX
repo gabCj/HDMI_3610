@@ -66,5 +66,6 @@
 #pragma line 9 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\sec_api/string_s.h" 2 3 ::: 564
 #pragma line 175 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\string.h" 2 3 ::: 565
 #pragma line 3 "SobelLab4/Sobel.cpp" 2 ::: 566
-#pragma line 27 "SobelLab4/Sobel.cpp" ::: 579
-#pragma line 45 "SobelLab4/Sobel.cpp" ::: 586
+#pragma line 32 "SobelLab4/Sobel.cpp" ::: 583
+#pragma line 40 "SobelLab4/Sobel.cpp" ::: 594
+#pragma line 44 "SobelLab4/Sobel.cpp" ::: 601

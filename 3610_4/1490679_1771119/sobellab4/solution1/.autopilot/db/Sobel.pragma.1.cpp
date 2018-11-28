@@ -583,21 +583,95 @@ typedef union {
  unsigned full;
 } OneToFourPixels;
 
+static inline uint8_t getVal(int index, int xDiff, int yDiff, int img_width, uint8_t * Y)
+{
+ return Y[index + (yDiff * img_width) + xDiff];
+};
 
 uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 {
 _ssdm_InlineSelf(0, "");
-#27 "SobelLab4/Sobel.cpp"
- return 0;
+#32 "SobelLab4/Sobel.cpp"
+ int x_weight = 0;
+ int y_weight = 0;
+
+ unsigned edge_weight;
+ uint8_t edge_val;
+
+ const char x_op[3][3] = { { -1,0,1 },
+        { -2,0,2 },
+        { -1,0,1 } };
+_ssdm_SpecConstant(x_op);
+#40 "SobelLab4/Sobel.cpp"
+
+
+ const char y_op[3][3] = { { 1,2,1 },
+        { 0,0,0 },
+        { -1,-2,-1 } };
+_ssdm_SpecConstant(y_op);
+#44 "SobelLab4/Sobel.cpp"
+
+
+
+ for (int i = 0; i < 3; i++) {
+  for (int j = 0; j < 3; j++) {
+
+  x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, 1920, image) * x_op[i][j]);
+
+
+  y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1, 1920, image) * y_op[i][j]);
+  }
+ }
+
+ edge_weight = ((x_weight>0)? x_weight : -x_weight) + ((y_weight>0)? y_weight : -y_weight);
+
+ edge_val = (255 - (uint8_t)(edge_weight));
+
+
+ if (edge_val > 200)
+  edge_val = 255;
+ else if (edge_val < 100)
+  edge_val = 0;
+
+ return edge_val;
 }
 
 
 void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 {_ssdm_SpecArrayDimSize(out_pix,1920 * 1080);_ssdm_SpecArrayDimSize(inter_pix,1920 * 1080);
-#45 "SobelLab4/Sobel.cpp"
+
+
+
+
+
+
+
+_ssdm_op_SpecInterface(inter_pix, "m_axi", 0, 0, "", 0, 0, "gmem0", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(out_pix, "m_axi", 0, 0, "", 0, 0, "gmem1", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
+
+
+
+ ZerosFirstRow: for (unsigned int i = 0; i < 1920; ++i)
+  out_pix[i] = 0;
+ ZerosLastRow: for (unsigned int i = (1920 * 1080) - 1920; i < (1920 * 1080); ++i)
+  out_pix[i] = 0;
+ ZerosFirstLine: for (unsigned int i = 0; i < (1920 * 1080); i += 1920)
+  out_pix[i] = 0;
+ ZerosLastLine: for (unsigned int i = 1920 - 1; i < (1920 * 1080); i += 1920)
+  out_pix[i] = 0;
+
+
+ OperatorLines: for (unsigned int i = 1; i < 1080 - 1; ++i) {
+  OperatorRows: for (unsigned int j = 1; j < 1920 - 1; ++j) {
+   int fullIndex = i * 1920 + j;
+   out_pix[fullIndex] = sobel_operator(fullIndex, inter_pix);
+  }
+ }
+
 IMG: for (int i = 0; i < 1920 * 1080; ++i) {
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- uint8_t val = inter_pix[i];
+  uint8_t val = out_pix[i];
   OneToFourPixels fourWide;
 OneTo4: for (int j = 0; j < 4; ++j)
    fourWide.pix[j] = val;

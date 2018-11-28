@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Fri Nov 16 12:18:33 2018
+-- Date        : Fri Nov 16 12:18:29 2018
 -- Host        : L3712-22 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               X:/Bureau/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_1_auto_pc_1 -prefix
+--               design_1_auto_pc_1_ design_1_auto_pc_1_sim_netlist.vhdl
 -- Design      : design_1_auto_pc_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -28,8 +28,6 @@ entity design_1_auto_pc_1_xpm_cdc_async_rst is
   attribute INIT_SYNC_FF of design_1_auto_pc_1_xpm_cdc_async_rst : entity is 0;
   attribute INV_DEF_VAL : string;
   attribute INV_DEF_VAL of design_1_auto_pc_1_xpm_cdc_async_rst : entity is "1'b1";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_xpm_cdc_async_rst : entity is "xpm_cdc_async_rst";
   attribute RST_ACTIVE_HIGH : integer;
   attribute RST_ACTIVE_HIGH of design_1_auto_pc_1_xpm_cdc_async_rst : entity is 1;
   attribute VERSION : integer;
@@ -100,8 +98,6 @@ entity design_1_auto_pc_1_dmem is
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC;
     dout : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_dmem : entity is "dmem";
 end design_1_auto_pc_1_dmem;
 
 architecture STRUCTURE of design_1_auto_pc_1_dmem is
@@ -164,8 +160,6 @@ entity design_1_auto_pc_1_rd_bin_cntr is
     clk : in STD_LOGIC;
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_rd_bin_cntr : entity is "rd_bin_cntr";
 end design_1_auto_pc_1_rd_bin_cntr;
 
 architecture STRUCTURE of design_1_auto_pc_1_rd_bin_cntr is
@@ -356,8 +350,6 @@ entity design_1_auto_pc_1_rd_fwft is
     ram_empty_fb_i_reg : in STD_LOGIC;
     dout_i : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_rd_fwft : entity is "rd_fwft";
 end design_1_auto_pc_1_rd_fwft;
 
 architecture STRUCTURE of design_1_auto_pc_1_rd_fwft is
@@ -588,8 +580,6 @@ entity design_1_auto_pc_1_rd_status_flags_ss is
     clk : in STD_LOGIC;
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_rd_status_flags_ss : entity is "rd_status_flags_ss";
 end design_1_auto_pc_1_rd_status_flags_ss;
 
 architecture STRUCTURE of design_1_auto_pc_1_rd_status_flags_ss is
@@ -650,8 +640,6 @@ entity design_1_auto_pc_1_wr_bin_cntr is
     clk : in STD_LOGIC;
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_wr_bin_cntr : entity is "wr_bin_cntr";
 end design_1_auto_pc_1_wr_bin_cntr;
 
 architecture STRUCTURE of design_1_auto_pc_1_wr_bin_cntr is
@@ -946,8 +934,6 @@ entity design_1_auto_pc_1_wr_status_flags_ss is
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_wr_status_flags_ss : entity is "wr_status_flags_ss";
 end design_1_auto_pc_1_wr_status_flags_ss;
 
 architecture STRUCTURE of design_1_auto_pc_1_wr_status_flags_ss is
@@ -1038,8 +1024,6 @@ entity design_1_auto_pc_1_memory is
     \gpregsm1.curr_fwft_state_reg[1]\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_memory : entity is "memory";
 end design_1_auto_pc_1_memory;
 
 architecture STRUCTURE of design_1_auto_pc_1_memory is
@@ -1095,8 +1079,6 @@ entity design_1_auto_pc_1_rd_logic is
     rd_en : in STD_LOGIC;
     dout_i : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_rd_logic : entity is "rd_logic";
 end design_1_auto_pc_1_rd_logic;
 
 architecture STRUCTURE of design_1_auto_pc_1_rd_logic is
@@ -1144,8 +1126,6 @@ entity design_1_auto_pc_1_reset_blk_ramfifo is
     rst : in STD_LOGIC;
     clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_reset_blk_ramfifo : entity is "reset_blk_ramfifo";
 end design_1_auto_pc_1_reset_blk_ramfifo;
 
 architecture STRUCTURE of design_1_auto_pc_1_reset_blk_ramfifo is
@@ -1229,8 +1209,6 @@ entity design_1_auto_pc_1_wr_logic is
     \gc0.count_d1_reg[4]\ : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \gc0.count_reg[4]\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_wr_logic : entity is "wr_logic";
 end design_1_auto_pc_1_wr_logic;
 
 architecture STRUCTURE of design_1_auto_pc_1_wr_logic is
@@ -1280,8 +1258,6 @@ entity design_1_auto_pc_1_fifo_generator_ramfifo is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_fifo_generator_ramfifo : entity is "fifo_generator_ramfifo";
 end design_1_auto_pc_1_fifo_generator_ramfifo;
 
 architecture STRUCTURE of design_1_auto_pc_1_fifo_generator_ramfifo is
@@ -1368,8 +1344,6 @@ entity design_1_auto_pc_1_fifo_generator_top is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_fifo_generator_top : entity is "fifo_generator_top";
 end design_1_auto_pc_1_fifo_generator_top;
 
 architecture STRUCTURE of design_1_auto_pc_1_fifo_generator_top is
@@ -1401,8 +1375,6 @@ entity design_1_auto_pc_1_fifo_generator_v13_2_2_synth is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_fifo_generator_v13_2_2_synth : entity is "fifo_generator_v13_2_2_synth";
 end design_1_auto_pc_1_fifo_generator_v13_2_2_synth;
 
 architecture STRUCTURE of design_1_auto_pc_1_fifo_generator_v13_2_2_synth is
@@ -2061,8 +2033,6 @@ entity design_1_auto_pc_1_fifo_generator_v13_2_2 is
   attribute C_WR_PNTR_WIDTH_WRCH of design_1_auto_pc_1_fifo_generator_v13_2_2 : entity is 4;
   attribute C_WR_RESPONSE_LATENCY : integer;
   attribute C_WR_RESPONSE_LATENCY of design_1_auto_pc_1_fifo_generator_v13_2_2 : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_fifo_generator_v13_2_2 : entity is "fifo_generator_v13_2_2";
 end design_1_auto_pc_1_fifo_generator_v13_2_2;
 
 architecture STRUCTURE of design_1_auto_pc_1_fifo_generator_v13_2_2 is
@@ -2737,8 +2707,6 @@ entity design_1_auto_pc_1_axi_data_fifo_v2_1_15_fifo_gen is
     \areset_d_reg[1]_0\ : in STD_LOGIC;
     cmd_empty_reg : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_axi_data_fifo_v2_1_15_fifo_gen : entity is "axi_data_fifo_v2_1_15_fifo_gen";
 end design_1_auto_pc_1_axi_data_fifo_v2_1_15_fifo_gen;
 
 architecture STRUCTURE of design_1_auto_pc_1_axi_data_fifo_v2_1_15_fifo_gen is
@@ -3934,8 +3902,6 @@ entity design_1_auto_pc_1_axi_data_fifo_v2_1_15_axic_fifo is
     \areset_d_reg[1]_0\ : in STD_LOGIC;
     cmd_empty_reg : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_axi_data_fifo_v2_1_15_axic_fifo : entity is "axi_data_fifo_v2_1_15_axic_fifo";
 end design_1_auto_pc_1_axi_data_fifo_v2_1_15_axic_fifo;
 
 architecture STRUCTURE of design_1_auto_pc_1_axi_data_fifo_v2_1_15_axic_fifo is
@@ -4025,8 +3991,6 @@ entity design_1_auto_pc_1_axi_protocol_converter_v2_1_16_a_axi3_conv is
     m_axi_rvalid : in STD_LOGIC;
     s_axi_arvalid : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_axi_protocol_converter_v2_1_16_a_axi3_conv : entity is "axi_protocol_converter_v2_1_16_a_axi3_conv";
 end design_1_auto_pc_1_axi_protocol_converter_v2_1_16_a_axi3_conv;
 
 architecture STRUCTURE of design_1_auto_pc_1_axi_protocol_converter_v2_1_16_a_axi3_conv is
@@ -7213,8 +7177,6 @@ entity design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi3_conv is
     m_axi_rvalid : in STD_LOGIC;
     s_axi_arvalid : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi3_conv : entity is "axi_protocol_converter_v2_1_16_axi3_conv";
 end design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi3_conv;
 
 architecture STRUCTURE of design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi3_conv is
@@ -7386,8 +7348,6 @@ entity design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi_protocol_converter 
   attribute C_TRANSLATION_MODE of design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi_protocol_converter : entity is 2;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi_protocol_converter : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi_protocol_converter : entity is "axi_protocol_converter_v2_1_16_axi_protocol_converter";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of design_1_auto_pc_1_axi_protocol_converter_v2_1_16_axi_protocol_converter : entity is 1;
   attribute P_AXI4 : integer;
