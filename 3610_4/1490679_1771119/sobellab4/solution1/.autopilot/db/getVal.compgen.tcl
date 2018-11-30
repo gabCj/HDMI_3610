@@ -7,6 +7,25 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 4 \
+    name Y \
+    reset_level 1 \
+    sync_rst true \
+    dir I \
+    corename Y \
+    op interface \
+    ports { Y_address0 { O 13 vector } Y_ce0 { O 1 bit } Y_q0 { I 8 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'Y'"
+}
+}
+
+
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
@@ -18,7 +37,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_index \
     op interface \
-    ports { index { I 23 vector } } \
+    ports { index { I 14 vector } } \
 } "
 }
 
@@ -49,36 +68,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_yDiff \
     op interface \
     ports { yDiff { I 2 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 4 \
-    name Y \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_Y \
-    op interface \
-    ports { m_axi_Y_AWVALID { O 1 bit } m_axi_Y_AWREADY { I 1 bit } m_axi_Y_AWADDR { O 32 vector } m_axi_Y_AWID { O 1 vector } m_axi_Y_AWLEN { O 32 vector } m_axi_Y_AWSIZE { O 3 vector } m_axi_Y_AWBURST { O 2 vector } m_axi_Y_AWLOCK { O 2 vector } m_axi_Y_AWCACHE { O 4 vector } m_axi_Y_AWPROT { O 3 vector } m_axi_Y_AWQOS { O 4 vector } m_axi_Y_AWREGION { O 4 vector } m_axi_Y_AWUSER { O 1 vector } m_axi_Y_WVALID { O 1 bit } m_axi_Y_WREADY { I 1 bit } m_axi_Y_WDATA { O 8 vector } m_axi_Y_WSTRB { O 1 vector } m_axi_Y_WLAST { O 1 bit } m_axi_Y_WID { O 1 vector } m_axi_Y_WUSER { O 1 vector } m_axi_Y_ARVALID { O 1 bit } m_axi_Y_ARREADY { I 1 bit } m_axi_Y_ARADDR { O 32 vector } m_axi_Y_ARID { O 1 vector } m_axi_Y_ARLEN { O 32 vector } m_axi_Y_ARSIZE { O 3 vector } m_axi_Y_ARBURST { O 2 vector } m_axi_Y_ARLOCK { O 2 vector } m_axi_Y_ARCACHE { O 4 vector } m_axi_Y_ARPROT { O 3 vector } m_axi_Y_ARQOS { O 4 vector } m_axi_Y_ARREGION { O 4 vector } m_axi_Y_ARUSER { O 1 vector } m_axi_Y_RVALID { I 1 bit } m_axi_Y_RREADY { O 1 bit } m_axi_Y_RDATA { I 8 vector } m_axi_Y_RLAST { I 1 bit } m_axi_Y_RID { I 1 vector } m_axi_Y_RUSER { I 1 vector } m_axi_Y_RRESP { I 2 vector } m_axi_Y_BVALID { I 1 bit } m_axi_Y_BREADY { O 1 bit } m_axi_Y_BRESP { I 2 vector } m_axi_Y_BID { I 1 vector } m_axi_Y_BUSER { I 1 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 5 \
-    name Y_offset \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_Y_offset \
-    op interface \
-    ports { Y_offset { I 32 vector } } \
 } "
 }
 
@@ -147,6 +136,26 @@ eval "cg_default_interface_gen_reset { \
 }"
 } else {
 puts "@W \[IMPL-114\] Cannot find bus interface model in the library. Ignored generation of bus interface for '${PortName}'"
+}
+}
+
+
+# Adapter definition:
+set PortName ap_ce
+set DataWd 1 
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc cg_default_interface_gen_ce] == "cg_default_interface_gen_ce"} {
+eval "cg_default_interface_gen_ce { \
+    id -5 \
+    name ${PortName} \
+    reset_level 1 \
+    sync_rst true \
+    corename apif_ap_ce \
+    data_wd ${DataWd} \
+    op interface \
+}"
+} else {
+puts "@W \[IMPL-113\] Cannot find bus interface model in the library. Ignored generation of bus interface for '${PortName}'"
 }
 }
 

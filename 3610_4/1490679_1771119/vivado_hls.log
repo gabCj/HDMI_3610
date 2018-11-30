@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running 'C:/Logiciels/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'gacota' on host 'l3712-17' (Windows NT_amd64 version 6.2) on Tue Nov 27 16:17:00 -0500 2018
+INFO: [HLS 200-10] For user 'gacota' on host 'l3712-13' (Windows NT_amd64 version 6.2) on Fri Nov 30 12:07:52 -0500 2018
 INFO: [HLS 200-10] In directory 'X:/Bureau/HDMI_3610/3610_4/1490679_1771119'
 INFO: [HLS 200-10] Opening project 'X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4'.
 INFO: [HLS 200-10] Opening solution 'X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1'.
@@ -16,4 +16,4 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Logiciels/Xilinx/Vivado/2018.1/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 27 16:17:30 2018...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 30 12:08:22 2018...

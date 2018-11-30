@@ -585,13 +585,27 @@ typedef union {
 #pragma empty_line
 static inline uint8_t getVal(int index, int xDiff, int yDiff, int img_width, uint8_t * Y)
 {
- return Y[index + (yDiff * img_width) + xDiff];
+ int fullIndex = (index + (yDiff * img_width)) + xDiff;
+ if (fullIndex < 0)
+ {
+#pragma empty_line
+  fullIndex += img_width * 4;
+ }
+ else if (fullIndex >= img_width * 4)
+ {
+#pragma empty_line
+  fullIndex -= img_width * 4;
+ }
+#pragma empty_line
+ return Y[fullIndex];
+#pragma empty_line
+#pragma empty_line
 };
 #pragma empty_line
 uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 {
 #pragma HLS inline
-#pragma line 32 "SobelLab4/Sobel.cpp"
+#pragma line 46 "SobelLab4/Sobel.cpp"
  int x_weight = 0;
  int y_weight = 0;
 #pragma empty_line
@@ -602,13 +616,16 @@ uint8_t sobel_operator(const int fullIndex, uint8_t * image)
         { -2,0,2 },
         { -1,0,1 } };
 #pragma empty_line
+#pragma empty_line
  const char y_op[3][3] = { { 1,2,1 },
         { 0,0,0 },
         { -1,-2,-1 } };
 #pragma empty_line
 #pragma empty_line
+#pragma empty_line
  for (int i = 0; i < 3; i++) {
-  for (int j = 0; j < 3; j++) {
+#pragma HLS unroll
+ for (int j = 0; j < 3; j++) {
 #pragma empty_line
   x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, 1920, image) * x_op[i][j]);
 #pragma empty_line
@@ -646,29 +663,46 @@ void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
+ uint8_t superCache[4*1920];
+#pragma line 120 "SobelLab4/Sobel.cpp"
+ OperatorLines: for (unsigned int i = 0; i < 1080 + 1; ++i) {
+  OperatorRows1: for (unsigned int j = 0; j < 1920; ++j) {
+#pragma HLS pipeline II=25
+ if (i < 3) {
+    superCache[i*1920 + j] = inter_pix[i*1920 + j];
+   }
+   else if (i >= 3 && i < 1080) {
+    superCache[(i%4)*1920 + j] = inter_pix[i*1920 + j];
+    out_pix[(i-2)*1920 + j] = sobel_operator(((i-2)%4)*1920 + j, superCache);
+   }
+   else {
+    out_pix[(i-2)*1920 + j] = sobel_operator(((i-2)%4)*1920 + j, superCache);
+   }
+  }
+#pragma line 176 "SobelLab4/Sobel.cpp"
+ }
 #pragma empty_line
  ZerosFirstRow: for (unsigned int i = 0; i < 1920; ++i)
-  out_pix[i] = 0;
+#pragma HLS pipeline
+ out_pix[i] = 0;
  ZerosLastRow: for (unsigned int i = (1920 * 1080) - 1920; i < (1920 * 1080); ++i)
-  out_pix[i] = 0;
+#pragma HLS pipeline
+ out_pix[i] = 0;
  ZerosFirstLine: for (unsigned int i = 0; i < (1920 * 1080); i += 1920)
-  out_pix[i] = 0;
+#pragma HLS pipeline
+ out_pix[i] = 0;
  ZerosLastLine: for (unsigned int i = 1920 - 1; i < (1920 * 1080); i += 1920)
-  out_pix[i] = 0;
+#pragma HLS pipeline
+ out_pix[i] = 0;
 #pragma empty_line
+ IMG: for (int i = 0; i < 1920 * 1080; ++i) {
+#pragma HLS pipeline
 #pragma empty_line
- OperatorLines: for (unsigned int i = 1; i < 1080 - 1; ++i) {
-  OperatorRows: for (unsigned int j = 1; j < 1920 - 1; ++j) {
-   int fullIndex = i * 1920 + j;
-   out_pix[fullIndex] = sobel_operator(fullIndex, inter_pix);
+ uint8_t val = out_pix[i];
+   OneToFourPixels fourWide;
+ OneTo4: for (int j = 0; j < 4; ++j)
+    fourWide.pix[j] = val;
+   out_pix[i] = fourWide.full;
   }
- }
 #pragma empty_line
-IMG: for (int i = 0; i < 1920 * 1080; ++i) {
-  uint8_t val = out_pix[i];
-  OneToFourPixels fourWide;
-OneTo4: for (int j = 0; j < 4; ++j)
-   fourWide.pix[j] = val;
-  out_pix[i] = fourWide.full;
- }
 }

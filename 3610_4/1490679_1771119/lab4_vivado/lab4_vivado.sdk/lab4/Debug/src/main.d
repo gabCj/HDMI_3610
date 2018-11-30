@@ -27,13 +27,8 @@ src/main.o src/main.o: ../src/main.c \
  ../../standalone_bsp_0/ps7_cortexa9_0/include/xdebug.h \
  ../src/hdmi/video_resolution.h ../src/hdmi/video_generator.h \
  ../src/hdmi/video_frame_buffer.h ../src/Sobel.h \
- ../src/../../design_1_wrapper_hw_platform_2/drivers/sobel_filter_v1_0/src/xsobel_filter.c \
- ../src/../../design_1_wrapper_hw_platform_2/drivers/sobel_filter_v1_0/src/xsobel_filter.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h \
- ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h \
- ../src/../../design_1_wrapper_hw_platform_2/drivers/sobel_filter_v1_0/src/xsobel_filter_hw.h
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xsobel_filter.h \
+ ../../standalone_bsp_0/ps7_cortexa9_0/include/xsobel_filter_hw.h
 
 ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_cache.h:
 
@@ -99,16 +94,6 @@ src/main.o src/main.o: ../src/main.c \
 
 ../src/Sobel.h:
 
-../src/../../design_1_wrapper_hw_platform_2/drivers/sobel_filter_v1_0/src/xsobel_filter.c:
+../../standalone_bsp_0/ps7_cortexa9_0/include/xsobel_filter.h:
 
-../src/../../design_1_wrapper_hw_platform_2/drivers/sobel_filter_v1_0/src/xsobel_filter.h:
-
-../../standalone_bsp_0/ps7_cortexa9_0/include/xil_types.h:
-
-../../standalone_bsp_0/ps7_cortexa9_0/include/xil_assert.h:
-
-../../standalone_bsp_0/ps7_cortexa9_0/include/xstatus.h:
-
-../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:
-
-../src/../../design_1_wrapper_hw_platform_2/drivers/sobel_filter_v1_0/src/xsobel_filter_hw.h:
+../../standalone_bsp_0/ps7_cortexa9_0/include/xsobel_filter_hw.h:

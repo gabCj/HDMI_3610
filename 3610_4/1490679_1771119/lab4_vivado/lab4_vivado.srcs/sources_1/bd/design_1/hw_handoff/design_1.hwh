@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Nov 27 16:41:13 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Nov 30 12:12:38 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -124,6 +124,11 @@
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK3">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="142857132" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
@@ -461,11 +466,6 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP1_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="142857132" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK1"/>
-          </CONNECTIONS>
-        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="sobel_filter_0_m_axi_gmem0" DATAWIDTH="32" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -621,6 +621,11 @@
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK3">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="142857132" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
@@ -956,11 +961,6 @@
         <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="axi_smc_1_M00_AXI_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP2_RREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="142857132" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3414,6 +3414,10 @@
         <PORT CLKFREQUENCY="142857132" DIR="O" NAME="FCLK_CLK1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP1_ACLK"/>
+            <CONNECTION INSTANCE="axi_smc" PORT="aclk1"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP2_ACLK"/>
+            <CONNECTION INSTANCE="axi_smc_1" PORT="aclk1"/>
             <CONNECTION INSTANCE="zed_hdmi_display_axi_vdma_0" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="zed_hdmi_display_axi_vdma_0" PORT="m_axis_mm2s_aclk"/>
             <CONNECTION INSTANCE="zed_hdmi_display_axis_subset_converter_0" PORT="aclk"/>
@@ -3424,10 +3428,6 @@
             <CONNECTION INSTANCE="zed_hdmi_display_axi_mem_intercon" PORT="ACLK"/>
             <CONNECTION INSTANCE="zed_hdmi_display_axi_mem_intercon" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="zed_hdmi_display_axi_mem_intercon" PORT="S00_ACLK"/>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP1_ACLK"/>
-            <CONNECTION INSTANCE="axi_smc" PORT="aclk1"/>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP2_ACLK"/>
-            <CONNECTION INSTANCE="axi_smc_1" PORT="aclk1"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="FCLK_CLK2" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK2">
@@ -3438,10 +3438,10 @@
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="FCLK_CLK3" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK3">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="axi_smc_1" PORT="aclk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_ACLK"/>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="ap_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -4238,6 +4238,16 @@
             <CONNECTION INSTANCE="rst_ps7_0_76M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M03_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="S00_AXI_arvalid" SIGIS="undef" SIGNAME="processing_system7_0_M_AXI_GP0_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARVALID"/>
@@ -4513,6 +4523,91 @@
             <CONNECTION INSTANCE="zed_hdmi_iic_0" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="4" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_AWADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_AWVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_AWREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_WDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_WSTRB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_WVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_WREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_BRESP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_BVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_BREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="4" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_ARADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_ARVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_ARREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_RDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_RRESP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_RVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_RREADY"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M01_AXI_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zed_hdmi_display_axi_vdma_0" PORT="s_axi_lite_araddr"/>
@@ -4678,103 +4773,6 @@
             <CONNECTION INSTANCE="zed_hdmi_display_v_tc_0" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK3">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK3"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="4" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_AWADDR"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_AWVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_AWREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_WDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_WSTRB"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_WVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_WREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_BRESP"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_BVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_BREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="4" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_ARADDR"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_ARVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_ARREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_RDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_RRESP"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_RVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="ps7_0_axi_periph_M03_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="s_axi_AXILiteS_RREADY"/>
-          </CONNECTIONS>
-        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="processing_system7_0_M_AXI_GP0" DATAWIDTH="32" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -4884,7 +4882,6 @@
         <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M03_AXI" DATAWIDTH="32" NAME="M03_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M03_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="M03_AXI_awprot"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M03_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M03_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M03_AXI_wdata"/>
@@ -4895,7 +4892,6 @@
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M03_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M03_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M03_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="M03_AXI_arprot"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M03_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M03_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M03_AXI_rdata"/>
@@ -4945,10 +4941,10 @@
         <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" RIGHT="0" SIGIS="rst"/>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sobel_filter_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="axi_smc" PORT="aresetn"/>
             <CONNECTION INSTANCE="axi_smc_1" PORT="aresetn"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_ARESETN"/>
+            <CONNECTION INSTANCE="sobel_filter_0" PORT="ap_rst_n"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -5279,7 +5275,7 @@
         <PARAMETER NAME="clk_period" VALUE="10"/>
         <PARAMETER NAME="machine" VALUE="64"/>
         <PARAMETER NAME="combinational" VALUE="0"/>
-        <PARAMETER NAME="latency" VALUE="452864553"/>
+        <PARAMETER NAME="latency" VALUE="53967659"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S_AXI_AXILITES_BASEADDR" VALUE="0x43C10000"/>

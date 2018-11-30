@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sobel_filter'" level="0">
-<item name = "Date">Tue Nov 27 16:15:48 2018
+<item name = "Date">Fri Nov 30 12:07:09 2018
 </item>
 <item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
 <item name = "Project">sobellab4</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">452864553, 452864553, 452864553, 452864553, none</column>
+<column name="">53967659, 53967659, 53967659, 53967659, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,16 +35,12 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- ZerosFirstRow">1920, 1920, 1, -, -, 1920, no</column>
-<column name="- ZerosLastRow">1920, 1920, 1, -, -, 1920, no</column>
-<column name="- ZerosFirstLine">8640, 8640, 8, -, -, 1080, no</column>
-<column name="- ZerosLastLine">8640, 8640, 8, -, -, 1080, no</column>
-<column name="- OperatorLines">440401808, 440401808, 408536, -, -, 1078, no</column>
-<column name=" + OperatorRows">408534, 408534, 213, -, -, 1918, no</column>
-<column name="  ++ OperatorRows.1">204, 204, 68, -, -, 3, no</column>
-<column name="   +++ OperatorRows.1.1">66, 66, 22, -, -, 3, no</column>
-<column name="- IMG">12441600, 12441600, 6, -, -, 2073600, no</column>
-<column name=" + OneTo4">4, 4, 1, -, -, 4, no</column>
+<column name="- OperatorLines_OperatorRows1">51888016, 51888016, 42, 25, 25, 2075520, yes</column>
+<column name="- ZerosFirstRow">1920, 1920, 2, 1, 1, 1920, yes</column>
+<column name="- ZerosLastRow">1920, 1920, 2, 1, 1, 1920, yes</column>
+<column name="- ZerosFirstLine">1086, 1086, 8, 1, 1, 1080, yes</column>
+<column name="- ZerosLastLine">1086, 1086, 8, 1, 1, 1080, yes</column>
+<column name="- IMG">2073601, 2073601, 3, 1, 1, 2073600, yes</column>
 </table>
 </item>
 </section>

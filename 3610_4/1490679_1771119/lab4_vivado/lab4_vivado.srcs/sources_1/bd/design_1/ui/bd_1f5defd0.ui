@@ -11,37 +11,37 @@ preplace inst zed_hdmi_iic_0 -pg 1 -lvl 1 -y -350 -defaultsOSRD
 preplace inst axi_smc_1 -pg 1 -lvl 4 -y 100 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -y -310 -defaultsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 1 -y -10 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 3 -y -110 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 3 -y -120 -defaultsOSRD
 preplace inst zed_hdmi_display -pg 1 -lvl 3 -y 160 -defaultsOSRD -orient R270
-preplace inst rst_ps7_0_76M -pg 1 -lvl 3 -y -340 -defaultsOSRD
+preplace inst rst_ps7_0_76M -pg 1 -lvl 3 -y -350 -defaultsOSRD
 preplace inst sobel_filter_0 -pg 1 -lvl 2 -y -580 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 2 -y -130 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 2 3 900J -240 1270 -550 1720
-preplace netloc ps7_0_axi_periph_M02_AXI 1 3 2 1280J 200 1660
-preplace netloc processing_system7_0_FCLK_CLK3 1 1 3 290 -360 850 -210 1330
-preplace netloc hdmio_clk_1 1 1 2 280 70 920J
-preplace netloc sobel_filter_0_m_axi_gmem0 1 2 2 NJ -600 1350
-preplace netloc axi4s_resetn_1 1 2 1 870
-preplace netloc sobel_filter_0_m_axi_gmem1 1 2 2 NJ -580 1310
-preplace netloc processing_system7_0_M_AXI_GP0 1 2 2 860J -440 1340
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 3 300 -320 890J -220 1300
-preplace netloc axi4s_clk_1 1 1 3 320 60 840 N 1350
-preplace netloc axi_smc_M00_AXI 1 1 4 310 -480 830J -530 NJ -530 1690
+preplace netloc processing_system7_0_DDR 1 2 3 890J -250 1310 -540 1730
+preplace netloc ps7_0_axi_periph_M02_AXI 1 3 2 1290J 200 1680
+preplace netloc processing_system7_0_FCLK_CLK3 1 1 3 300 100 920 -20 1360
+preplace netloc hdmio_clk_1 1 1 2 280 70 930J
+preplace netloc sobel_filter_0_m_axi_gmem0 1 2 2 NJ -600 1340
+preplace netloc axi4s_resetn_1 1 2 1 860
+preplace netloc sobel_filter_0_m_axi_gmem1 1 2 2 880J 310 1340
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 2 860J -450 1330
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 3 320 -320 900J -240 1310
+preplace netloc axi4s_clk_1 1 1 3 340 60 840 N 1370
+preplace netloc axi_smc_M00_AXI 1 1 4 330 -480 830J -520 1290J -530 1710
 preplace netloc processing_system7_0_FCLK_RESET3_N 1 2 1 900
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 1 880
-preplace netloc ps7_0_axi_periph_M03_AXI 1 1 4 280 -490 NJ -490 NJ -490 1650
-preplace netloc ps7_0_axi_periph_M01_AXI 1 3 2 1270J 190 1670
-preplace netloc zed_hdmi_display_hdmio_io 1 3 2 NJ 300 1710J
-preplace netloc processing_system7_0_FIXED_IO 1 2 3 870J -230 1290 -540 1700
-preplace netloc zed_hdmi_display_M00_AXI 1 1 2 300 290 NJ
-preplace netloc axi_smc_1_M00_AXI 1 1 4 320 -470 NJ -470 1280J -510 1680
-preplace netloc zed_hdmi_iic_0_IIC 1 1 4 NJ -370 850J -520 NJ -520 1710J
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -30 -100 290 80 910 N 1320
-preplace netloc ps7_0_axi_periph_M00_AXI 1 0 5 -30 -500 NJ -500 NJ -500 NJ -500 1660
-preplace netloc rst_ps7_0_76M_interconnect_aresetn 1 3 1 1300
-preplace netloc rst_ps7_0_76M_peripheral_aresetn 1 0 4 -20 90 NJ 90 930J N 1340
-preplace netloc processing_system7_0_FCLK_CLK2 1 0 3 -10 100 NJ 100 830
-levelinfo -pg 1 -50 160 600 1100 1500 1740 -top -660 -bot 310
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 1 870
+preplace netloc ps7_0_axi_periph_M03_AXI 1 1 4 310 -490 NJ -490 NJ -490 1670
+preplace netloc ps7_0_axi_periph_M01_AXI 1 3 2 1280J 190 1690
+preplace netloc zed_hdmi_display_hdmio_io 1 3 2 NJ 300 1730J
+preplace netloc processing_system7_0_FIXED_IO 1 2 3 840J -530 1280 -550 1740
+preplace netloc zed_hdmi_display_M00_AXI 1 1 2 320 290 NJ
+preplace netloc zed_hdmi_iic_0_IIC 1 1 4 NJ -370 850J -510 1300J -520 1720J
+preplace netloc axi_smc_1_M00_AXI 1 1 4 340 -470 NJ -470 1330J -510 1700
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -30 -100 290 80 910 N 1330
+preplace netloc ps7_0_axi_periph_M00_AXI 1 0 5 -30 -500 NJ -500 NJ -500 NJ -500 1680
+preplace netloc rst_ps7_0_76M_interconnect_aresetn 1 3 1 1320
+preplace netloc rst_ps7_0_76M_peripheral_aresetn 1 0 4 -20 90 NJ 90 940J N 1350
+preplace netloc processing_system7_0_FCLK_CLK2 1 0 3 -10 110 NJ 110 830
+levelinfo -pg 1 -50 160 600 1110 1520 1760 -top -660 -bot 320
 ",
 }
 {

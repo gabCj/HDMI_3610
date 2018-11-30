@@ -2,53 +2,79 @@
 <Messages>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;SobelLab4/Sobel.cpp&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 102.801 ; gain = 45.172" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 102.820 ; gain = 45.191" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 103.156 ; gain = 44.992" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 103.176 ; gain = 45.012" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;sobel_operator&apos; into &apos;sobel_filter&apos; (SobelLab4/Sobel.cpp:100)." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 104.750 ; gain = 47.121" tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;sobel_operator&apos; into &apos;sobel_filter&apos; (SobelLab4/Sobel.cpp:131)." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;sobel_operator&apos; into &apos;sobel_filter&apos; (SobelLab4/Sobel.cpp:128)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 104.852 ; gain = 46.688" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[SYNCHK 200-23]" severity="WARNING" keynum="579" content="SobelLab4/Sobel.cpp:107: variable-indexed range selection may cause suboptimal QoR." tag=""/>
+	<Message prefix="[SYNCHK 200-23]" severity="WARNING" keynum="579" content="SobelLab4/Sobel.cpp:196: variable-indexed range selection may cause suboptimal QoR." tag=""/>
 	<Message prefix="[SYNCHK 200-10]" severity="INFO" keynum="597" content="0 error(s), 1 warning(s)." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 104.750 ; gain = 47.121" tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:57:2) to (SobelLab4/Sobel.cpp:98:56) in function &apos;sobel_filter&apos;... converting 3 basic blocks." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 125.344 ; gain = 67.715" tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 1920 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:88:3). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 1920 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:90:3). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst read of a total cumulative length 2073600 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:105:27). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 2073600 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:109:3). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 127.953 ; gain = 70.324" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 105.152 ; gain = 46.988" tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;OperatorRows1&apos; (SobelLab4/Sobel.cpp:121) in function &apos;sobel_filter&apos; for pipelining." tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;IMG&apos; (SobelLab4/Sobel.cpp:191) in function &apos;sobel_filter&apos; for pipelining." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.1&apos; (SobelLab4/Sobel.cpp:63) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.1.1&apos; (SobelLab4/Sobel.cpp:65) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.2&apos; (SobelLab4/Sobel.cpp:63) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.2.1&apos; (SobelLab4/Sobel.cpp:65) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;OneTo4&apos; (SobelLab4/Sobel.cpp:197) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:127:5) to (SobelLab4/Sobel.cpp:129:4) in function &apos;sobel_filter&apos;... converting 3 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:131:31) in function &apos;sobel_filter&apos;... converting 3 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock to (SobelLab4/Sobel.cpp:25:2) in function &apos;getVal&apos;... converting 4 basic blocks." tag=""/>
+	<Message prefix="[XFORM 203-11]" severity="INFO" keynum="754" content="Balancing expressions in function &apos;sobel_filter&apos; (SobelLab4/Sobel.cpp:88)...3 expression(s) balanced." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 126.105 ; gain = 67.941" tag=""/>
+	<Message prefix="[XFORM 203-541]" severity="INFO" keynum="789" content="Flattening a loop nest &apos;OperatorLines&apos; (SobelLab4/Sobel.cpp:120:62) in function &apos;sobel_filter&apos;." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 1920 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:180:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 1920 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:183:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst read of a total cumulative length 2073600 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:194:26). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 2073600 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:198:4). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 128.770 ; gain = 70.605" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;sobel_filter&apos; ..." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;getVal&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="112" content="Pipelining function &apos;getVal&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 15.927 seconds; current allocated memory: 85.708 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 14.136 seconds; current allocated memory: 86.608 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.256 seconds; current allocated memory: 85.820 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.275 seconds; current allocated memory: 86.729 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;sobel_filter&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;OperatorLines_OperatorRows1&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 25, Final II = 25, Depth = 42." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;ZerosFirstRow&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;ZerosLastRow&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;ZerosFirstLine&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 8." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;ZerosLastLine&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 8." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;IMG&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3." tag=""/>
 	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.495 seconds; current allocated memory: 86.690 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.966 seconds; current allocated memory: 88.095 MB." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
 	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
 	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.917 seconds; current allocated memory: 87.404 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.546 seconds; current allocated memory: 89.339 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;getVal&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;getVal&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.44 seconds; current allocated memory: 87.782 MB." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 2.144 seconds; current allocated memory: 89.725 MB." tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;sobel_filter&apos;" tag=""/>
 	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
@@ -58,15 +84,13 @@
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sobel_filter/out_pix&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;sobel_filter&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos; and &apos;out_pix&apos; to AXI-Lite port AXILiteS." tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;sobel_filter_mac_muladd_3s_8ns_32ns_32_1_1&apos; to &apos;sobel_filter_mac_bkb&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;sobel_filter_mac_bkb&apos;: 2 instance(s)." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;sobel_filter_superCache&apos; to &apos;sobel_filter_supebkb&apos; due to the length limit 20" tag=""/>
 	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;sobel_filter&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.036 seconds; current allocated memory: 89.959 MB." tag=""/>
-	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;sobel_filter_x_op_rom&apos; using distributed ROMs." tag=""/>
-	<Message prefix="[RTMG 210-279]" severity="INFO" keynum="RTMG_279_1793" content="Implementing memory &apos;sobel_filter_y_op_rom&apos; using distributed ROMs." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:38 . Memory (MB): peak = 146.707 ; gain = 89.078" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.246 seconds; current allocated memory: 93.611 MB." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;sobel_filter_supebkb_ram (RAM)&apos; using block RAMs." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:06 ; elapsed = 00:00:39 . Memory (MB): peak = 152.895 ; gain = 94.730" tag=""/>
 	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for sobel_filter." tag=""/>
 	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for sobel_filter." tag=""/>
 	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for sobel_filter." tag=""/>
-	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 38.356 seconds; peak allocated memory: 89.959 MB." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 39.482 seconds; peak allocated memory: 93.611 MB." tag=""/>
 </Messages>

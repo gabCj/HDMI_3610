@@ -462,6 +462,25 @@
 
 /******************************************************************/
 
+/* Definitions for driver SOBEL_FILTER */
+#define XPAR_XSOBEL_FILTER_NUM_INSTANCES 1
+
+/* Definitions for peripheral SOBEL_FILTER_0 */
+#define XPAR_SOBEL_FILTER_0_DEVICE_ID 0
+#define XPAR_SOBEL_FILTER_0_S_AXI_AXILITES_BASEADDR 0x43C10000
+#define XPAR_SOBEL_FILTER_0_S_AXI_AXILITES_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral SOBEL_FILTER_0 */
+#define XPAR_XSOBEL_FILTER_0_DEVICE_ID XPAR_SOBEL_FILTER_0_DEVICE_ID
+#define XPAR_XSOBEL_FILTER_0_S_AXI_AXILITES_BASEADDR 0x43C10000
+#define XPAR_XSOBEL_FILTER_0_S_AXI_AXILITES_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver TTCPS */
 #define XPAR_XTTCPS_NUM_INSTANCES 3U
 

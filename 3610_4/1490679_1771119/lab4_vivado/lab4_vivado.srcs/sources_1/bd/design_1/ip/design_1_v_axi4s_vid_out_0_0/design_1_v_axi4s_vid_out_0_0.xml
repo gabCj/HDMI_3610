@@ -634,7 +634,7 @@ um {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Nov 27 21:40:47 UTC 2018</spirit:value>
+            <spirit:value>Fri Nov 30 17:12:09 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>

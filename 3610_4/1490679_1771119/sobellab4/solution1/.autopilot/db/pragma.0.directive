@@ -3,6 +3,9 @@
 <directive functionLabel="" functionName="sobel_operator" label="">
 <pragma name="INLINE"/>
 </directive>
+<directive functionLabel="" functionName="sobel_operator" label="">
+<pragma name="UNROLL"/>
+</directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
 <pragma name="INTERFACE">
 <option name="m_axi" positionalBoolean="mode" value=""/>
@@ -24,6 +27,26 @@
 <option name="s_axilite" positionalBoolean="mode" value=""/>
 <option name="port" positionalBoolean="4" value="return"/>
 </pragma>
+</directive>
+<directive functionLabel="" functionName="sobel_filter" label="">
+<pragma name="PIPELINE">
+<option name="II" value="25"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sobel_filter" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="sobel_filter" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="sobel_filter" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="sobel_filter" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="sobel_filter" label="">
+<pragma name="PIPELINE"/>
 </directive>
 </sourceFile>
 </AutoPilot:ProjectResources>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'getVal'" level="0">
-<item name = "Date">Tue Nov 27 16:15:51 2018
+<item name = "Date">Fri Nov 30 12:07:12 2018
 </item>
 <item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
 <item name = "Project">sobellab4</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.75, 1.25</column>
+<column name="ap_clk">10.00, 8.70, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">8, 8, 8, 8, none</column>
+<column name="">2, 2, 1, 1, function</column>
 </table>
 </item>
 <item name = "Detail">
@@ -47,12 +47,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 96</column>
+<column name="Expression">-, -, 0, 135</column>
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">-, -, -, -</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 74</column>
-<column name="Register">-, -, 42, -</column>
+<column name="Multiplexer">-, -, -, -</column>
+<column name="Register">-, -, 19, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
 </table>
@@ -77,25 +77,29 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="sum_fu_134_p2">+, 0, 0, 40, 33, 33</column>
-<column name="tmp1_fu_110_p2">+, 0, 0, 13, 13, 13</column>
-<column name="tmp_33_fu_120_p2">+, 0, 0, 30, 23, 23</column>
-<column name="tmp_fu_100_p2">-, 0, 0, 13, 13, 13</column>
+<column name="fullIndex_2_fu_118_p2">+, 0, 0, 21, 15, 13</column>
+<column name="fullIndex_3_fu_134_p2">+, 0, 0, 21, 15, 14</column>
+<column name="fullIndex_fu_104_p2">+, 0, 0, 21, 15, 15</column>
+<column name="tmp1_fu_90_p2">+, 0, 0, 11, 13, 13</column>
+<column name="tmp_fu_80_p2">-, 0, 0, 11, 13, 13</column>
+<column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_s_fu_128_p2">icmp, 0, 0, 13, 15, 13</column>
+<column name="ap_block_pp0_stage0_subdone">or, 0, 0, 2, 1, 1</column>
+<column name="fullIndex_1_fu_152_p3">select, 0, 0, 16, 1, 16</column>
+<column name="p_s_fu_140_p3">select, 0, 0, 15, 1, 15</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="Y_blk_n_AR">9, 2, 1, 2</column>
-<column name="Y_blk_n_R">9, 2, 1, 2</column>
-<column name="ap_NS_fsm">47, 10, 1, 10</column>
-<column name="ap_sig_ioackin_m_axi_Y_ARREADY">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="Y_addr_reg_150">32, 0, 32, 0</column>
-<column name="ap_CS_fsm">9, 0, 9, 0</column>
-<column name="ap_reg_ioackin_m_axi_Y_ARREADY">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="fullIndex_1_reg_168">16, 0, 16, 0</column>
 </table>
 </item>
 </section>
@@ -111,56 +115,14 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, getVal, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, getVal, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, getVal, return value</column>
+<column name="ap_ce">in, 1, ap_ctrl_hs, getVal, return value</column>
 <column name="ap_return">out, 8, ap_ctrl_hs, getVal, return value</column>
-<column name="index">in, 23, ap_none, index, scalar</column>
+<column name="index">in, 14, ap_none, index, scalar</column>
 <column name="xDiff">in, 2, ap_none, xDiff, scalar</column>
 <column name="yDiff">in, 2, ap_none, yDiff, scalar</column>
-<column name="m_axi_Y_AWVALID">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWREADY">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWADDR">out, 32, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWID">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWLEN">out, 32, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWSIZE">out, 3, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWBURST">out, 2, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWLOCK">out, 2, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWCACHE">out, 4, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWPROT">out, 3, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWQOS">out, 4, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWREGION">out, 4, m_axi, Y, pointer</column>
-<column name="m_axi_Y_AWUSER">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_WVALID">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_WREADY">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_WDATA">out, 8, m_axi, Y, pointer</column>
-<column name="m_axi_Y_WSTRB">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_WLAST">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_WID">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_WUSER">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARVALID">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARREADY">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARADDR">out, 32, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARID">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARLEN">out, 32, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARSIZE">out, 3, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARBURST">out, 2, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARLOCK">out, 2, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARCACHE">out, 4, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARPROT">out, 3, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARQOS">out, 4, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARREGION">out, 4, m_axi, Y, pointer</column>
-<column name="m_axi_Y_ARUSER">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_RVALID">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_RREADY">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_RDATA">in, 8, m_axi, Y, pointer</column>
-<column name="m_axi_Y_RLAST">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_RID">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_RUSER">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_RRESP">in, 2, m_axi, Y, pointer</column>
-<column name="m_axi_Y_BVALID">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_BREADY">out, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_BRESP">in, 2, m_axi, Y, pointer</column>
-<column name="m_axi_Y_BID">in, 1, m_axi, Y, pointer</column>
-<column name="m_axi_Y_BUSER">in, 1, m_axi, Y, pointer</column>
-<column name="Y_offset">in, 32, ap_none, Y_offset, scalar</column>
+<column name="Y_address0">out, 13, ap_memory, Y, array</column>
+<column name="Y_ce0">out, 1, ap_memory, Y, array</column>
+<column name="Y_q0">in, 8, ap_memory, Y, array</column>
 </table>
 </item>
 </section>

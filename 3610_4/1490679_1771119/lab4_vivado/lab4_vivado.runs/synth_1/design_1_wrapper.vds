@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Tue Nov 27 16:47:19 2018
-# Process ID: 70836
+# Start of session at: Fri Nov 30 12:15:40 2018
+# Process ID: 19864
 # Current directory: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/design_1_wrapper.vds
@@ -14,26 +14,26 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'x:/Bureau/HDMI_3610/3610_4/1490679_1771119/ip_repo'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'x:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Logiciels/Xilinx/Vivado/2018.1/data/ip'.
-add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:28 . Memory (MB): peak = 332.164 ; gain = 62.840
+add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 331.828 ; gain = 62.434
 Command: synth_design -top design_1_wrapper -part xc7z020clg484-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 71748 
+INFO: Helper process launched with PID 23008 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 450.223 ; gain = 105.852
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 450.180 ; gain = 105.941
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (1#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_1_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axi_smc_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_1_0' (2#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axi_smc_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (3#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_clk_wiz_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (4#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (1#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_1_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axi_smc_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_1_0' (2#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axi_smc_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (3#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (4#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' requires 208 connections, but only 181 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:533]
 INFO: [Synth 8-6157] synthesizing module 'design_1_ps7_0_axi_periph_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:1192]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_15SPJYW' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2015]
@@ -43,62 +43,62 @@ INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_XU9C55' (6#1) [X
 INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_14WQB4R' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2272]
 INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_14WQB4R' (7#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2272]
 INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_YFYJ3U' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2404]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_cc_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_auto_cc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_cc_0' (8#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_auto_cc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_cc_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_auto_cc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_cc_0' (8#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_auto_cc_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'auto_cc' of module 'design_1_auto_cc_0' requires 42 connections, but only 40 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2567]
 INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_YFYJ3U' (9#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2404]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_UYSKKA' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2773]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (10#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (10#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_auto_pc_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_UYSKKA' (11#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2773]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (12#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (12#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_xbar_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_ps7_0_axi_periph_0' (13#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:1192]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_100M_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_rst_ps7_0_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_100M_0' (14#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_rst_ps7_0_100M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_100M_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_rst_ps7_0_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_100M_0' (14#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_rst_ps7_0_100M_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'rst_ps7_0_100M' of module 'design_1_rst_ps7_0_100M_0' requires 10 connections, but only 6 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:833]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_76M_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_rst_ps7_0_76M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_76M_0' (15#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_rst_ps7_0_76M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_76M_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_rst_ps7_0_76M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_76M_0' (15#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_rst_ps7_0_76M_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'rst_ps7_0_76M' of module 'design_1_rst_ps7_0_76M_0' requires 10 connections, but only 7 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:840]
-INFO: [Synth 8-6157] synthesizing module 'design_1_sobel_filter_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_sobel_filter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_sobel_filter_0_0' (16#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_sobel_filter_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_sobel_filter_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_sobel_filter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_sobel_filter_0_0' (16#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_sobel_filter_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'sobel_filter_0' of module 'design_1_sobel_filter_0_0' requires 90 connections, but only 85 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:848]
 INFO: [Synth 8-6157] synthesizing module 'zed_hdmi_display_imp_1XTD6E1' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:3078]
 INFO: [Synth 8-6157] synthesizing module 'design_1_axi_mem_intercon_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:1022]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_6ELQH7' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2610]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (17#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (17#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_auto_pc_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_6ELQH7' (18#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:2610]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_mem_intercon_0' (19#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:1022]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_vdma_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axi_vdma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_vdma_0_0' (20#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axi_vdma_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_vdma_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axi_vdma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_vdma_0_0' (20#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axi_vdma_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_vdma_0' of module 'design_1_axi_vdma_0_0' requires 41 connections, but only 39 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:3400]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axis_subset_converter_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axis_subset_converter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_subset_converter_0_0' (21#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axis_subset_converter_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_subset_converter_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axis_subset_converter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_subset_converter_0_0' (21#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axis_subset_converter_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axis_subset_converter_0' of module 'design_1_axis_subset_converter_0_0' requires 14 connections, but only 13 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:3440]
-INFO: [Synth 8-6157] synthesizing module 'design_1_gnd_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_gnd_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_gnd_0' (22#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_gnd_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_proc_sys_reset_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_proc_sys_reset_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_proc_sys_reset_0' (23#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_proc_sys_reset_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_gnd_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_gnd_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_gnd_0' (22#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_gnd_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_proc_sys_reset_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_proc_sys_reset_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_proc_sys_reset_0' (23#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_proc_sys_reset_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'proc_sys_reset' of module 'design_1_proc_sys_reset_0' requires 10 connections, but only 7 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:3456]
-INFO: [Synth 8-6157] synthesizing module 'design_1_v_axi4s_vid_out_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_v_axi4s_vid_out_0_0' (24#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_v_axi4s_vid_out_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_v_axi4s_vid_out_0_0' (24#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_v_axi4s_vid_out_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'v_axi4s_vid_out_0' of module 'design_1_v_axi4s_vid_out_0_0' requires 30 connections, but only 23 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:3464]
-INFO: [Synth 8-6157] synthesizing module 'design_1_v_cresample_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_v_cresample_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_v_cresample_0_0' (25#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_v_cresample_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_v_cresample_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_v_cresample_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_v_cresample_0_0' (25#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_v_cresample_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'v_cresample_0' of module 'design_1_v_cresample_0_0' requires 16 connections, but only 14 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:3488]
-INFO: [Synth 8-6157] synthesizing module 'design_1_v_rgb2ycrcb_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_v_rgb2ycrcb_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_v_rgb2ycrcb_0_0' (26#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_v_rgb2ycrcb_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_v_tc_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_v_tc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_v_tc_0_0' (27#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_v_rgb2ycrcb_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_v_rgb2ycrcb_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_v_rgb2ycrcb_0_0' (26#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_v_rgb2ycrcb_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_v_tc_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_v_tc_0_0' (27#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_v_tc_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'v_tc_0' of module 'design_1_v_tc_0_0' requires 32 connections, but only 30 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:3517]
-INFO: [Synth 8-6157] synthesizing module 'design_1_vcc_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_vcc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_vcc_0' (28#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_vcc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_zed_hdmi_out_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_zed_hdmi_out_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_zed_hdmi_out_0_0' (29#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_zed_hdmi_out_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_vcc_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_vcc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_vcc_0' (28#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_vcc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_zed_hdmi_out_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_zed_hdmi_out_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_zed_hdmi_out_0_0' (29#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_zed_hdmi_out_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'zed_hdmi_display_imp_1XTD6E1' (30#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:3078]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_iic_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axi_iic_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_iic_0_0' (31#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-70836-L3712-17/realtime/design_1_axi_iic_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_iic_0_0' [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axi_iic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_iic_0_0' (31#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/.Xil/Vivado-19864-L3712-13/realtime/design_1_axi_iic_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'zed_hdmi_iic_0' of module 'design_1_axi_iic_0_0' requires 27 connections, but only 25 given [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:994]
 INFO: [Synth 8-6155] done synthesizing module 'design_1' (32#1) [X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.srcs/sources_1/bd/design_1/synth/design_1.v:13]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Logiciels/Xilinx/Vivado/2018.1/scripts/rt/data/unisim_comp.v:22659]
@@ -210,7 +210,7 @@ WARNING: [Synth 8-3331] design m03_couplers_imp_YFYJ3U has unconnected port S_AX
 WARNING: [Synth 8-3331] design m03_couplers_imp_YFYJ3U has unconnected port S_AXI_araddr[30]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 506.762 ; gain = 162.391
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 505.922 ; gain = 161.684
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -223,10 +223,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 506.762 ; gain = 162.391
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 505.922 ; gain = 161.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 506.762 ; gain = 162.391
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 505.922 ; gain = 161.684
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -305,17 +305,17 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 843.977 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 842.859 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'design_1_i/zed_hdmi_display/axi_vdma_0' at clock pin 'm_axi_mm2s_aclk' is different from the actual clock period '7.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:54 . Memory (MB): peak = 843.977 ; gain = 499.605
+Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:54 . Memory (MB): peak = 842.859 ; gain = 498.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:54 . Memory (MB): peak = 843.977 ; gain = 499.605
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:54 . Memory (MB): peak = 842.859 ; gain = 498.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -648,10 +648,10 @@ Applied set_property DONT_TOUCH = true for design_1_i/zed_hdmi_display/axi_mem_i
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/m03_couplers/auto_cc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:55 . Memory (MB): peak = 843.977 ; gain = 499.605
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:55 . Memory (MB): peak = 842.859 ; gain = 498.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:57 . Memory (MB): peak = 843.977 ; gain = 499.605
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:56 . Memory (MB): peak = 842.859 ; gain = 498.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -687,7 +687,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:58 . Memory (MB): peak = 843.977 ; gain = 499.605
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:58 . Memory (MB): peak = 842.859 ; gain = 498.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -707,13 +707,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/clk_wiz_0/clk_
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'design_1_i/clk_wiz_0/clk_in1' to 'design_1_i/processing_system7_0/bbstub_FCLK_CLK2/O'
 INFO: [Synth 8-5819] Moved 6 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:01:13 . Memory (MB): peak = 849.828 ; gain = 505.457
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:01:12 . Memory (MB): peak = 852.719 ; gain = 508.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:01:13 . Memory (MB): peak = 850.273 ; gain = 505.902
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:01:12 . Memory (MB): peak = 853.090 ; gain = 508.852
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -725,7 +725,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:01:13 . Memory (MB): peak = 851.449 ; gain = 507.078
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:01:12 . Memory (MB): peak = 854.266 ; gain = 510.027
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -749,7 +749,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:01:15 . Memory (MB): peak = 851.449 ; gain = 507.078
+Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:01:14 . Memory (MB): peak = 854.266 ; gain = 510.027
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -762,7 +762,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:01:15 . Memory (MB): peak = 851.449 ; gain = 507.078
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:01:14 . Memory (MB): peak = 854.266 ; gain = 510.027
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -774,25 +774,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:48 ; elapsed = 00:01:15 . Memory (MB): peak = 851.449 ; gain = 507.078
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:48 ; elapsed = 00:01:14 . Memory (MB): peak = 854.266 ; gain = 510.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:48 ; elapsed = 00:01:15 . Memory (MB): peak = 851.449 ; gain = 507.078
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:48 ; elapsed = 00:01:14 . Memory (MB): peak = 854.266 ; gain = 510.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:01:15 . Memory (MB): peak = 851.449 ; gain = 507.078
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:01:14 . Memory (MB): peak = 854.266 ; gain = 510.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:01:15 . Memory (MB): peak = 851.449 ; gain = 507.078
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:01:14 . Memory (MB): peak = 854.266 ; gain = 510.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -869,11 +869,11 @@ Report Instance Areas:
 |8     |        s00_couplers   |s00_couplers_imp_6ELQH7      |   125|
 +------+-----------------------+-----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:01:15 . Memory (MB): peak = 851.449 ; gain = 507.078
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:01:14 . Memory (MB): peak = 854.266 ; gain = 510.027
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:45 . Memory (MB): peak = 851.449 ; gain = 169.863
-Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:01:15 . Memory (MB): peak = 851.449 ; gain = 507.078
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:44 . Memory (MB): peak = 854.266 ; gain = 173.090
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:01:14 . Memory (MB): peak = 854.266 ; gain = 510.027
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -886,8 +886,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 98 Infos, 118 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:01:23 . Memory (MB): peak = 873.617 ; gain = 541.453
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:01:22 . Memory (MB): peak = 877.863 ; gain = 546.035
 INFO: [Common 17-1381] The checkpoint 'X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 873.617 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 27 16:49:28 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 878.133 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 30 12:17:38 2018...

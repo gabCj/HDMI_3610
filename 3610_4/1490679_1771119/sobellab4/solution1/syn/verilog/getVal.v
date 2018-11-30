@@ -14,67 +14,17 @@ module getVal (
         ap_done,
         ap_idle,
         ap_ready,
+        ap_ce,
         index,
         xDiff,
         yDiff,
-        m_axi_Y_AWVALID,
-        m_axi_Y_AWREADY,
-        m_axi_Y_AWADDR,
-        m_axi_Y_AWID,
-        m_axi_Y_AWLEN,
-        m_axi_Y_AWSIZE,
-        m_axi_Y_AWBURST,
-        m_axi_Y_AWLOCK,
-        m_axi_Y_AWCACHE,
-        m_axi_Y_AWPROT,
-        m_axi_Y_AWQOS,
-        m_axi_Y_AWREGION,
-        m_axi_Y_AWUSER,
-        m_axi_Y_WVALID,
-        m_axi_Y_WREADY,
-        m_axi_Y_WDATA,
-        m_axi_Y_WSTRB,
-        m_axi_Y_WLAST,
-        m_axi_Y_WID,
-        m_axi_Y_WUSER,
-        m_axi_Y_ARVALID,
-        m_axi_Y_ARREADY,
-        m_axi_Y_ARADDR,
-        m_axi_Y_ARID,
-        m_axi_Y_ARLEN,
-        m_axi_Y_ARSIZE,
-        m_axi_Y_ARBURST,
-        m_axi_Y_ARLOCK,
-        m_axi_Y_ARCACHE,
-        m_axi_Y_ARPROT,
-        m_axi_Y_ARQOS,
-        m_axi_Y_ARREGION,
-        m_axi_Y_ARUSER,
-        m_axi_Y_RVALID,
-        m_axi_Y_RREADY,
-        m_axi_Y_RDATA,
-        m_axi_Y_RLAST,
-        m_axi_Y_RID,
-        m_axi_Y_RUSER,
-        m_axi_Y_RRESP,
-        m_axi_Y_BVALID,
-        m_axi_Y_BREADY,
-        m_axi_Y_BRESP,
-        m_axi_Y_BID,
-        m_axi_Y_BUSER,
-        Y_offset,
+        Y_address0,
+        Y_ce0,
+        Y_q0,
         ap_return
 );
 
-parameter    ap_ST_fsm_state1 = 9'd1;
-parameter    ap_ST_fsm_state2 = 9'd2;
-parameter    ap_ST_fsm_state3 = 9'd4;
-parameter    ap_ST_fsm_state4 = 9'd8;
-parameter    ap_ST_fsm_state5 = 9'd16;
-parameter    ap_ST_fsm_state6 = 9'd32;
-parameter    ap_ST_fsm_state7 = 9'd64;
-parameter    ap_ST_fsm_state8 = 9'd128;
-parameter    ap_ST_fsm_state9 = 9'd256;
+parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
 
 input   ap_clk;
 input   ap_rst;
@@ -82,95 +32,68 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [22:0] index;
+input   ap_ce;
+input  [13:0] index;
 input  [1:0] xDiff;
 input  [1:0] yDiff;
-output   m_axi_Y_AWVALID;
-input   m_axi_Y_AWREADY;
-output  [31:0] m_axi_Y_AWADDR;
-output  [0:0] m_axi_Y_AWID;
-output  [31:0] m_axi_Y_AWLEN;
-output  [2:0] m_axi_Y_AWSIZE;
-output  [1:0] m_axi_Y_AWBURST;
-output  [1:0] m_axi_Y_AWLOCK;
-output  [3:0] m_axi_Y_AWCACHE;
-output  [2:0] m_axi_Y_AWPROT;
-output  [3:0] m_axi_Y_AWQOS;
-output  [3:0] m_axi_Y_AWREGION;
-output  [0:0] m_axi_Y_AWUSER;
-output   m_axi_Y_WVALID;
-input   m_axi_Y_WREADY;
-output  [7:0] m_axi_Y_WDATA;
-output  [0:0] m_axi_Y_WSTRB;
-output   m_axi_Y_WLAST;
-output  [0:0] m_axi_Y_WID;
-output  [0:0] m_axi_Y_WUSER;
-output   m_axi_Y_ARVALID;
-input   m_axi_Y_ARREADY;
-output  [31:0] m_axi_Y_ARADDR;
-output  [0:0] m_axi_Y_ARID;
-output  [31:0] m_axi_Y_ARLEN;
-output  [2:0] m_axi_Y_ARSIZE;
-output  [1:0] m_axi_Y_ARBURST;
-output  [1:0] m_axi_Y_ARLOCK;
-output  [3:0] m_axi_Y_ARCACHE;
-output  [2:0] m_axi_Y_ARPROT;
-output  [3:0] m_axi_Y_ARQOS;
-output  [3:0] m_axi_Y_ARREGION;
-output  [0:0] m_axi_Y_ARUSER;
-input   m_axi_Y_RVALID;
-output   m_axi_Y_RREADY;
-input  [7:0] m_axi_Y_RDATA;
-input   m_axi_Y_RLAST;
-input  [0:0] m_axi_Y_RID;
-input  [0:0] m_axi_Y_RUSER;
-input  [1:0] m_axi_Y_RRESP;
-input   m_axi_Y_BVALID;
-output   m_axi_Y_BREADY;
-input  [1:0] m_axi_Y_BRESP;
-input  [0:0] m_axi_Y_BID;
-input  [0:0] m_axi_Y_BUSER;
-input  [31:0] Y_offset;
+output  [12:0] Y_address0;
+output   Y_ce0;
+input  [7:0] Y_q0;
 output  [7:0] ap_return;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-reg m_axi_Y_ARVALID;
-reg m_axi_Y_RREADY;
+reg Y_ce0;
 
-(* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
-wire    ap_CS_fsm_state1;
-reg    Y_blk_n_AR;
-wire    ap_CS_fsm_state2;
-reg    Y_blk_n_R;
-wire    ap_CS_fsm_state9;
-reg   [31:0] Y_addr_reg_150;
-wire  signed [63:0] sum_cast_fu_140_p1;
-reg    ap_reg_ioackin_m_axi_Y_ARREADY;
-reg    ap_sig_ioackin_m_axi_Y_ARREADY;
-wire   [8:0] p_shl2_fu_88_p3;
-wire   [12:0] p_shl_fu_80_p3;
-wire  signed [12:0] p_shl2_cast_fu_96_p1;
-wire   [12:0] tmp_fu_100_p2;
-wire  signed [12:0] xDiff_cast_fu_106_p1;
-wire   [12:0] tmp1_fu_110_p2;
-wire  signed [22:0] tmp1_cast_fu_116_p1;
-wire   [22:0] tmp_33_fu_120_p2;
-wire  signed [32:0] tmp_cast_fu_126_p1;
-wire  signed [32:0] sext_cast_fu_130_p1;
-wire   [32:0] sum_fu_134_p2;
-reg   [8:0] ap_NS_fsm;
+(* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
+wire    ap_CS_fsm_pp0_stage0;
+wire    ap_enable_reg_pp0_iter0;
+wire    ap_block_pp0_stage0;
+reg    ap_enable_reg_pp0_iter1;
+reg    ap_enable_reg_pp0_iter2;
+reg    ap_idle_pp0;
+reg    ap_block_state1_pp0_stage0_iter0;
+wire    ap_block_state2_pp0_stage0_iter1;
+wire    ap_block_state3_pp0_stage0_iter2;
+reg    ap_block_pp0_stage0_11001;
+wire   [15:0] fullIndex_1_fu_152_p3;
+reg   [15:0] fullIndex_1_reg_168;
+reg    ap_block_pp0_stage0_subdone;
+wire   [63:0] tmp_70_fu_163_p1;
+wire   [8:0] p_shl2_fu_68_p3;
+wire   [12:0] p_shl_fu_60_p3;
+wire  signed [12:0] p_shl2_cast_fu_76_p1;
+wire  signed [12:0] xDiff_cast_fu_86_p1;
+wire   [12:0] tmp_fu_80_p2;
+wire   [12:0] tmp1_fu_90_p2;
+wire  signed [14:0] index_cast_fu_100_p1;
+wire  signed [14:0] tmp1_cast_fu_96_p1;
+wire   [14:0] fullIndex_fu_104_p2;
+wire   [14:0] fullIndex_2_fu_118_p2;
+wire   [0:0] tmp_s_fu_128_p2;
+wire   [14:0] fullIndex_3_fu_134_p2;
+wire   [14:0] p_s_fu_140_p3;
+wire   [0:0] tmp_71_fu_110_p3;
+wire   [15:0] fullIndex_2_cast_fu_124_p1;
+wire  signed [15:0] p_cast_fu_148_p1;
+wire  signed [31:0] fullIndex_1_cast_fu_160_p1;
+reg   [0:0] ap_NS_fsm;
+reg    ap_idle_pp0_0to1;
+reg    ap_reset_idle_pp0;
+reg    ap_reset_start_pp0;
+wire    ap_enable_pp0;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 9'd1;
-#0 ap_reg_ioackin_m_axi_Y_ARREADY = 1'b0;
+#0 ap_CS_fsm = 1'd1;
+#0 ap_enable_reg_pp0_iter1 = 1'b0;
+#0 ap_enable_reg_pp0_iter2 = 1'b0;
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_CS_fsm <= ap_ST_fsm_state1;
+        ap_CS_fsm <= ap_ST_fsm_pp0_stage0;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
     end
@@ -178,42 +101,40 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_reg_ioackin_m_axi_Y_ARREADY <= 1'b0;
+        ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state2)) begin
-            if ((ap_sig_ioackin_m_axi_Y_ARREADY == 1'b1)) begin
-                ap_reg_ioackin_m_axi_Y_ARREADY <= 1'b0;
-            end else if ((m_axi_Y_ARREADY == 1'b1)) begin
-                ap_reg_ioackin_m_axi_Y_ARREADY <= 1'b1;
-            end
+        if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+            ap_enable_reg_pp0_iter1 <= ap_start;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-        Y_addr_reg_150 <= sum_cast_fu_140_p1;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        Y_blk_n_AR = m_axi_Y_ARREADY;
+    if (ap_rst == 1'b1) begin
+        ap_enable_reg_pp0_iter2 <= 1'b0;
     end else begin
-        Y_blk_n_AR = 1'b1;
+        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
+            ap_enable_reg_pp0_iter2 <= ap_enable_reg_pp0_iter1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b1 == ap_ce) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        fullIndex_1_reg_168 <= fullIndex_1_fu_152_p3;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state9)) begin
-        Y_blk_n_R = m_axi_Y_RVALID;
+    if (((1'b1 == ap_ce) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        Y_ce0 = 1'b1;
     end else begin
-        Y_blk_n_R = 1'b1;
+        Y_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)) | ((m_axi_Y_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state9)))) begin
+    if ((((ap_start == 1'b0) & (1'b0 == ap_block_pp0_stage0) & (ap_start == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0)) | ((1'b1 == ap_ce) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1)))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -221,7 +142,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((ap_start == 1'b0) & (ap_idle_pp0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -229,7 +150,23 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((m_axi_Y_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state9))) begin
+    if (((ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
+        ap_idle_pp0 = 1'b1;
+    end else begin
+        ap_idle_pp0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
+        ap_idle_pp0_0to1 = 1'b1;
+    end else begin
+        ap_idle_pp0_0to1 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_ce) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_start == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -237,69 +174,25 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((ap_reg_ioackin_m_axi_Y_ARREADY == 1'b0)) begin
-        ap_sig_ioackin_m_axi_Y_ARREADY = m_axi_Y_ARREADY;
+    if (((ap_start == 1'b0) & (ap_idle_pp0_0to1 == 1'b1))) begin
+        ap_reset_idle_pp0 = 1'b1;
     end else begin
-        ap_sig_ioackin_m_axi_Y_ARREADY = 1'b1;
+        ap_reset_idle_pp0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((ap_reg_ioackin_m_axi_Y_ARREADY == 1'b0) & (1'b1 == ap_CS_fsm_state2))) begin
-        m_axi_Y_ARVALID = 1'b1;
+    if (((ap_start == 1'b1) & (ap_idle_pp0_0to1 == 1'b1))) begin
+        ap_reset_start_pp0 = 1'b1;
     end else begin
-        m_axi_Y_ARVALID = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((m_axi_Y_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state9))) begin
-        m_axi_Y_RREADY = 1'b1;
-    end else begin
-        m_axi_Y_RREADY = 1'b0;
+        ap_reset_start_pp0 = 1'b0;
     end
 end
 
 always @ (*) begin
     case (ap_CS_fsm)
-        ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-                ap_NS_fsm = ap_ST_fsm_state2;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state1;
-            end
-        end
-        ap_ST_fsm_state2 : begin
-            if (((1'b1 == ap_CS_fsm_state2) & (ap_sig_ioackin_m_axi_Y_ARREADY == 1'b1))) begin
-                ap_NS_fsm = ap_ST_fsm_state3;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state2;
-            end
-        end
-        ap_ST_fsm_state3 : begin
-            ap_NS_fsm = ap_ST_fsm_state4;
-        end
-        ap_ST_fsm_state4 : begin
-            ap_NS_fsm = ap_ST_fsm_state5;
-        end
-        ap_ST_fsm_state5 : begin
-            ap_NS_fsm = ap_ST_fsm_state6;
-        end
-        ap_ST_fsm_state6 : begin
-            ap_NS_fsm = ap_ST_fsm_state7;
-        end
-        ap_ST_fsm_state7 : begin
-            ap_NS_fsm = ap_ST_fsm_state8;
-        end
-        ap_ST_fsm_state8 : begin
-            ap_NS_fsm = ap_ST_fsm_state9;
-        end
-        ap_ST_fsm_state9 : begin
-            if (((m_axi_Y_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state9))) begin
-                ap_NS_fsm = ap_ST_fsm_state1;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state9;
-            end
+        ap_ST_fsm_pp0_stage0 : begin
+            ap_NS_fsm = ap_ST_fsm_pp0_stage0;
         end
         default : begin
             ap_NS_fsm = 'bx;
@@ -307,96 +200,70 @@ always @ (*) begin
     endcase
 end
 
-assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+assign Y_address0 = tmp_70_fu_163_p1;
 
-assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
-assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
+assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
 
-assign ap_return = m_axi_Y_RDATA;
+always @ (*) begin
+    ap_block_pp0_stage0_11001 = ((ap_start == 1'b0) & (ap_start == 1'b1));
+end
 
-assign m_axi_Y_ARADDR = Y_addr_reg_150;
+always @ (*) begin
+    ap_block_pp0_stage0_subdone = ((1'b0 == ap_ce) | ((ap_start == 1'b0) & (ap_start == 1'b1)));
+end
 
-assign m_axi_Y_ARBURST = 2'd0;
+always @ (*) begin
+    ap_block_state1_pp0_stage0_iter0 = (ap_start == 1'b0);
+end
 
-assign m_axi_Y_ARCACHE = 4'd0;
+assign ap_block_state2_pp0_stage0_iter1 = ~(1'b1 == 1'b1);
 
-assign m_axi_Y_ARID = 1'd0;
+assign ap_block_state3_pp0_stage0_iter2 = ~(1'b1 == 1'b1);
 
-assign m_axi_Y_ARLEN = 32'd1;
+assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 
-assign m_axi_Y_ARLOCK = 2'd0;
+assign ap_enable_reg_pp0_iter0 = ap_start;
 
-assign m_axi_Y_ARPROT = 3'd0;
+assign ap_return = Y_q0;
 
-assign m_axi_Y_ARQOS = 4'd0;
+assign fullIndex_1_cast_fu_160_p1 = $signed(fullIndex_1_reg_168);
 
-assign m_axi_Y_ARREGION = 4'd0;
+assign fullIndex_1_fu_152_p3 = ((tmp_71_fu_110_p3[0:0] === 1'b1) ? fullIndex_2_cast_fu_124_p1 : p_cast_fu_148_p1);
 
-assign m_axi_Y_ARSIZE = 3'd0;
+assign fullIndex_2_cast_fu_124_p1 = fullIndex_2_fu_118_p2;
 
-assign m_axi_Y_ARUSER = 1'd0;
+assign fullIndex_2_fu_118_p2 = (fullIndex_fu_104_p2 + 15'd7680);
 
-assign m_axi_Y_AWADDR = 32'd0;
+assign fullIndex_3_fu_134_p2 = ($signed(fullIndex_fu_104_p2) + $signed(15'd25088));
 
-assign m_axi_Y_AWBURST = 2'd0;
+assign fullIndex_fu_104_p2 = ($signed(index_cast_fu_100_p1) + $signed(tmp1_cast_fu_96_p1));
 
-assign m_axi_Y_AWCACHE = 4'd0;
+assign index_cast_fu_100_p1 = $signed(index);
 
-assign m_axi_Y_AWID = 1'd0;
+assign p_cast_fu_148_p1 = $signed(p_s_fu_140_p3);
 
-assign m_axi_Y_AWLEN = 32'd0;
+assign p_s_fu_140_p3 = ((tmp_s_fu_128_p2[0:0] === 1'b1) ? fullIndex_fu_104_p2 : fullIndex_3_fu_134_p2);
 
-assign m_axi_Y_AWLOCK = 2'd0;
+assign p_shl2_cast_fu_76_p1 = $signed(p_shl2_fu_68_p3);
 
-assign m_axi_Y_AWPROT = 3'd0;
+assign p_shl2_fu_68_p3 = {{yDiff}, {7'd0}};
 
-assign m_axi_Y_AWQOS = 4'd0;
+assign p_shl_fu_60_p3 = {{yDiff}, {11'd0}};
 
-assign m_axi_Y_AWREGION = 4'd0;
+assign tmp1_cast_fu_96_p1 = $signed(tmp1_fu_90_p2);
 
-assign m_axi_Y_AWSIZE = 3'd0;
+assign tmp1_fu_90_p2 = ($signed(xDiff_cast_fu_86_p1) + $signed(tmp_fu_80_p2));
 
-assign m_axi_Y_AWUSER = 1'd0;
+assign tmp_70_fu_163_p1 = $unsigned(fullIndex_1_cast_fu_160_p1);
 
-assign m_axi_Y_AWVALID = 1'b0;
+assign tmp_71_fu_110_p3 = fullIndex_fu_104_p2[32'd14];
 
-assign m_axi_Y_BREADY = 1'b0;
+assign tmp_fu_80_p2 = ($signed(p_shl_fu_60_p3) - $signed(p_shl2_cast_fu_76_p1));
 
-assign m_axi_Y_WDATA = 8'd0;
+assign tmp_s_fu_128_p2 = (($signed(fullIndex_fu_104_p2) < $signed(15'd7680)) ? 1'b1 : 1'b0);
 
-assign m_axi_Y_WID = 1'd0;
-
-assign m_axi_Y_WLAST = 1'b0;
-
-assign m_axi_Y_WSTRB = 1'd0;
-
-assign m_axi_Y_WUSER = 1'd0;
-
-assign m_axi_Y_WVALID = 1'b0;
-
-assign p_shl2_cast_fu_96_p1 = $signed(p_shl2_fu_88_p3);
-
-assign p_shl2_fu_88_p3 = {{yDiff}, {7'd0}};
-
-assign p_shl_fu_80_p3 = {{yDiff}, {11'd0}};
-
-assign sext_cast_fu_130_p1 = $signed(Y_offset);
-
-assign sum_cast_fu_140_p1 = $signed(sum_fu_134_p2);
-
-assign sum_fu_134_p2 = ($signed(tmp_cast_fu_126_p1) + $signed(sext_cast_fu_130_p1));
-
-assign tmp1_cast_fu_116_p1 = $signed(tmp1_fu_110_p2);
-
-assign tmp1_fu_110_p2 = ($signed(tmp_fu_100_p2) + $signed(xDiff_cast_fu_106_p1));
-
-assign tmp_33_fu_120_p2 = ($signed(index) + $signed(tmp1_cast_fu_116_p1));
-
-assign tmp_cast_fu_126_p1 = $signed(tmp_33_fu_120_p2);
-
-assign tmp_fu_100_p2 = ($signed(p_shl_fu_80_p3) - $signed(p_shl2_cast_fu_96_p1));
-
-assign xDiff_cast_fu_106_p1 = $signed(xDiff);
+assign xDiff_cast_fu_86_p1 = $signed(xDiff);
 
 endmodule //getVal

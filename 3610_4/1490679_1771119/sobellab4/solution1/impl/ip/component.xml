@@ -1448,7 +1448,7 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>342c270c</spirit:value>
+            <spirit:value>bcefc88d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1464,7 +1464,7 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5b264c4e</spirit:value>
+            <spirit:value>c2bdd1a6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1480,7 +1480,7 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>66e68290</spirit:value>
+            <spirit:value>8f7d07eb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1496,7 +1496,7 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>72a2be9b</spirit:value>
+            <spirit:value>215d7ab5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3674,24 +3674,8 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_mac_bkb.v</spirit:name>
+        <spirit:name>hdl/verilog/sobel_filter_supebkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_x_op.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_x_op_rom.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_y_op.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_y_op_rom.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/sobel_filter.v</spirit:name>
@@ -3721,27 +3705,9 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_mac_bkb.v</spirit:name>
+        <spirit:name>hdl/verilog/sobel_filter_supebkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_x_op.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_x_op_rom.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_y_op.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_y_op_rom.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/sobel_filter.v</spirit:name>
@@ -3773,21 +3739,13 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/sobel_filter_mac_bkb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/sobel_filter_x_op.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/sobel_filter_y_op.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/sobel_filter_supebkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/sobel_filter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_a928585b</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_35d316cf</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -3813,17 +3771,7 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/sobel_filter_mac_bkb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/sobel_filter_x_op.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/sobel_filter_y_op.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/sobel_filter_supebkb.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4138,7 +4086,7 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="29">452864553</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="29">53967659</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -4155,18 +4103,18 @@ ng minimum {} maximum {}} value 0}}}}</spirit:value>
       </xilinx:taxonomies>
       <xilinx:displayName>Sobel</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1811271617</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-11-27T21:17:29Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1811301208</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-11-30T17:08:21Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="aed89e6a"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="896e2658"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="61291741"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1399c3ef"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4fdba01c"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="b65f911f"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="34368edc"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c976c476"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="7f53c452"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

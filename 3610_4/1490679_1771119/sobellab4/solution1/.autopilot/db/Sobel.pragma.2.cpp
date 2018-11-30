@@ -736,13 +736,27 @@ typedef union {
 
 static inline uint8_t getVal(int index, int xDiff, int yDiff, int img_width, uint8_t * Y)
 {
- return Y[index + (yDiff * img_width) + xDiff];
+ int fullIndex = (index + (yDiff * img_width)) + xDiff;
+ if (fullIndex < 0)
+ {
+
+  fullIndex += img_width * 4;
+ }
+ else if (fullIndex >= img_width * 4)
+ {
+
+  fullIndex -= img_width * 4;
+ }
+
+ return Y[fullIndex];
+
+
 };
 
 uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 {
 _ssdm_InlineSelf(0, "");
-# 32 "SobelLab4/Sobel.cpp"
+# 46 "SobelLab4/Sobel.cpp"
  int x_weight = 0;
  int y_weight = 0;
 
@@ -753,19 +767,22 @@ _ssdm_InlineSelf(0, "");
         { -2,0,2 },
         { -1,0,1 } };
 _ssdm_SpecConstant(x_op);
-# 40 "SobelLab4/Sobel.cpp"
+# 54 "SobelLab4/Sobel.cpp"
+
 
 
  const char y_op[3][3] = { { 1,2,1 },
         { 0,0,0 },
         { -1,-2,-1 } };
 _ssdm_SpecConstant(y_op);
-# 44 "SobelLab4/Sobel.cpp"
+# 59 "SobelLab4/Sobel.cpp"
+
 
 
 
  for (int i = 0; i < 3; i++) {
-  for (int j = 0; j < 3; j++) {
+_ssdm_Unroll(0,0,0, "");
+ for (int j = 0; j < 3; j++) {
 
   x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, 1920, image) * x_op[i][j]);
 
@@ -803,29 +820,46 @@ _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "
 
 
 
+ uint8_t superCache[4*1920];
+# 120 "SobelLab4/Sobel.cpp"
+ OperatorLines: for (unsigned int i = 0; i < 1080 + 1; ++i) {
+  OperatorRows1: for (unsigned int j = 0; j < 1920; ++j) {
+_ssdm_op_SpecPipeline(25, 1, 1, 0, "");
+ if (i < 3) {
+    superCache[i*1920 + j] = inter_pix[i*1920 + j];
+   }
+   else if (i >= 3 && i < 1080) {
+    superCache[(i%4)*1920 + j] = inter_pix[i*1920 + j];
+    out_pix[(i-2)*1920 + j] = sobel_operator(((i-2)%4)*1920 + j, superCache);
+   }
+   else {
+    out_pix[(i-2)*1920 + j] = sobel_operator(((i-2)%4)*1920 + j, superCache);
+   }
+  }
+# 176 "SobelLab4/Sobel.cpp"
+ }
 
  ZerosFirstRow: for (unsigned int i = 0; i < 1920; ++i)
-  out_pix[i] = 0;
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+ out_pix[i] = 0;
  ZerosLastRow: for (unsigned int i = (1920 * 1080) - 1920; i < (1920 * 1080); ++i)
-  out_pix[i] = 0;
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+ out_pix[i] = 0;
  ZerosFirstLine: for (unsigned int i = 0; i < (1920 * 1080); i += 1920)
-  out_pix[i] = 0;
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+ out_pix[i] = 0;
  ZerosLastLine: for (unsigned int i = 1920 - 1; i < (1920 * 1080); i += 1920)
-  out_pix[i] = 0;
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+ out_pix[i] = 0;
 
+ IMG: for (int i = 0; i < 1920 * 1080; ++i) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 
- OperatorLines: for (unsigned int i = 1; i < 1080 - 1; ++i) {
-  OperatorRows: for (unsigned int j = 1; j < 1920 - 1; ++j) {
-   int fullIndex = i * 1920 + j;
-   out_pix[fullIndex] = sobel_operator(fullIndex, inter_pix);
+ uint8_t val = out_pix[i];
+   OneToFourPixels fourWide;
+ OneTo4: for (int j = 0; j < 4; ++j)
+    fourWide.pix[j] = val;
+   out_pix[i] = fourWide.full;
   }
- }
 
-IMG: for (int i = 0; i < 1920 * 1080; ++i) {
-  uint8_t val = out_pix[i];
-  OneToFourPixels fourWide;
-OneTo4: for (int j = 0; j < 4; ++j)
-   fourWide.pix[j] = val;
-  out_pix[i] = fourWide.full;
- }
 }

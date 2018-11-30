@@ -48,7 +48,7 @@
 
 
 // IP VLNV: polymtl.ca:hls:sobel_filter:1.0
-// IP Revision: 1811271617
+// IP Revision: 1811301208
 
 `timescale 1ns/1ps
 

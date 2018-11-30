@@ -14,7 +14,7 @@ set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 1
+set HasDSPModule 0
 set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
@@ -44,7 +44,7 @@ set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../Sobel.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/solution1.directive}
-set TBFiles {verilog {../ap_bmp.cpp ../sobel_test.cpp} bc {../ap_bmp.cpp ../sobel_test.cpp} sc {../ap_bmp.cpp ../sobel_test.cpp} vhdl {../ap_bmp.cpp ../sobel_test.cpp} c {} cas {../ap_bmp.cpp ../sobel_test.cpp}}
+set TBFiles {verilog {../sobel_test.cpp ../ap_bmp.cpp} bc {../sobel_test.cpp ../ap_bmp.cpp} sc {../sobel_test.cpp ../ap_bmp.cpp} vhdl {../sobel_test.cpp ../ap_bmp.cpp} c {} cas {../sobel_test.cpp ../ap_bmp.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

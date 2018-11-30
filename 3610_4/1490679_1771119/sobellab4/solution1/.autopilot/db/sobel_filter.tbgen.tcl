@@ -252,24 +252,22 @@ set NewPortList {[
  	{ "name": "m_axi_gmem1_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem1", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5"],
 		"CDFG" : "sobel_filter",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "452864553", "EstimateLatencyMax" : "452864553",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "53967659", "EstimateLatencyMax" : "53967659",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
 		"InDataflowNetwork" : "0",
-		"WaitState" : [
-			{"State" : "ap_ST_fsm_state34", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_getVal_fu_484"},
-			{"State" : "ap_ST_fsm_state36", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_getVal_fu_484"}],
 		"Port" : [
 			{"Name" : "gmem0", "Type" : "MAXI", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "6", "SubInstance" : "grp_getVal_fu_484", "Port" : "Y"}]},
+				"BlockSignal" : [
+					{"Name" : "gmem0_blk_n_AR", "Type" : "RtlSignal"},
+					{"Name" : "gmem0_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "gmem1", "Type" : "MAXI", "Direction" : "IO",
 				"BlockSignal" : [
 					{"Name" : "gmem1_blk_n_AW", "Type" : "RtlSignal"},
@@ -278,61 +276,55 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem1_blk_n_AR", "Type" : "RtlSignal"},
 					{"Name" : "gmem1_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "inter_pix", "Type" : "None", "Direction" : "I"},
-			{"Name" : "out_pix", "Type" : "None", "Direction" : "I"},
-			{"Name" : "x_op", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "y_op", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.x_op_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.y_op_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_AXILiteS_s_axi_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem0_m_axi_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem1_m_axi_U", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_getVal_fu_484", "Parent" : "0",
+			{"Name" : "out_pix", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_AXILiteS_s_axi_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem0_m_axi_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem1_m_axi_U", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.superCache_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_getVal_fu_444", "Parent" : "0",
 		"CDFG" : "getVal",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
-		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "8", "EstimateLatencyMax" : "8",
+		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "1",
+		"VariableLatency" : "0", "ExactLatency" : "2", "EstimateLatencyMin" : "2", "EstimateLatencyMax" : "2",
 		"Combinational" : "0",
 		"Datapath" : "0",
-		"ClockEnable" : "0",
+		"ClockEnable" : "1",
 		"InDataflowNetwork" : "0",
 		"Port" : [
 			{"Name" : "index", "Type" : "None", "Direction" : "I"},
 			{"Name" : "xDiff", "Type" : "None", "Direction" : "I"},
 			{"Name" : "yDiff", "Type" : "None", "Direction" : "I"},
-			{"Name" : "Y", "Type" : "MAXI", "Direction" : "I",
-				"BlockSignal" : [
-					{"Name" : "Y_blk_n_AR", "Type" : "RtlSignal"},
-					{"Name" : "Y_blk_n_R", "Type" : "RtlSignal"}]},
-			{"Name" : "Y_offset", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mac_bkb_U6", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mac_bkb_U7", "Parent" : "0"}]}
+			{"Name" : "Y", "Type" : "Memory", "Direction" : "I"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	sobel_filter {
-		gmem0 {Type I LastRead 8 FirstWrite -1}
-		gmem1 {Type IO LastRead 23 FirstWrite 2}
+		gmem0 {Type I LastRead 10 FirstWrite -1}
+		gmem1 {Type IO LastRead 39 FirstWrite 4}
 		inter_pix {Type I LastRead 0 FirstWrite -1}
-		out_pix {Type I LastRead 0 FirstWrite -1}
-		x_op {Type I LastRead -1 FirstWrite -1}
-		y_op {Type I LastRead -1 FirstWrite -1}}
+		out_pix {Type I LastRead 0 FirstWrite -1}}
 	getVal {
 		index {Type I LastRead 0 FirstWrite -1}
 		xDiff {Type I LastRead 0 FirstWrite -1}
 		yDiff {Type I LastRead 0 FirstWrite -1}
-		Y {Type I LastRead 8 FirstWrite -1}
-		Y_offset {Type I LastRead 0 FirstWrite -1}}}
+		Y {Type I LastRead 1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "452864553", "Max" : "452864553"}
-	, {"Name" : "Interval", "Min" : "452864554", "Max" : "452864554"}
+	{"Name" : "Latency", "Min" : "53967659", "Max" : "53967659"}
+	, {"Name" : "Interval", "Min" : "53967660", "Max" : "53967660"}
 ]}
 
 set PipelineEnableSignalInfo {[
+	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
+	{"Pipeline" : "1", "EnableSignal" : "ap_enable_pp1"}
+	{"Pipeline" : "2", "EnableSignal" : "ap_enable_pp2"}
+	{"Pipeline" : "3", "EnableSignal" : "ap_enable_pp3"}
+	{"Pipeline" : "4", "EnableSignal" : "ap_enable_pp4"}
+	{"Pipeline" : "5", "EnableSignal" : "ap_enable_pp5"}
 ]}
 
 set Spec2ImplPortList { 

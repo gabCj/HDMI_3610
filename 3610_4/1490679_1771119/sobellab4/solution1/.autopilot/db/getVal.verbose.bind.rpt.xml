@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'getVal'" level="0">
-<item name = "Date">Tue Nov 27 16:15:47 2018
+<item name = "Date">Fri Nov 30 12:07:08 2018
 </item>
 <item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
 <item name = "Project">sobellab4</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.75, 1.25</column>
+<column name="ap_clk">10.00, 8.70, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">8, 8, 8, 8, none</column>
+<column name="">2, 2, 1, 1, function</column>
 </table>
 </item>
 <item name = "Detail">

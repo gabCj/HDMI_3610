@@ -9,8 +9,7 @@
 #include "platform.h"
 #include "hdmi/zed_hdmi_display.h"
 #include "Sobel.h"			//décommentez lorsqu'il existera
-#include "../../design_1_wrapper_hw_platform_2/drivers/sobel_filter_v1_0/src/xsobel_filter.c"
-//#include "../../design_1_wrapper_hw_platform_2/drivers/sobel_filter_v1_0/src/xsobel_filter.h"
+#include "xsobel_filter.h"
 
 void hdmiInit(zed_hdmi_display_t * hdmiConfig)
 {
@@ -167,8 +166,8 @@ int main()
 
 	// À compléter: Initialisation du filtre de Sobel matériel
 	XSobel_filter sobelFilter;
-	//if (XSobel_filter_Initialize(&sobelFilter, "s") != XST_SUCCESS)
-	//	return 1;
+	if (XSobel_filter_Initialize(&sobelFilter, 0) != XST_SUCCESS)
+		return 1;
 
 	XTime_SetTime(0);
 	//unsigned* dataOut = malloc(sizeof(unsigned)*IMG_SIZE);
@@ -184,8 +183,6 @@ int main()
 		}
 	}
 
-	if (XSobel_filter_Release(&sobelFilter) != XST_SUCCESS)
-		return 1;
 	free(data);
 	free(dataOut);
 	cleanup_platform();

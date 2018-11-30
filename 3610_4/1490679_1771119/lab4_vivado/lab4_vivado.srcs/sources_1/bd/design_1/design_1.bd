@@ -505,13 +505,6 @@
         <spirit:componentRef spirit:library="BlockDiagram/design_1_imp" spirit:name="zed_hdmi_display" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>sobel_filter_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="sobel_filter" spirit:vendor="polymtl.ca" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_sobel_filter_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>axi_smc</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="smartconnect" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
@@ -534,6 +527,13 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_smc_1_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_SI">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_CLKS">2</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>sobel_filter_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="sobel_filter" spirit:vendor="polymtl.ca" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_sobel_filter_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -632,11 +632,11 @@
         <spirit:name>axi4s_clk_1</spirit:name>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK1"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP0_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="zed_hdmi_display" spirit:portRef="axi4s_clk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP1_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_smc" spirit:portRef="aclk1"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP2_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_smc_1" spirit:portRef="aclk1"/>
+        <spirit:internalPortReference spirit:componentRef="zed_hdmi_display" spirit:portRef="axi4s_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axi4s_resetn_1</spirit:name>
@@ -652,10 +652,10 @@
         <spirit:name>processing_system7_0_FCLK_CLK3</spirit:name>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK3"/>
         <spirit:internalPortReference spirit:componentRef="axi_smc" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="sobel_filter_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="slowest_sync_clk"/>
         <spirit:internalPortReference spirit:componentRef="axi_smc_1" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="sobel_filter_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET3_N</spirit:name>
@@ -665,10 +665,10 @@
       <spirit:adHocConnection>
         <spirit:name>rst_ps7_0_100M_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_ps7_0_100M" spirit:portRef="peripheral_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="sobel_filter_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="axi_smc" spirit:portRef="aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_smc_1" spirit:portRef="aresetn"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M03_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="sobel_filter_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
