@@ -4,7 +4,36 @@
 <pragma name="INLINE"/>
 </directive>
 <directive functionLabel="" functionName="sobel_operator" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="x_weightA"/>
+<option name="complete" positionalBoolean="type" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sobel_operator" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="y_weightA"/>
+<option name="complete" positionalBoolean="type" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sobel_operator" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="x_op"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sobel_operator" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="y_op"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sobel_operator" label="">
 <pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="sobel_operator" label="">
+<pragma name="PIPELINE"/>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
 <pragma name="INTERFACE">
@@ -29,21 +58,20 @@
 </pragma>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
-<pragma name="PIPELINE">
-<option name="II" value="25"/>
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="surroundingPix"/>
+<option name="complete" positionalBoolean="type" value=""/>
 </pragma>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
-<pragma name="PIPELINE"/>
+<pragma name="PIPELINE">
+<option name="II" value="2"/>
+</pragma>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
-<pragma name="PIPELINE"/>
-</directive>
-<directive functionLabel="" functionName="sobel_filter" label="">
-<pragma name="PIPELINE"/>
-</directive>
-<directive functionLabel="" functionName="sobel_filter" label="">
-<pragma name="PIPELINE"/>
+<pragma name="LOOP_FLATTEN">
+<option name="off" positionalBoolean="1" value=""/>
+</pragma>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
 <pragma name="PIPELINE"/>

@@ -3,7 +3,7 @@ Vendor: Xilinx
 Associated Filename: sobel_test.cpp
 Purpose: Testbench file for sobel edge detection
 Revision History: February 13, 2012 - initial release
-                  2015~2017 modifié pour INF3610.
+                  2015~2017 modifiï¿½ pour INF3610.
                                                 
 *******************************************************************************
 Â© Copyright 2008 - 2012 Xilinx, Inc. All rights reserved. 
@@ -48,6 +48,7 @@ ALL TIMES.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <inttypes.h> ///a enlever
 #include "ap_bmp.h"
 #include "Sobel.h"
 

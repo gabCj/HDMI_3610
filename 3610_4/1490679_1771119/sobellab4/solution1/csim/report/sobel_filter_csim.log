@@ -1,8 +1,40 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../Sobel.cpp in release mode
-   Generating csim.exe
-Simulation Complete
-Output image matches the reference output image
-INFO: [SIM 1] CSim done with 0 errors.
+   Compiling ../../../sobel_test.cpp in release mode
+csim.mk:76: recipe for target 'obj/sobel_test.o' failed
+In file included from /home/gabriel/Vivado/2017.3/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include-fixed/features.h:339:0,
+                 from /usr/include/malloc.h:22,
+                 from ../../../sobel_test.cpp:47:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:467:49: error: missing binary operator before token "("
+In file included from /usr/include/malloc.h:24:0,
+                 from ../../../sobel_test.cpp:47:
+/usr/include/stdio.h:276:43: error: missing binary operator before token "("
+/usr/include/stdio.h:349:17: error: missing binary operator before token "("
+/usr/include/stdio.h:567:17: error: missing binary operator before token "("
+/usr/include/stdio.h:592:43: error: missing binary operator before token "("
+In file included from ../../../sobel_test.cpp:49:0:
+/usr/include/stdlib.h:133:35: error: missing binary operator before token "("
+/usr/include/stdlib.h:139:35: error: missing binary operator before token "("
+/usr/include/stdlib.h:145:35: error: missing binary operator before token "("
+/usr/include/stdlib.h:151:36: error: missing binary operator before token "("
+/usr/include/stdlib.h:157:36: error: missing binary operator before token "("
+/usr/include/stdlib.h:163:36: error: missing binary operator before token "("
+/usr/include/stdlib.h:169:37: error: missing binary operator before token "("
+/usr/include/stdlib.h:211:17: error: missing binary operator before token "("
+/usr/include/stdlib.h:225:35: error: missing binary operator before token "("
+/usr/include/stdlib.h:231:35: error: missing binary operator before token "("
+/usr/include/stdlib.h:237:35: error: missing binary operator before token "("
+/usr/include/stdlib.h:243:36: error: missing binary operator before token "("
+/usr/include/stdlib.h:249:36: error: missing binary operator before token "("
+/usr/include/stdlib.h:255:36: error: missing binary operator before token "("
+/usr/include/stdlib.h:261:37: error: missing binary operator before token "("
+In file included from ../../../sobel_test.cpp:50:0:
+/usr/include/string.h:164:21: error: missing binary operator before token "("
+/usr/include/string.h:173:43: error: missing binary operator before token "("
+In file included from /home/gabriel/Vivado/2017.3/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stdint.h:3:0,
+                 from /usr/include/inttypes.h:27,
+                 from ../../../sobel_test.cpp:51:
+/usr/include/stdint.h:286:17: error: missing binary operator before token "("
+make: *** [obj/sobel_test.o] Error 1
+CRITICAL WARNING: [SIM 100] 'csim_design' failed: compilation error(s).
 INFO: [SIM 3] *************** CSIM finish ***************

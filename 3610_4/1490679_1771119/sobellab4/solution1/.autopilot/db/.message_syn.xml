@@ -1,96 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;SobelLab4/Sobel.cpp&apos; ..." tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 103.156 ; gain = 44.992" tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 103.176 ; gain = 45.012" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
-	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;sobel_operator&apos; into &apos;sobel_filter&apos; (SobelLab4/Sobel.cpp:131)." tag=""/>
-	<Message prefix="[XFORM 203-603]" severity="INFO" keynum="792" content="Inlining function &apos;sobel_operator&apos; into &apos;sobel_filter&apos; (SobelLab4/Sobel.cpp:128)." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 104.852 ; gain = 46.688" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
-	<Message prefix="[SYNCHK 200-23]" severity="WARNING" keynum="579" content="SobelLab4/Sobel.cpp:196: variable-indexed range selection may cause suboptimal QoR." tag=""/>
-	<Message prefix="[SYNCHK 200-10]" severity="INFO" keynum="597" content="0 error(s), 1 warning(s)." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 105.152 ; gain = 46.988" tag=""/>
-	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;OperatorRows1&apos; (SobelLab4/Sobel.cpp:121) in function &apos;sobel_filter&apos; for pipelining." tag=""/>
-	<Message prefix="[XFORM 203-502]" severity="INFO" keynum="813" content="Unrolling all sub-loops inside loop &apos;IMG&apos; (SobelLab4/Sobel.cpp:191) in function &apos;sobel_filter&apos; for pipelining." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.1&apos; (SobelLab4/Sobel.cpp:63) in function &apos;sobel_filter&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.1.1&apos; (SobelLab4/Sobel.cpp:65) in function &apos;sobel_filter&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.2&apos; (SobelLab4/Sobel.cpp:63) in function &apos;sobel_filter&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;Loop-1.1.2.1&apos; (SobelLab4/Sobel.cpp:65) in function &apos;sobel_filter&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-501]" severity="INFO" keynum="891" content="Unrolling loop &apos;OneTo4&apos; (SobelLab4/Sobel.cpp:197) in function &apos;sobel_filter&apos; completely." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:127:5) to (SobelLab4/Sobel.cpp:129:4) in function &apos;sobel_filter&apos;... converting 3 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:131:31) in function &apos;sobel_filter&apos;... converting 3 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-401]" severity="INFO" keynum="809" content="Performing if-conversion on hyperblock to (SobelLab4/Sobel.cpp:25:2) in function &apos;getVal&apos;... converting 4 basic blocks." tag=""/>
-	<Message prefix="[XFORM 203-11]" severity="INFO" keynum="754" content="Balancing expressions in function &apos;sobel_filter&apos; (SobelLab4/Sobel.cpp:88)...3 expression(s) balanced." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 126.105 ; gain = 67.941" tag=""/>
-	<Message prefix="[XFORM 203-541]" severity="INFO" keynum="789" content="Flattening a loop nest &apos;OperatorLines&apos; (SobelLab4/Sobel.cpp:120:62) in function &apos;sobel_filter&apos;." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 1920 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:180:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 1920 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:183:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst read of a total cumulative length 2073600 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:194:26). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
-	<Message prefix="[XFORM 203-811]" severity="INFO" keynum="821" content="Inferring multiple bus burst write of a total cumulative length 2073600 on port &apos;gmem1&apos; (SobelLab4/Sobel.cpp:198:4). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 128.770 ; gain = 70.605" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;sobel_filter&apos; ..." tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;getVal&apos;" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="112" content="Pipelining function &apos;getVal&apos;." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3." tag=""/>
-	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 14.136 seconds; current allocated memory: 86.608 MB." tag=""/>
-	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
-	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
-	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
-	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
-	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.275 seconds; current allocated memory: 86.729 MB." tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;sobel_filter&apos;" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;OperatorLines_OperatorRows1&apos;." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 25, Final II = 25, Depth = 42." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;ZerosFirstRow&apos;." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;ZerosLastRow&apos;." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;ZerosFirstLine&apos;." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 8." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;ZerosLastLine&apos;." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 8." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="107" content="Pipelining loop &apos;IMG&apos;." tag=""/>
-	<Message prefix="[SCHED 204-61]" severity="INFO" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3." tag=""/>
-	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.966 seconds; current allocated memory: 88.095 MB." tag=""/>
-	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
-	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
-	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
-	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
-	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.546 seconds; current allocated memory: 89.339 MB." tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;getVal&apos;" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;getVal&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 2.144 seconds; current allocated memory: 89.725 MB." tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;sobel_filter&apos;" tag=""/>
-	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sobel_filter/gmem0&apos; to &apos;m_axi&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sobel_filter/gmem1&apos; to &apos;m_axi&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sobel_filter/inter_pix&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;sobel_filter/out_pix&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;sobel_filter&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="364" content="Bundling port &apos;return&apos; and &apos;out_pix&apos; to AXI-Lite port AXILiteS." tag=""/>
-	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;sobel_filter_superCache&apos; to &apos;sobel_filter_supebkb&apos; due to the length limit 20" tag=""/>
-	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;sobel_filter&apos;." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 1.246 seconds; current allocated memory: 93.611 MB." tag=""/>
-	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;sobel_filter_supebkb_ram (RAM)&apos; using block RAMs." tag=""/>
-	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:06 ; elapsed = 00:00:39 . Memory (MB): peak = 152.895 ; gain = 94.730" tag=""/>
-	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for sobel_filter." tag=""/>
-	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for sobel_filter." tag=""/>
-	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for sobel_filter." tag=""/>
-	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 39.482 seconds; peak allocated memory: 93.611 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1312" content="Analyzing design file &apos;sobellab4/Sobel.cpp&apos; ... " tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 361.707 ; gain = 13.375 ; free physical = 8592 ; free virtual = 28600" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="473" content="Finished Linking Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 361.707 ; gain = 13.375 ; free physical = 8592 ; free virtual = 28600" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="info" keynum="792" content="Inlining function &apos;sobel_operator&apos; into &apos;sobel_filter&apos; (sobellab4/Sobel.cpp:219)." tag=""/>
+	<Message prefix="[XFORM 203-603]" severity="info" keynum="792" content="Inlining function &apos;sobel_operator&apos; into &apos;sobel_filter&apos; (sobellab4/Sobel.cpp:192)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 361.707 ; gain = 13.375 ; free physical = 8590 ; free virtual = 28597" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[SYNCHK 200-23]" severity="warn" keynum="579" content="sobellab4/Sobel.cpp:194: variable-indexed range selection may cause suboptimal QoR." tag=""/>
+	<Message prefix="[SYNCHK 200-10]" severity="info" keynum="597" content="0 error(s), 1 warning(s)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 361.707 ; gain = 13.375 ; free physical = 8589 ; free virtual = 28597" tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="info" keynum="813" content="Unrolling all sub-loops inside loop &apos;OperatorRows&apos; (sobellab4/Sobel.cpp:172) in function &apos;sobel_filter&apos; for pipelining." tag=""/>
+	<Message prefix="[XFORM 203-505]" severity="warn" keynum="814" content="Ignored pipeline directive for loop &apos;Loop-1.1.2&apos; (sobellab4/Sobel.cpp:79) because its parent loop or function is pipelined." tag=""/>
+	<Message prefix="[XFORM 203-502]" severity="info" keynum="813" content="Unrolling all sub-loops inside loop &apos;lastPixels&apos; (sobellab4/Sobel.cpp:203) in function &apos;sobel_filter&apos; for pipelining." tag=""/>
+	<Message prefix="[XFORM 203-505]" severity="warn" keynum="814" content="Ignored pipeline directive for loop &apos;Loop-2.1.2&apos; (sobellab4/Sobel.cpp:79) because its parent loop or function is pipelined." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="info" keynum="891" content="Unrolling loop &apos;Loop-1.1.1&apos; (sobellab4/Sobel.cpp:66) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="info" keynum="891" content="Unrolling loop &apos;Loop-1.1.1.1&apos; (sobellab4/Sobel.cpp:68) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="info" keynum="891" content="Unrolling loop &apos;Loop-1.1.2&apos; (sobellab4/Sobel.cpp:79) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="info" keynum="891" content="Unrolling loop &apos;Loop-1.1.3&apos; (sobellab4/Sobel.cpp:194) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="info" keynum="891" content="Unrolling loop &apos;Loop-2.1.1&apos; (sobellab4/Sobel.cpp:66) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="info" keynum="891" content="Unrolling loop &apos;Loop-2.1.1.1&apos; (sobellab4/Sobel.cpp:68) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="info" keynum="891" content="Unrolling loop &apos;Loop-2.1.2&apos; (sobellab4/Sobel.cpp:79) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-501]" severity="info" keynum="891" content="Unrolling loop &apos;Loop-2.1.3&apos; (sobellab4/Sobel.cpp:221) in function &apos;sobel_filter&apos; completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;surroundingPix&apos; (sobellab4/Sobel.cpp:109) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;x_weightA&apos; (sobellab4/Sobel.cpp:46) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;y_weightA&apos; (sobellab4/Sobel.cpp:48) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;x_op&apos;  in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;y_op&apos;  in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;x_weightA.1&apos; (sobellab4/Sobel.cpp:46) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;y_weightA.1&apos; (sobellab4/Sobel.cpp:48) in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;x_op.0&apos;  in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;x_op.1&apos;  in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;x_op.2&apos;  in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;y_op.0&apos;  in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;y_op.1&apos;  in dimension 1 completely." tag=""/>
+	<Message prefix="[XFORM 203-101]" severity="info" keynum="692" content="Partitioning array &apos;y_op.2&apos;  in dimension 1 completely." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 489.703 ; gain = 141.371 ; free physical = 8569 ; free virtual = 28577" tag=""/>
+	<Message prefix="[XFORM 203-541]" severity="info" keynum="789" content="Flattening a loop nest &apos;lastLines&apos; (sobellab4/Sobel.cpp:202:51) in function &apos;sobel_filter&apos;." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="info" keynum="821" content="Inferring bus burst write of length 1920 on port &apos;gmem1&apos; (sobellab4/Sobel.cpp:196:5)." tag=""/>
+	<Message prefix="[XFORM 203-811]" severity="info" keynum="821" content="Inferring bus burst write of length 1920 on port &apos;gmem1&apos; (sobellab4/Sobel.cpp:223:4)." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 489.703 ; gain = 141.371 ; free physical = 8570 ; free virtual = 28578" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1385" content="Synthesizing &apos;sobel_filter&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="info" keynum="HLS_42_1438" content="-- Implementing module &apos;sobel_filter&apos; " tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="info" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="info" keynum="107" content="Pipelining loop &apos;OperatorRows&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="info" keynum="110" content="Pipelining result : Target II = 2, Final II = 2, Depth = 2." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="info" keynum="107" content="Pipelining loop &apos;lastLines_lastPixels&apos;." tag=""/>
+	<Message prefix="[SCHED 204-61]" severity="info" keynum="110" content="Pipelining result : Target II = 1, Final II = 1, Depth = 24." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="info" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="474" content=" Elapsed time: 8.88 seconds; current allocated memory: 71.439 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="info" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="info" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="info" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="info" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="info" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="474" content=" Elapsed time: 0.1 seconds; current allocated memory: 71.952 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;sobel_filter&apos; " tag=""/>
+	<Message prefix="[HLS 200-10]" severity="info" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="info" keynum="73" content="Setting interface mode on port &apos;sobel_filter/gmem0&apos; to &apos;m_axi&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="info" keynum="73" content="Setting interface mode on port &apos;sobel_filter/gmem1&apos; to &apos;m_axi&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="info" keynum="73" content="Setting interface mode on port &apos;sobel_filter/inter_pix&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="info" keynum="73" content="Setting interface mode on port &apos;sobel_filter/out_pix&apos; to &apos;s_axilite &amp; ap_none&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="info" keynum="73" content="Setting interface mode on function &apos;sobel_filter&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="info" keynum="364" content="Bundling port &apos;return&apos;, &apos;inter_pix&apos; and &apos;out_pix&apos; to AXI-Lite port AXILiteS." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="info" keynum="402" content="Renamed object name &apos;sobel_filter_urem_13ns_12ns_13_17_1&apos; to &apos;sobel_filter_urembkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWVALID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWVALID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWREADY&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWADDR&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWADDR&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWLEN&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWLEN&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWSIZE&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWSIZE&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWBURST&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWBURST&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWLOCK&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWLOCK&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWCACHE&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWCACHE&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWPROT&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWPROT&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWQOS&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWQOS&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWREGION&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWREGION&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_AWUSER&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_AWUSER&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_WVALID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_WVALID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_WREADY&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_WDATA&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_WDATA&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_WSTRB&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_WSTRB&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_WLAST&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_WLAST&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_WID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_WID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_WUSER&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_WUSER&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARVALID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARVALID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARREADY&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARADDR&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARADDR&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARID&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARLEN&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARLEN&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARSIZE&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARSIZE&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARBURST&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARBURST&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARLOCK&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARLOCK&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARCACHE&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARCACHE&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARPROT&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARPROT&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARQOS&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARQOS&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARREGION&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARREGION&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_ARUSER&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_ARUSER&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_RVALID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_RREADY&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_RREADY&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_RDATA&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_RLAST&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_RID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_RUSER&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_RRESP&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_BVALID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_BREADY&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="252" content="Setting dangling out port &apos;sobel_filter/m_axi_gmem0_BREADY&apos; to 0." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_BRESP&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_BID&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="warn" keynum="251" content="Port &apos;sobel_filter/m_axi_gmem0_BUSER&apos; has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="info" keynum="368" content="Generating core module &apos;sobel_filter_urembkb&apos;: 2 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="info" keynum="369" content="Finished creating RTL model for &apos;sobel_filter&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="474" content=" Elapsed time: 0.19 seconds; current allocated memory: 73.456 MB." tag=""/>
+	<Message prefix="[RTMG 210-282]" severity="info" keynum="RTMG_282_1796" content="Generating pipelined core: &apos;sobel_filter_urembkb_div&apos;" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="info" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 489.703 ; gain = 141.371 ; free physical = 8559 ; free virtual = 28570" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="info" keynum="SYSC_301_1065" content="Generating SystemC RTL for sobel_filter." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="info" keynum="VHDL_304_1066" content="Generating VHDL RTL for sobel_filter." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="info" keynum="VLOG_307_1067" content="Generating Verilog RTL for sobel_filter." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="info" keynum="472" content="Total elapsed time: 9.68 seconds; peak allocated memory: 73.456 MB." tag=""/>
 </Messages>

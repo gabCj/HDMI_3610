@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="Sobel.cpp" path="X:\Bureau\HDMI_3610\3610_4\1490679_1771119\SobelLab4\Sobel.cpp"/>
+    <originFiles name="Sobel.h" path="/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/Sobel.h"/>
+    <originFiles name="Sobel.cpp" path="/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/Sobel.cpp"/>
   </source>
   <testbench>
-    <originFiles name="ap_bmp.cpp" path="X:\Bureau\HDMI_3610\3610_4\1490679_1771119\sobellab4\ap_bmp.cpp"/>
-    <originFiles name="sobel_test.cpp" path="X:\Bureau\HDMI_3610\3610_4\1490679_1771119\sobellab4\sobel_test.cpp"/>
+    <originFiles name="sobel_test.cpp" path="/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/sobel_test.cpp"/>
+    <originFiles name="ap_bmp.cpp" path="/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/ap_bmp.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

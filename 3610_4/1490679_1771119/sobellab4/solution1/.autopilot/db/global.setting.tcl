@@ -43,8 +43,8 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../Sobel.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/solution1.directive}
-set TBFiles {verilog {../sobel_test.cpp ../ap_bmp.cpp} bc {../sobel_test.cpp ../ap_bmp.cpp} sc {../sobel_test.cpp ../ap_bmp.cpp} vhdl {../sobel_test.cpp ../ap_bmp.cpp} c {} cas {../sobel_test.cpp ../ap_bmp.cpp}}
+set DirectiveFile {/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/solution1.directive}
+set TBFiles {verilog {../ap_bmp.cpp ../sobel_test.cpp} bc {../ap_bmp.cpp ../sobel_test.cpp} sc {../ap_bmp.cpp ../sobel_test.cpp} vhdl {../ap_bmp.cpp ../sobel_test.cpp} c {} cas {../ap_bmp.cpp ../sobel_test.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

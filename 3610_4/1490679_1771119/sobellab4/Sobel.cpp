@@ -29,22 +29,24 @@ static inline uint8_t getVal(int index, int xDiff, int yDiff, int img_width, uin
 
 uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 {
-#pragma HLS inline			// Inliner la fonction lui permet d'àtre "copiàe-collàe" là oà elle est appellàe
+#pragma HLS inline			// Inliner la fonction lui permet d'ï¿½tre "copiï¿½e-collï¿½e" lï¿½ oï¿½ elle est appellï¿½e
 							// et ainsi faciliter le pipelinage de la boucle principale
-	/* à complàter en important votre code du lab 3.
-	 * à noter que la fonction peut avoir 3 signatures diffàrentes, selon vos diffàrentes modifications:
+	/* ï¿½ complï¿½ter en important votre code du lab 3.
+	 * ï¿½ noter que la fonction peut avoir 3 signatures diffï¿½rentes, selon vos diffï¿½rentes modifications:
 	 * uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 	 * uint8_t sobel_operator(const int fullIndex, uint8_t image[IMG_HEIGHT * IMG_WIDTH])
 	 * uint8_t sobel_operator(const int col, const int row, uint8_t image[IMG_HEIGHT][IMG_WIDTH])
 	 *
-	 * Les deux premiàres sont assez àquivalentes, mais la derniàre permet d'accàder à l'image comme un
-	 * tableau 2D. Par contre, un tableau 2D doit alors lui àtre passà, ce qui n'est pas àvident considàrant
-	 * que les entràes de la fonction sobel_filtrer() sont 1D. Cependant, si pour une raison ou une autre
-	 * un buffer-cache intermàdiaire àtait utilisà, celui-ci pourrait àtre 2D...
+	 * Les deux premiï¿½res sont assez ï¿½quivalentes, mais la derniï¿½re permet d'accï¿½der ï¿½ l'image comme un
+	 * tableau 2D. Par contre, un tableau 2D doit alors lui ï¿½tre passï¿½, ce qui n'est pas ï¿½vident considï¿½rant
+	 * que les entrï¿½es de la fonction sobel_filtrer() sont 1D. Cependant, si pour une raison ou une autre
+	 * un buffer-cache intermï¿½diaire ï¿½tait utilisï¿½, celui-ci pourrait ï¿½tre 2D...
 	 */
 
-	int x_weight = 0;
-	int y_weight = 0;
+	int x_weightA[9];
+#pragma HLS ARRAY_PARTITION variable=x_weightA complete
+	int y_weightA[9];
+#pragma HLS ARRAY_PARTITION variable=y_weightA complete
 
 	unsigned edge_weight;
 	uint8_t edge_val;
@@ -52,23 +54,32 @@ uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 	const char x_op[3][3] = {	{ -1,0,1 },
 								{ -2,0,2 },
 								{ -1,0,1 } };
-//#pragma HLS ARRAY_PARTITION variable=x_op complete dim=0
+#pragma HLS ARRAY_PARTITION variable=x_op complete dim=0
 
 	const char y_op[3][3] = {	{ 1,2,1 },
 								{ 0,0,0 },
 								{ -1,-2,-1 } };
-//#pragma HLS ARRAY_PARTITION variable=y_op complete dim=0
+#pragma HLS ARRAY_PARTITION variable=y_op complete dim=0
+
 
 	//Compute approximation of the gradients in the X-Y direction
 	for (int i = 0; i < 3; i++) {
 #pragma HLS unroll
 		for (int j = 0; j < 3; j++) {
 		// X direction gradient
-		x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, IMG_WIDTH, image) * x_op[i][j]);
+		x_weightA[i*2 + j] = (getVal(fullIndex, i - 1, j - 1, IMG_WIDTH, image) * x_op[i][j]);
 
 		// Y direction gradient
-		y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1, IMG_WIDTH, image) * y_op[i][j]);
+		y_weightA[i*2 + j] = (getVal(fullIndex, i - 1, j - 1, IMG_WIDTH, image) * y_op[i][j]);
 		}
+	}
+
+	int x_weight = 0;
+	int y_weight = 0;
+	for (int i = 0; i < 9; i++) {
+#pragma HLS pipeline
+		x_weight = x_weight + x_weightA[i];
+		y_weight = y_weight + y_weightA[i];
 	}
 
 	edge_weight = ABS(x_weight) + ABS(y_weight);
@@ -87,115 +98,132 @@ uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 
 void sobel_filter(uint8_t inter_pix[IMG_WIDTH * IMG_HEIGHT], unsigned out_pix[IMG_WIDTH * IMG_HEIGHT])
 {
-	/* On demande à HLS de nous synthàtiser des maàtres AXI que l'on connectera à la màmoire principale.
-	 * Ainsi, le CPU n'a pas besoin de transfàrer l'image au filtre: c'est le filtre qui va chercher l'image
-	 * dans la màmoire principale (DDR de la carte) et àcrit le ràsultat dans cette màme màmoire.
-	 * Un esclave AXI-Lite est aussi cràà, accessible par le CPU, pour informer le filtre des adresses
-	 * auxquelles il doit aller chercher et àcrire l'image, lui dire de dàmarrer ou d'arràter, etc.
-	 */
-	// ***** LES 3 LIGNES SUIVANTES DOIVENT àTRE DàCOMMENTàES UNE FOIS LES QUESTIONS INITIALES COMPLàTàES!! ******
 #pragma HLS INTERFACE m_axi port=inter_pix offset=slave bundle=gmem0
 #pragma HLS INTERFACE m_axi port=out_pix offset=slave bundle=gmem1
 #pragma HLS INTERFACE s_axilite port=return
 
-	// à remplacer par votre fonction *apràs* avoir ràpondu aux questions initiales
 
-	uint8_t superCache[4*IMG_WIDTH];
-//#pragma HLS ARRAY_PARTITION variable=superCache complete dim=0
-
-	/*SuperBoucle: for (unsigned int i = 0; i < (IMG_HEIGHT + 1)*IMG_WIDTH; ++i) {
-#pragma HLS pipeline
-		if (i < 3*IMG_WIDTH) {
-			superCache[i] = inter_pix[i];
-		}
-		else if (i >= 3*IMG_WIDTH && i < IMG_WIDTH*IMG_HEIGHT) {
-			superCache[i % (4*IMG_WIDTH)] = inter_pix[i];
-			out_pix[i - (3*IMG_WIDTH)] = sobel_operator((i - (3*IMG_WIDTH))%(4*IMG_WIDTH), superCache);
-		}
-		else {
-			out_pix[i - (3*IMG_WIDTH)] = sobel_operator((i - (3*IMG_WIDTH))%(4*IMG_WIDTH), superCache);
-		}
-	}*/
-
+	uint8_t cache1[4*IMG_WIDTH];
+	uint8_t val;
+	OneToFourPixels fourWide;
+	uint8_t surroundingPix[9];
+#pragma HLS array_partition variable=surroundingPix complete
+/*
 	OperatorLines: for (unsigned int i = 0; i < IMG_HEIGHT + 1; ++i) {
-		OperatorRows1: for (unsigned int j = 0; j < IMG_WIDTH; ++j) {
-#pragma HLS pipeline II=25
-			if (i < 3) {
-				superCache[i*IMG_WIDTH + j] = inter_pix[i*IMG_WIDTH + j];
+			OperatorRows: for (unsigned int j = 0; j < IMG_WIDTH; ++j) {
+	#pragma HLS pipeline II=10
+	#pragma HLS loop_flatten off
+				if (i < 3) {
+					cache1[i*IMG_WIDTH + j] = inter_pix[i*IMG_WIDTH + j];
+				}
+				else if (i >= 3 && i < IMG_HEIGHT) {
+					cache1[(i%4)*IMG_WIDTH + j] = inter_pix[i*IMG_WIDTH + j];
+
+
+					if (j == 0 || j == IMG_WIDTH - 1 || i - 2 == 0) {
+						val = 0;
+					}
+					else {
+						surroundingPix[0] = cache1[((i-3)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[1] = cache1[((i-3)%4)*IMG_WIDTH + (j)];
+						surroundingPix[2] = cache1[((i-3)%4)*IMG_WIDTH + (j+1)];
+						surroundingPix[3] = cache1[((i-2)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[4] = cache1[((i-2)%4)*IMG_WIDTH + (j)];
+						surroundingPix[5] = cache1[((i-2)%4)*IMG_WIDTH + (j+1)];
+						surroundingPix[6] = cache1[((i-1)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[7] = cache1[((i-1)%4)*IMG_WIDTH + (j)];
+						surroundingPix[8] = cache1[((i-1)%4)*IMG_WIDTH + (j+1)];
+
+						val = sobel_operator(4, surroundingPix);
+					}
+					for (int j = 0; j < 4; ++j)
+						fourWide.pix[j] = val;
+					out_pix[(i-2)*IMG_WIDTH + j] = fourWide.full;
+
+
+				}
+				else {
+
+					if (j == 0 || j == IMG_WIDTH - 1 || i - 2 == IMG_HEIGHT - 1) {
+						val = 0;
+					}
+					else {
+						surroundingPix[0] = cache1[((i-3)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[1] = cache1[((i-3)%4)*IMG_WIDTH + (j)];
+						surroundingPix[2] = cache1[((i-3)%4)*IMG_WIDTH + (j+1)];
+						surroundingPix[3] = cache1[((i-2)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[4] = cache1[((i-2)%4)*IMG_WIDTH + (j)];
+						surroundingPix[5] = cache1[((i-2)%4)*IMG_WIDTH + (j+1)];
+						surroundingPix[6] = cache1[((i-1)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[7] = cache1[((i-1)%4)*IMG_WIDTH + (j)];
+						surroundingPix[8] = cache1[((i-1)%4)*IMG_WIDTH + (j+1)];
+
+						val = sobel_operator(4, surroundingPix);
+					}
+					for (int j = 0; j < 4; ++j)
+						fourWide.pix[j] = val;
+					out_pix[(i-2)*IMG_WIDTH + j] = fourWide.full;
+
+				}
 			}
-			else if (i >= 3 && i < IMG_HEIGHT) {
-				superCache[(i%4)*IMG_WIDTH + j] = inter_pix[i*IMG_WIDTH + j];
-				out_pix[(i-2)*IMG_WIDTH + j] = sobel_operator(((i-2)%4)*IMG_WIDTH + j, superCache);
+		}*/
+
+  OperatorLines: for (unsigned int i = 0; i < IMG_HEIGHT; ++i) {
+			OperatorRows: for (unsigned int j = 0; j < IMG_WIDTH; ++j) {
+	#pragma HLS pipeline II=2
+	#pragma HLS loop_flatten off
+				cache1[(i%4)*IMG_WIDTH + j] = inter_pix[i*IMG_WIDTH + j];
+
+
+				if (j == 0 || j == IMG_WIDTH - 1 || i - 2 == 0) {
+					val = 0;
+				}
+				else {
+						surroundingPix[0] = cache1[((i-3)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[1] = cache1[((i-3)%4)*IMG_WIDTH + (j)];
+						surroundingPix[2] = cache1[((i-3)%4)*IMG_WIDTH + (j+1)];
+						surroundingPix[3] = cache1[((i-2)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[4] = cache1[((i-2)%4)*IMG_WIDTH + (j)];
+						surroundingPix[5] = cache1[((i-2)%4)*IMG_WIDTH + (j+1)];
+						surroundingPix[6] = cache1[((i-1)%4)*IMG_WIDTH + (j-1)];
+						surroundingPix[7] = cache1[((i-1)%4)*IMG_WIDTH + (j)];
+						surroundingPix[8] = cache1[((i-1)%4)*IMG_WIDTH + (j+1)];
+
+						val = sobel_operator(4, surroundingPix);
+				}
+				for (int j = 0; j < 4; ++j)
+					fourWide.pix[j] = val;
+				out_pix[(i-2)*IMG_WIDTH + j] = fourWide.full;
+
+
+				}
+			}
+
+	lastLines: for (unsigned int i = 0; i < 3; ++i) {
+		lastPixels: for (unsigned int j = 0; j < IMG_WIDTH; ++j) {
+#pragma HLS pipeline
+			if (j == 0 || j == IMG_WIDTH - 1 || i - 2 == IMG_HEIGHT - 1) {
+				val = 0;
 			}
 			else {
-				out_pix[(i-2)*IMG_WIDTH + j] = sobel_operator(((i-2)%4)*IMG_WIDTH + j, superCache);
+				surroundingPix[0] = cache1[((i-3)%4)*IMG_WIDTH + (j-1)];
+				surroundingPix[1] = cache1[((i-3)%4)*IMG_WIDTH + (j)];
+				surroundingPix[2] = cache1[((i-3)%4)*IMG_WIDTH + (j+1)];
+				surroundingPix[3] = cache1[((i-2)%4)*IMG_WIDTH + (j-1)];
+				surroundingPix[4] = cache1[((i-2)%4)*IMG_WIDTH + (j)];
+				surroundingPix[5] = cache1[((i-2)%4)*IMG_WIDTH + (j+1)];
+				surroundingPix[6] = cache1[((i-1)%4)*IMG_WIDTH + (j-1)];
+				surroundingPix[7] = cache1[((i-1)%4)*IMG_WIDTH + (j)];
+				surroundingPix[8] = cache1[((i-1)%4)*IMG_WIDTH + (j+1)];
+
+				val = sobel_operator(4, surroundingPix);
 			}
+			for (int j = 0; j < 4; ++j)
+				fourWide.pix[j] = val;
+			out_pix[(i-2)*IMG_WIDTH + j] = fourWide.full;
+
 		}
-//		OperatorRows2: for (unsigned int j = IMG_WIDTH / 2; j < IMG_WIDTH ; ++j) {
-//#pragma HLS unroll factor=8
-//			if (i < 3) {
-//				superCache[i * IMG_WIDTH + j] = inter_pix[i * IMG_WIDTH + j];
-//			} else if (i >= 3 && i < IMG_HEIGHT) {
-//				superCache[(i % 4) * IMG_WIDTH + j] = inter_pix[i * IMG_WIDTH
-//						+ j];
-//				out_pix[(i - 2) * IMG_WIDTH + j] = sobel_operator(
-//						((i - 2) % 4) * IMG_WIDTH + j, superCache);
-//			} else {
-//				out_pix[(i - 2) * IMG_WIDTH + j] = sobel_operator(
-//						((i - 2) % 4) * IMG_WIDTH + j, superCache);
-//			}
-//		}
-//		OperatorRows3: for (unsigned int j = IMG_WIDTH / 2; j < 3*IMG_WIDTH / 4; ++j) {
-//#pragma HLS unroll
-//			if (i < 3) {
-//				superCache[i * IMG_WIDTH + j] = inter_pix[i * IMG_WIDTH + j];
-//			} else if (i >= 3 && i < IMG_HEIGHT) {
-//				superCache[(i % 4) * IMG_WIDTH + j] = inter_pix[i * IMG_WIDTH
-//						+ j];
-//				out_pix[(i - 2) * IMG_WIDTH + j] = sobel_operator(
-//						((i - 2) % 4) * IMG_WIDTH + j, superCache);
-//			} else {
-//				out_pix[(i - 2) * IMG_WIDTH + j] = sobel_operator(
-//						((i - 2) % 4) * IMG_WIDTH + j, superCache);
-//			}
-//		}
-//		OperatorRows4: for (unsigned int j = 3*IMG_WIDTH / 4; j < IMG_WIDTH; ++j) {
-//#pragma HLS unroll
-//			if (i < 3) {
-//				superCache[i * IMG_WIDTH + j] = inter_pix[i * IMG_WIDTH + j];
-//			} else if (i >= 3 && i < IMG_HEIGHT) {
-//				superCache[(i % 4) * IMG_WIDTH + j] = inter_pix[i * IMG_WIDTH
-//						+ j];
-//				out_pix[(i - 2) * IMG_WIDTH + j] = sobel_operator(
-//						((i - 2) % 4) * IMG_WIDTH + j, superCache);
-//			} else {
-//				out_pix[(i - 2) * IMG_WIDTH + j] = sobel_operator(
-//						((i - 2) % 4) * IMG_WIDTH + j, superCache);
-//			}
-//		}
 	}
 
-	ZerosFirstRow: for (unsigned int i = 0; i < IMG_WIDTH; ++i)
-#pragma HLS pipeline
-		out_pix[i] = 0;
-	ZerosLastRow: for (unsigned int i = IMG_SIZE - IMG_WIDTH; i < IMG_SIZE; ++i)
-#pragma HLS pipeline
-		out_pix[i] = 0;
-	ZerosFirstLine: for (unsigned int i = 0; i < IMG_SIZE; i += IMG_WIDTH)
-#pragma HLS pipeline
-		out_pix[i] = 0;
-	ZerosLastLine: for (unsigned int i = IMG_WIDTH - 1; i < IMG_SIZE; i += IMG_WIDTH)
-#pragma HLS pipeline
-		out_pix[i] = 0;
-
-	IMG: for (int i = 0; i < IMG_WIDTH * IMG_HEIGHT; ++i) {
-#pragma HLS pipeline
-//#pragma HLS loop_flatten off
-			uint8_t val = out_pix[i];
-			OneToFourPixels fourWide;
-	OneTo4:	for (int j = 0; j < 4; ++j)
-				fourWide.pix[j] = val;
-			out_pix[i] = fourWide.full;
-		}
 
 }

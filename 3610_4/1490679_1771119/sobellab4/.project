@@ -29,47 +29,52 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/.apc/.src</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/.apc/.tb</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/.tcls</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/Sobel.cpp</name>
 			<type>1</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/SobelLab4/Sobel.cpp</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/Sobel.cpp</location>
+		</link>
+		<link>
+			<name>source/Sobel.h</name>
+			<type>1</type>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/Sobel.h</location>
 		</link>
 		<link>
 			<name>testbench/ap_bmp.cpp</name>
 			<type>1</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/ap_bmp.cpp</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/ap_bmp.cpp</location>
 		</link>
 		<link>
 			<name>testbench/sobel_test.cpp</name>
 			<type>1</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/sobel_test.cpp</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/sobel_test.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/solution1.directive</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/directives.tcl</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/script.tcl</location>
+			<location>/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

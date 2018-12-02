@@ -1,8 +1,8 @@
-# 1 "X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/.autopilot/db/Sobel.pragma.1.cpp"
-# 1 "X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/.autopilot/db/Sobel.pragma.1.cpp" 1
+# 1 "/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/.autopilot/db/Sobel.pragma.1.cpp"
+# 1 "/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/.autopilot/db/Sobel.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 152 "<built-in>" 3
+# 155 "<built-in>" 3
 # 1 "<command line>" 1
 
 
@@ -10,33 +10,31 @@
 
 
 
-
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/common/technology/autopilot\\etc/autopilot_ssdm_op.h" 1
-# 157 "C:/Logiciels/Xilinx/Vivado/2018.1/common/technology/autopilot\\etc/autopilot_ssdm_op.h"
+# 1 "/home/gabriel/Vivado/2017.3/common/technology/autopilot/etc/autopilot_ssdm_op.h" 1
+# 156 "/home/gabriel/Vivado/2017.3/common/technology/autopilot/etc/autopilot_ssdm_op.h"
 extern "C" {
 
 
 
 
 
+    typedef bool _uint1_;
 
     void _ssdm_op_IfRead(...) __attribute__ ((nothrow));
     void _ssdm_op_IfWrite(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfNbRead(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfNbWrite(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfCanRead(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfCanWrite(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_op_IfNbRead(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_op_IfNbWrite(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_op_IfCanRead(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_op_IfCanWrite(...) __attribute__ ((nothrow));
 
 
     void _ssdm_StreamRead(...) __attribute__ ((nothrow));
     void _ssdm_StreamWrite(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamNbRead(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamNbWrite(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamCanRead(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamCanWrite(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_StreamNbRead(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_StreamNbWrite(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_StreamCanRead(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_StreamCanWrite(...) __attribute__ ((nothrow));
     unsigned _ssdm_StreamSize(...) __attribute__ ((nothrow));
-
-
 
 
     void _ssdm_op_MemShiftRead(...) __attribute__ ((nothrow));
@@ -143,14 +141,14 @@ extern "C" {
 
 
 }
-# 9 "<command line>" 2
+# 8 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/.autopilot/db/Sobel.pragma.1.cpp" 2
-# 1 "SobelLab4/Sobel.cpp"
-# 1 "SobelLab4/Sobel.cpp" 1
+# 1 "/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/.autopilot/db/Sobel.pragma.1.cpp" 2
+# 1 "sobellab4/Sobel.cpp"
+# 1 "sobellab4/Sobel.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 152 "<built-in>" 3
+# 155 "<built-in>" 3
 # 1 "<command line>" 1
 
 
@@ -158,33 +156,31 @@ extern "C" {
 
 
 
-
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/common/technology/autopilot\\etc/autopilot_ssdm_op.h" 1
-# 157 "C:/Logiciels/Xilinx/Vivado/2018.1/common/technology/autopilot\\etc/autopilot_ssdm_op.h"
+# 1 "/home/gabriel/Vivado/2017.3/common/technology/autopilot/etc/autopilot_ssdm_op.h" 1
+# 156 "/home/gabriel/Vivado/2017.3/common/technology/autopilot/etc/autopilot_ssdm_op.h"
 extern "C" {
 
 
 
 
 
+    typedef bool _uint1_;
 
     void _ssdm_op_IfRead(...) __attribute__ ((nothrow));
     void _ssdm_op_IfWrite(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfNbRead(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfNbWrite(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfCanRead(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_op_IfCanWrite(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_op_IfNbRead(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_op_IfNbWrite(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_op_IfCanRead(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_op_IfCanWrite(...) __attribute__ ((nothrow));
 
 
     void _ssdm_StreamRead(...) __attribute__ ((nothrow));
     void _ssdm_StreamWrite(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamNbRead(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamNbWrite(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamCanRead(...) __attribute__ ((nothrow));
-    unsigned int __attribute__ ((bitwidth(1))) _ssdm_StreamCanWrite(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_StreamNbRead(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_StreamNbWrite(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_StreamCanRead(...) __attribute__ ((nothrow));
+    _uint1_ _ssdm_StreamCanWrite(...) __attribute__ ((nothrow));
     unsigned _ssdm_StreamSize(...) __attribute__ ((nothrow));
-
-
 
 
     void _ssdm_op_MemShiftRead(...) __attribute__ ((nothrow));
@@ -291,263 +287,260 @@ extern "C" {
 
 
 }
-# 9 "<command line>" 2
+# 8 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "SobelLab4/Sobel.cpp" 2
-# 1 "SobelLab4/Sobel.h" 1
+# 1 "sobellab4/Sobel.cpp" 2
+# 1 "sobellab4/Sobel.h" 1
 
 
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\inttypes.h" 1 3
-# 11 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\inttypes.h" 3
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 1 3
-# 10 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include/_mingw_mac.h" 1 3
-# 10 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 2 3
-# 277 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\vadefs.h" 1 3
-# 13 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\vadefs.h" 3
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 1 3
-# 674 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include/sdks/_mingw_directx.h" 1 3
-# 674 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 2 3
+# 1 "/usr/include/inttypes.h" 1 3 4
+# 25 "/usr/include/inttypes.h" 3 4
+# 1 "/usr/include/features.h" 1 3 4
+# 402 "/usr/include/features.h" 3 4
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 403 "/usr/include/features.h" 2 3 4
+# 424 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
+# 427 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 428 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 429 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 425 "/usr/include/features.h" 2 3 4
+# 448 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
+# 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
+# 449 "/usr/include/features.h" 2 3 4
+# 26 "/usr/include/inttypes.h" 2 3 4
 
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include/sdks/_mingw_ddk.h" 1 3
-# 675 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 2 3
-# 13 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\vadefs.h" 2 3
+# 1 "/home/gabriel/Vivado/2017.3/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdint.h" 1 3 4
+# 33 "/home/gabriel/Vivado/2017.3/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdint.h" 3 4
+# 1 "/usr/include/stdint.h" 1 3 4
+# 26 "/usr/include/stdint.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/stdint.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
 
 
-#pragma pack(push,_CRT_PACKING)
+typedef unsigned char __u_char;
+typedef unsigned short int __u_short;
+typedef unsigned int __u_int;
+typedef unsigned long int __u_long;
 
 
-extern "C" {
+typedef signed char __int8_t;
+typedef unsigned char __uint8_t;
+typedef signed short int __int16_t;
+typedef unsigned short int __uint16_t;
+typedef signed int __int32_t;
+typedef unsigned int __uint32_t;
 
+typedef signed long int __int64_t;
+typedef unsigned long int __uint64_t;
 
 
 
 
-  typedef __builtin_va_list __gnuc_va_list;
 
 
 
+typedef long int __quad_t;
+typedef unsigned long int __u_quad_t;
 
 
 
-  typedef __gnuc_va_list va_list;
-# 99 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\vadefs.h" 3
-}
 
 
-#pragma pack(pop)
-# 277 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 2 3
 
 
-#pragma pack(push,_CRT_PACKING)
-# 370 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-__extension__ typedef unsigned long long size_t;
-# 380 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-__extension__ typedef long long ssize_t;
-# 392 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-__extension__ typedef long long intptr_t;
-# 405 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-__extension__ typedef unsigned long long uintptr_t;
-# 418 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-__extension__ typedef long long ptrdiff_t;
-# 436 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-typedef unsigned short wint_t;
-typedef unsigned short wctype_t;
-# 456 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-typedef int errno_t;
+typedef long int __intmax_t;
+typedef unsigned long int __uintmax_t;
+# 130 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/typesizes.h" 1 3 4
+# 131 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
 
 
+typedef unsigned long int __dev_t;
+typedef unsigned int __uid_t;
+typedef unsigned int __gid_t;
+typedef unsigned long int __ino_t;
+typedef unsigned long int __ino64_t;
+typedef unsigned int __mode_t;
+typedef unsigned long int __nlink_t;
+typedef long int __off_t;
+typedef long int __off64_t;
+typedef int __pid_t;
+typedef struct { int __val[2]; } __fsid_t;
+typedef long int __clock_t;
+typedef unsigned long int __rlim_t;
+typedef unsigned long int __rlim64_t;
+typedef unsigned int __id_t;
+typedef long int __time_t;
+typedef unsigned int __useconds_t;
+typedef long int __suseconds_t;
 
+typedef int __daddr_t;
+typedef int __key_t;
 
-typedef long __time32_t;
 
+typedef int __clockid_t;
 
 
+typedef void * __timer_t;
 
-__extension__ typedef long long __time64_t;
 
+typedef long int __blksize_t;
 
 
 
 
+typedef long int __blkcnt_t;
+typedef long int __blkcnt64_t;
 
 
-typedef __time64_t time_t;
-# 607 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 3
-struct threadlocaleinfostruct;
-struct threadmbcinfostruct;
-typedef struct threadlocaleinfostruct *pthreadlocinfo;
-typedef struct threadmbcinfostruct *pthreadmbcinfo;
-struct __lc_time_data;
+typedef unsigned long int __fsblkcnt_t;
+typedef unsigned long int __fsblkcnt64_t;
 
-typedef struct localeinfo_struct {
-  pthreadlocinfo locinfo;
-  pthreadmbcinfo mbcinfo;
-} _locale_tstruct,*_locale_t;
 
+typedef unsigned long int __fsfilcnt_t;
+typedef unsigned long int __fsfilcnt64_t;
 
 
-typedef struct tagLC_ID {
-  unsigned short wLanguage;
-  unsigned short wCountry;
-  unsigned short wCodePage;
-} LC_ID,*LPLC_ID;
+typedef long int __fsword_t;
 
+typedef long int __ssize_t;
 
 
+typedef long int __syscall_slong_t;
 
-typedef struct threadlocaleinfostruct {
-  int refcount;
-  unsigned int lc_codepage;
-  unsigned int lc_collate_cp;
-  unsigned long lc_handle[6];
-  LC_ID lc_id[6];
-  struct {
-    char *locale;
-    wchar_t *wlocale;
-    int *refcount;
-    int *wrefcount;
-  } lc_category[6];
-  int lc_clike;
-  int mb_cur_max;
-  int *lconv_intl_refcount;
-  int *lconv_num_refcount;
-  int *lconv_mon_refcount;
-  struct lconv *lconv;
-  int *ctype1_refcount;
-  unsigned short *ctype1;
-  const unsigned short *pctype;
-  const unsigned char *pclmap;
-  const unsigned char *pcumap;
-  struct __lc_time_data *lc_time_curr;
-} threadlocinfo;
+typedef unsigned long int __syscall_ulong_t;
 
 
 
-extern "C" {
+typedef __off64_t __loff_t;
+typedef char *__caddr_t;
 
 
+typedef long int __intptr_t;
 
-const char *__mingw_get_crt_info (void);
 
+typedef unsigned int __socklen_t;
 
-}
 
 
-#pragma pack(pop)
-# 11 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\inttypes.h" 2 3
 
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/include\\stdint.h" 1 3 4
-# 33 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/include\\stdint.h" 3 4
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\stdint.h" 1 3 4
-# 28 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\stdint.h" 3 4
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 1 3 4
-# 28 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\stdint.h" 2 3 4
+typedef int __sig_atomic_t;
+# 28 "/usr/include/stdint.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wchar.h" 1 3 4
+# 29 "/usr/include/stdint.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 30 "/usr/include/stdint.h" 2 3 4
 
 
 
 
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/include\\stddef.h" 1 3 4
-# 31 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/include\\stddef.h" 3 4
-typedef __typeof__(((int*)0)-((int*)0)) ptrdiff_t;
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 3 4
+typedef __int8_t int8_t;
+typedef __int16_t int16_t;
+typedef __int32_t int32_t;
+typedef __int64_t int64_t;
+# 35 "/usr/include/stdint.h" 2 3 4
 
 
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h" 3 4
+typedef __uint8_t uint8_t;
+typedef __uint16_t uint16_t;
+typedef __uint32_t uint32_t;
+typedef __uint64_t uint64_t;
+# 38 "/usr/include/stdint.h" 2 3 4
 
-typedef __typeof__(sizeof(int)) size_t;
-# 32 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\stdint.h" 2 3 4
 
 
-
-typedef signed char int8_t;
-typedef unsigned char uint8_t;
-typedef short int16_t;
-typedef unsigned short uint16_t;
-typedef int int32_t;
-typedef unsigned uint32_t;
-__extension__ typedef long long int64_t;
-__extension__ typedef unsigned long long uint64_t;
 
 
 typedef signed char int_least8_t;
-typedef unsigned char uint_least8_t;
-typedef short int_least16_t;
-typedef unsigned short uint_least16_t;
+typedef short int int_least16_t;
 typedef int int_least32_t;
-typedef unsigned uint_least32_t;
-__extension__ typedef long long int_least64_t;
-__extension__ typedef unsigned long long uint_least64_t;
+
+typedef long int int_least64_t;
 
 
 
 
 
+
+typedef unsigned char uint_least8_t;
+typedef unsigned short int uint_least16_t;
+typedef unsigned int uint_least32_t;
+
+typedef unsigned long int uint_least64_t;
+# 68 "/usr/include/stdint.h" 3 4
 typedef signed char int_fast8_t;
+
+typedef long int int_fast16_t;
+typedef long int int_fast32_t;
+typedef long int int_fast64_t;
+# 81 "/usr/include/stdint.h" 3 4
 typedef unsigned char uint_fast8_t;
-typedef short int_fast16_t;
-typedef unsigned short uint_fast16_t;
-typedef int int_fast32_t;
-typedef unsigned int uint_fast32_t;
-__extension__ typedef long long int_fast64_t;
-__extension__ typedef unsigned long long uint_fast64_t;
+
+typedef unsigned long int uint_fast16_t;
+typedef unsigned long int uint_fast32_t;
+typedef unsigned long int uint_fast64_t;
+# 97 "/usr/include/stdint.h" 3 4
+typedef long int intptr_t;
 
 
-__extension__ typedef long long intmax_t;
-__extension__ typedef unsigned long long uintmax_t;
-# 33 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/include\\stdint.h" 2 3 4
-# 12 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\inttypes.h" 2 3
-
-
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/include\\stddef.h" 1 3 4
-# 14 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\inttypes.h" 2 3
-
-
-
+typedef unsigned long int uintptr_t;
+# 111 "/usr/include/stdint.h" 3 4
+typedef __intmax_t intmax_t;
+typedef __uintmax_t uintmax_t;
+# 34 "/home/gabriel/Vivado/2017.3/lnx64/tools/clang/bin/../lib/clang/3.1/include/stdint.h" 2 3 4
+# 28 "/usr/include/inttypes.h" 2 3 4
+# 266 "/usr/include/inttypes.h" 3 4
 extern "C" {
 
 
-typedef struct {
- intmax_t quot;
- intmax_t rem;
- } imaxdiv_t;
 
 
+typedef struct
+  {
+    long int quot;
+    long int rem;
+  } imaxdiv_t;
+# 290 "/usr/include/inttypes.h" 3 4
+extern intmax_t imaxabs (intmax_t __n) throw () __attribute__ ((__const__));
 
 
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw_print_push.h" 1 3
-# 26 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\inttypes.h" 2 3
-# 279 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\inttypes.h" 3
-intmax_t imaxabs (intmax_t j);
+extern imaxdiv_t imaxdiv (intmax_t __numer, intmax_t __denom)
+      throw () __attribute__ ((__const__));
 
 
+extern intmax_t strtoimax (const char *__restrict __nptr,
+      char **__restrict __endptr, int __base) throw ();
 
 
-imaxdiv_t imaxdiv (intmax_t numer, intmax_t denom);
+extern uintmax_t strtoumax (const char *__restrict __nptr,
+       char ** __restrict __endptr, int __base) throw ();
 
 
-
-intmax_t strtoimax (const char* __restrict__ nptr,
-                            char** __restrict__ endptr, int base);
-uintmax_t strtoumax (const char* __restrict__ nptr,
-        char** __restrict__ endptr, int base);
-
-intmax_t wcstoimax (const wchar_t* __restrict__ nptr,
-                            wchar_t** __restrict__ endptr, int base);
-uintmax_t wcstoumax (const wchar_t* __restrict__ nptr,
-        wchar_t** __restrict__ endptr, int base);
+extern intmax_t wcstoimax (const wchar_t *__restrict __nptr,
+      wchar_t **__restrict __endptr, int __base)
+     throw ();
 
 
-
-
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw_print_pop.h" 1 3
-# 299 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\inttypes.h" 2 3
-
-
-
+extern uintmax_t wcstoumax (const wchar_t *__restrict __nptr,
+       wchar_t ** __restrict __endptr, int __base)
+     throw ();
+# 432 "/usr/include/inttypes.h" 3 4
 }
-# 3 "SobelLab4/Sobel.h" 2
-
+# 4 "sobellab4/Sobel.h" 2
 
 
 
@@ -555,8 +548,27 @@ uintmax_t wcstoumax (const wchar_t* __restrict__ nptr,
 
 
 void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080]);
-# 2 "SobelLab4/Sobel.cpp" 2
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\string.h" 1 3
+# 2 "sobellab4/Sobel.cpp" 2
+# 1 "/usr/include/string.h" 1 3 4
+# 26 "/usr/include/string.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+
+
+
+
+
+
+# 1 "/home/gabriel/Vivado/2017.3/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 1 3 4
+# 31 "/home/gabriel/Vivado/2017.3/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 3 4
+typedef __typeof__(((int*)0)-((int*)0)) ptrdiff_t;
+
+
+
+typedef __typeof__(sizeof(int)) size_t;
+# 34 "/usr/include/string.h" 2 3 4
 
 
 
@@ -565,167 +577,340 @@ void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 
 
 
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\_mingw.h" 1 3
-# 9 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\string.h" 2 3
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern void *memset (void *__s, int __c, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 90 "/usr/include/string.h" 3 4
+extern void *memchr (const void *__s, int __c, size_t __n)
+      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 103 "/usr/include/string.h" 3 4
+extern void *rawmemchr (const void *__s, int __c)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 114 "/usr/include/string.h" 3 4
+extern void *memrchr (const void *__s, int __c, size_t __n)
+      throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcmp (const char *__s1, const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcoll (const char *__s1, const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 3 4
+struct __locale_struct
+{
+
+  struct __locale_data *__locales[13];
+
+
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+
+
+  const char *__names[13];
+
+public :
+inline __attribute__((always_inline)) __locale_struct() { _ssdm_SpecConstant(__names); }
+# 40 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h"
+};
+
+typedef struct __locale_struct *__locale_t;
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
+
+typedef __locale_t locale_t;
+# 153 "/usr/include/string.h" 2 3 4
+
+
+extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    locale_t __l) throw () __attribute__ ((__nonnull__ (2, 4)));
+
+
+
+
+
+extern char *strdup (const char *__s)
+     throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern char *strndup (const char *__string, size_t __n)
+     throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+# 225 "/usr/include/string.h" 3 4
+extern char *strchr (const char *__s, int __c)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 252 "/usr/include/string.h" 3 4
+extern char *strrchr (const char *__s, int __c)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 265 "/usr/include/string.h" 3 4
+extern char *strchrnul (const char *__s, int __c)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern size_t strcspn (const char *__s, const char *__reject)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern size_t strspn (const char *__s, const char *__accept)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 302 "/usr/include/string.h" 3 4
+extern char *strpbrk (const char *__s, const char *__accept)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 329 "/usr/include/string.h" 3 4
+extern char *strstr (const char *__haystack, const char *__needle)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+# 359 "/usr/include/string.h" 3 4
+extern char *strcasestr (const char *__haystack, const char *__needle)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+
+extern void *memmem (const void *__haystack, size_t __haystacklen,
+       const void *__needle, size_t __needlelen)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern void *__mempcpy (void *__restrict __dest,
+   const void *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern void *mempcpy (void *__restrict __dest,
+        const void *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern size_t strlen (const char *__s)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern char *strerror (int __errnum) throw ();
+# 420 "/usr/include/string.h" 3 4
+extern char *strerror_r (int __errnum, char *__buf, size_t __buflen)
+     throw () __attribute__ ((__nonnull__ (2))) ;
+
+
+
+
+
+extern char *strerror_l (int __errnum, locale_t __l) throw ();
+
+
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 23 "/usr/include/strings.h" 3 4
+# 1 "/home/gabriel/Vivado/2017.3/lnx64/tools/clang/bin/../lib/clang/3.1/include/stddef.h" 1 3 4
+# 24 "/usr/include/strings.h" 2 3 4
+
+
+
 
 
 
 extern "C" {
-# 36 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\string.h" 3
- __attribute__ ((__dllimport__)) void * _memccpy(void *_Dst,const void *_Src,int _Val,size_t _MaxCount);
-                void * memchr(const void *_Buf ,int _Val,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) int _memicmp(const void *_Buf1,const void *_Buf2,size_t _Size);
-  __attribute__ ((__dllimport__)) int _memicmp_l(const void *_Buf1,const void *_Buf2,size_t _Size,_locale_t _Locale);
-  int memcmp(const void *_Buf1,const void *_Buf2,size_t _Size);
-  void * memcpy(void * __restrict__ _Dst,const void * __restrict__ _Src,size_t _Size) ;
-  void * memset(void *_Dst,int _Val,size_t _Size);
-
-  void * memccpy(void *_Dst,const void *_Src,int _Val,size_t _Size) ;
-  int memicmp(const void *_Buf1,const void *_Buf2,size_t _Size) ;
 
 
-  char * _strset(char *_Str,int _Val) ;
-  char * _strset_l(char *_Str,int _Val,_locale_t _Locale) ;
-  char * strcpy(char * __restrict__ _Dest,const char * __restrict__ _Source);
-  char * strcat(char * __restrict__ _Dest,const char * __restrict__ _Source);
-  int strcmp(const char *_Str1,const char *_Str2);
-  size_t strlen(const char *_Str);
-  size_t strnlen(const char *_Str,size_t _MaxCount);
-  void * memmove(void *_Dst,const void *_Src,size_t _Size) ;
-  __attribute__ ((__dllimport__)) char * _strdup(const char *_Src);
-                char * strchr(const char *_Str,int _Val);
-  __attribute__ ((__dllimport__)) int _stricmp(const char *_Str1,const char *_Str2);
-  __attribute__ ((__dllimport__)) int _strcmpi(const char *_Str1,const char *_Str2);
-  __attribute__ ((__dllimport__)) int _stricmp_l(const char *_Str1,const char *_Str2,_locale_t _Locale);
-  int strcoll(const char *_Str1,const char *_Str2);
-  __attribute__ ((__dllimport__)) int _strcoll_l(const char *_Str1,const char *_Str2,_locale_t _Locale);
-  __attribute__ ((__dllimport__)) int _stricoll(const char *_Str1,const char *_Str2);
-  __attribute__ ((__dllimport__)) int _stricoll_l(const char *_Str1,const char *_Str2,_locale_t _Locale);
-  __attribute__ ((__dllimport__)) int _strncoll (const char *_Str1,const char *_Str2,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) int _strncoll_l(const char *_Str1,const char *_Str2,size_t _MaxCount,_locale_t _Locale);
-  __attribute__ ((__dllimport__)) int _strnicoll (const char *_Str1,const char *_Str2,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) int _strnicoll_l(const char *_Str1,const char *_Str2,size_t _MaxCount,_locale_t _Locale);
-  size_t strcspn(const char *_Str,const char *_Control);
-  __attribute__ ((__dllimport__)) char * _strerror(const char *_ErrMsg) ;
-  char * strerror(int) ;
-  __attribute__ ((__dllimport__)) char * _strlwr(char *_String) ;
-  char *strlwr_l(char *_String,_locale_t _Locale) ;
-  char * strncat(char * __restrict__ _Dest,const char * __restrict__ _Source,size_t _Count) ;
-  int strncmp(const char *_Str1,const char *_Str2,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) int _strnicmp(const char *_Str1,const char *_Str2,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) int _strnicmp_l(const char *_Str1,const char *_Str2,size_t _MaxCount,_locale_t _Locale);
-  char *strncpy(char * __restrict__ _Dest,const char * __restrict__ _Source,size_t _Count) ;
-  __attribute__ ((__dllimport__)) char * _strnset(char *_Str,int _Val,size_t _MaxCount) ;
-  __attribute__ ((__dllimport__)) char * _strnset_l(char *str,int c,size_t count,_locale_t _Locale) ;
-                char * strpbrk(const char *_Str,const char *_Control);
-                char * strrchr(const char *_Str,int _Ch);
-  __attribute__ ((__dllimport__)) char * _strrev(char *_Str);
-  size_t strspn(const char *_Str,const char *_Control);
-                char * strstr(const char *_Str,const char *_SubStr);
-  char * strtok(char * __restrict__ _Str,const char * __restrict__ _Delim) ;
-  __attribute__ ((__dllimport__)) char * _strupr(char *_String) ;
-  __attribute__ ((__dllimport__)) char *_strupr_l(char *_String,_locale_t _Locale) ;
-  size_t strxfrm(char * __restrict__ _Dst,const char * __restrict__ _Src,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) size_t _strxfrm_l(char * __restrict__ _Dst,const char * __restrict__ _Src,size_t _MaxCount,_locale_t _Locale);
+
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
-  char * strdup(const char *_Src) ;
-  int strcmpi(const char *_Str1,const char *_Str2) ;
-  int stricmp(const char *_Str1,const char *_Str2) ;
-  char * strlwr(char *_Str) ;
-  int strnicmp(const char *_Str1,const char *_Str,size_t _MaxCount) ;
-  int strncasecmp (const char *, const char *, size_t);
-  int strcasecmp (const char *, const char *);
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+  throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+# 68 "/usr/include/strings.h" 3 4
+extern char *index (const char *__s, int __c)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 96 "/usr/include/strings.h" 3 4
+extern char *rindex (const char *__s, int __c)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
 
 
 
 
 
 
-
-  char * strnset(char *_Str,int _Val,size_t _MaxCount) ;
-  char * strrev(char *_Str) ;
-  char * strset(char *_Str,int _Val) ;
-  char * strupr(char *_Str) ;
+extern int ffs (int __i) throw () __attribute__ ((__const__));
 
 
 
 
 
-  __attribute__ ((__dllimport__)) wchar_t * _wcsdup(const wchar_t *_Str);
-  wchar_t * wcscat(wchar_t * __restrict__ _Dest,const wchar_t * __restrict__ _Source) ;
-                wchar_t * wcschr(const wchar_t *_Str,wchar_t _Ch);
-  int wcscmp(const wchar_t *_Str1,const wchar_t *_Str2);
-  wchar_t * wcscpy(wchar_t * __restrict__ _Dest,const wchar_t * __restrict__ _Source) ;
-  size_t wcscspn(const wchar_t *_Str,const wchar_t *_Control);
-  size_t wcslen(const wchar_t *_Str);
-  size_t wcsnlen(const wchar_t *_Src,size_t _MaxCount);
-  wchar_t *wcsncat(wchar_t * __restrict__ _Dest,const wchar_t * __restrict__ _Source,size_t _Count) ;
-  int wcsncmp(const wchar_t *_Str1,const wchar_t *_Str2,size_t _MaxCount);
-  wchar_t *wcsncpy(wchar_t * __restrict__ _Dest,const wchar_t * __restrict__ _Source,size_t _Count) ;
-  wchar_t * _wcsncpy_l(wchar_t * __restrict__ _Dest,const wchar_t * __restrict__ _Source,size_t _Count,_locale_t _Locale) ;
-                wchar_t * wcspbrk(const wchar_t *_Str,const wchar_t *_Control);
-                wchar_t * wcsrchr(const wchar_t *_Str,wchar_t _Ch);
-  size_t wcsspn(const wchar_t *_Str,const wchar_t *_Control);
-                wchar_t * wcsstr(const wchar_t *_Str,const wchar_t *_SubStr);
-  wchar_t * wcstok(wchar_t * __restrict__ _Str,const wchar_t * __restrict__ _Delim) ;
-  __attribute__ ((__dllimport__)) wchar_t * _wcserror(int _ErrNum) ;
-  __attribute__ ((__dllimport__)) wchar_t * __wcserror(const wchar_t *_Str) ;
-  __attribute__ ((__dllimport__)) int _wcsicmp(const wchar_t *_Str1,const wchar_t *_Str2);
-  __attribute__ ((__dllimport__)) int _wcsicmp_l(const wchar_t *_Str1,const wchar_t *_Str2,_locale_t _Locale);
-  __attribute__ ((__dllimport__)) int _wcsnicmp(const wchar_t *_Str1,const wchar_t *_Str2,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) int _wcsnicmp_l(const wchar_t *_Str1,const wchar_t *_Str2,size_t _MaxCount,_locale_t _Locale);
-  __attribute__ ((__dllimport__)) wchar_t * _wcsnset(wchar_t *_Str,wchar_t _Val,size_t _MaxCount) ;
-  __attribute__ ((__dllimport__)) wchar_t * _wcsrev(wchar_t *_Str);
-  __attribute__ ((__dllimport__)) wchar_t * _wcsset(wchar_t *_Str,wchar_t _Val) ;
-  __attribute__ ((__dllimport__)) wchar_t * _wcslwr(wchar_t *_String) ;
-  __attribute__ ((__dllimport__)) wchar_t *_wcslwr_l(wchar_t *_String,_locale_t _Locale) ;
-  __attribute__ ((__dllimport__)) wchar_t * _wcsupr(wchar_t *_String) ;
-  __attribute__ ((__dllimport__)) wchar_t *_wcsupr_l(wchar_t *_String,_locale_t _Locale) ;
-  size_t wcsxfrm(wchar_t * __restrict__ _Dst,const wchar_t * __restrict__ _Src,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) size_t _wcsxfrm_l(wchar_t * __restrict__ _Dst,const wchar_t * __restrict__ _Src,size_t _MaxCount,_locale_t _Locale);
-  int wcscoll(const wchar_t *_Str1,const wchar_t *_Str2);
-  __attribute__ ((__dllimport__)) int _wcscoll_l(const wchar_t *_Str1,const wchar_t *_Str2,_locale_t _Locale);
-  __attribute__ ((__dllimport__)) int _wcsicoll(const wchar_t *_Str1,const wchar_t *_Str2);
-  __attribute__ ((__dllimport__)) int _wcsicoll_l(const wchar_t *_Str1,const wchar_t *_Str2,_locale_t _Locale);
-  __attribute__ ((__dllimport__)) int _wcsncoll(const wchar_t *_Str1,const wchar_t *_Str2,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) int _wcsncoll_l(const wchar_t *_Str1,const wchar_t *_Str2,size_t _MaxCount,_locale_t _Locale);
-  __attribute__ ((__dllimport__)) int _wcsnicoll(const wchar_t *_Str1,const wchar_t *_Str2,size_t _MaxCount);
-  __attribute__ ((__dllimport__)) int _wcsnicoll_l(const wchar_t *_Str1,const wchar_t *_Str2,size_t _MaxCount,_locale_t _Locale);
+extern int ffsl (long int __l) throw () __attribute__ ((__const__));
+__extension__ extern int ffsll (long long int __ll)
+     throw () __attribute__ ((__const__));
 
 
-  wchar_t * wcsdup(const wchar_t *_Str) ;
 
-  int wcsicmp(const wchar_t *_Str1,const wchar_t *_Str2) ;
-  int wcsnicmp(const wchar_t *_Str1,const wchar_t *_Str2,size_t _MaxCount) ;
-  wchar_t * wcsnset(wchar_t *_Str,wchar_t _Val,size_t _MaxCount) ;
-  wchar_t * wcsrev(wchar_t *_Str) ;
-  wchar_t * wcsset(wchar_t *_Str,wchar_t _Val) ;
-  wchar_t * wcslwr(wchar_t *_Str) ;
-  wchar_t * wcsupr(wchar_t *_Str) ;
-  int wcsicoll(const wchar_t *_Str1,const wchar_t *_Str2) ;
+extern int strcasecmp (const char *__s1, const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+extern int strncasecmp_l (const char *__s1, const char *__s2,
+     size_t __n, locale_t __loc)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
 
 
 }
+# 432 "/usr/include/string.h" 2 3 4
+
+
+
+extern void explicit_bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
 
 
 
 
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\sec_api/string_s.h" 1 3
+extern char *strsignal (int __sig) throw ();
+
+
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
 
 
 
 
+extern int strverscmp (const char *__s1, const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
 
 
+extern char *strfry (char *__string) throw () __attribute__ ((__nonnull__ (1)));
 
 
-# 1 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\string.h" 1 3
-# 9 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\sec_api/string_s.h" 2 3
-# 175 "C:/Logiciels/Xilinx/Vivado/2018.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\string.h" 2 3
-# 3 "SobelLab4/Sobel.cpp" 2
+extern void *memfrob (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+# 486 "/usr/include/string.h" 3 4
+extern char *basename (const char *__filename) throw () __attribute__ ((__nonnull__ (1)));
+# 498 "/usr/include/string.h" 3 4
+}
+# 3 "sobellab4/Sobel.cpp" 2
 
 
 
@@ -756,9 +941,11 @@ static inline uint8_t getVal(int index, int xDiff, int yDiff, int img_width, uin
 uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 {
 _ssdm_InlineSelf(0, "");
-# 46 "SobelLab4/Sobel.cpp"
- int x_weight = 0;
- int y_weight = 0;
+# 46 "sobellab4/Sobel.cpp"
+ int x_weightA[9];
+_ssdm_SpecArrayPartition( x_weightA, 1, "COMPLETE", 0, "");
+ int y_weightA[9];
+_ssdm_SpecArrayPartition( y_weightA, 1, "COMPLETE", 0, "");
 
  unsigned edge_weight;
  uint8_t edge_val;
@@ -767,16 +954,17 @@ _ssdm_InlineSelf(0, "");
         { -2,0,2 },
         { -1,0,1 } };
 _ssdm_SpecConstant(x_op);
-# 54 "SobelLab4/Sobel.cpp"
+# 56 "sobellab4/Sobel.cpp"
 
-
+_ssdm_SpecArrayPartition( x_op, 0, "COMPLETE", 0, "");
 
  const char y_op[3][3] = { { 1,2,1 },
         { 0,0,0 },
         { -1,-2,-1 } };
 _ssdm_SpecConstant(y_op);
-# 59 "SobelLab4/Sobel.cpp"
+# 61 "sobellab4/Sobel.cpp"
 
+_ssdm_SpecArrayPartition( y_op, 0, "COMPLETE", 0, "");
 
 
 
@@ -784,11 +972,19 @@ _ssdm_SpecConstant(y_op);
 _ssdm_Unroll(0,0,0, "");
  for (int j = 0; j < 3; j++) {
 
-  x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, 1920, image) * x_op[i][j]);
+  x_weightA[i*2 + j] = (getVal(fullIndex, i - 1, j - 1, 1920, image) * x_op[i][j]);
 
 
-  y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1, 1920, image) * y_op[i][j]);
+  y_weightA[i*2 + j] = (getVal(fullIndex, i - 1, j - 1, 1920, image) * y_op[i][j]);
   }
+ }
+
+ int x_weight = 0;
+ int y_weight = 0;
+ for (int i = 0; i < 9; i++) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+ x_weight = x_weight + x_weightA[i];
+  y_weight = y_weight + y_weightA[i];
  }
 
  edge_weight = ((x_weight>0)? x_weight : -x_weight) + ((y_weight>0)? y_weight : -y_weight);
@@ -807,59 +1003,73 @@ _ssdm_Unroll(0,0,0, "");
 
 void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 {_ssdm_SpecArrayDimSize(out_pix,1920 * 1080);_ssdm_SpecArrayDimSize(inter_pix,1920 * 1080);
-
-
-
-
-
-
-
 _ssdm_op_SpecInterface(inter_pix, "m_axi", 0, 0, "", 0, 0, "gmem0", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(out_pix, "m_axi", 0, 0, "", 0, 0, "gmem1", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
 
+ uint8_t cache1[4*1920];
+ uint8_t val;
+ OneToFourPixels fourWide;
+ uint8_t surroundingPix[9];
+_ssdm_SpecArrayPartition( surroundingPix, 1, "COMPLETE", 0, "");
+# 171 "sobellab4/Sobel.cpp"
+ OperatorLines: for (unsigned int i = 0; i < 1080; ++i) {
+   OperatorRows: for (unsigned int j = 0; j < 1920; ++j) {
+_ssdm_op_SpecPipeline(2, 1, 1, 0, "");
+_ssdm_SpecLoopFlatten(1, "");
+ cache1[(i%4)*1920 + j] = inter_pix[i*1920 + j];
 
- uint8_t superCache[4*1920];
-# 120 "SobelLab4/Sobel.cpp"
- OperatorLines: for (unsigned int i = 0; i < 1080 + 1; ++i) {
-  OperatorRows1: for (unsigned int j = 0; j < 1920; ++j) {
-_ssdm_op_SpecPipeline(25, 1, 1, 0, "");
- if (i < 3) {
-    superCache[i*1920 + j] = inter_pix[i*1920 + j];
+
+    if (j == 0 || j == 1920 - 1 || i - 2 == 0) {
+     val = 0;
+    }
+    else {
+      surroundingPix[0] = cache1[((i-3)%4)*1920 + (j-1)];
+      surroundingPix[1] = cache1[((i-3)%4)*1920 + (j)];
+      surroundingPix[2] = cache1[((i-3)%4)*1920 + (j+1)];
+      surroundingPix[3] = cache1[((i-2)%4)*1920 + (j-1)];
+      surroundingPix[4] = cache1[((i-2)%4)*1920 + (j)];
+      surroundingPix[5] = cache1[((i-2)%4)*1920 + (j+1)];
+      surroundingPix[6] = cache1[((i-1)%4)*1920 + (j-1)];
+      surroundingPix[7] = cache1[((i-1)%4)*1920 + (j)];
+      surroundingPix[8] = cache1[((i-1)%4)*1920 + (j+1)];
+
+      val = sobel_operator(4, surroundingPix);
+    }
+    for (int j = 0; j < 4; ++j)
+     fourWide.pix[j] = val;
+    out_pix[(i-2)*1920 + j] = fourWide.full;
+
+
+    }
    }
-   else if (i >= 3 && i < 1080) {
-    superCache[(i%4)*1920 + j] = inter_pix[i*1920 + j];
-    out_pix[(i-2)*1920 + j] = sobel_operator(((i-2)%4)*1920 + j, superCache);
+
+ lastLines: for (unsigned int i = 0; i < 3; ++i) {
+  lastPixels: for (unsigned int j = 0; j < 1920; ++j) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+ if (j == 0 || j == 1920 - 1 || i - 2 == 1080 - 1) {
+    val = 0;
    }
    else {
-    out_pix[(i-2)*1920 + j] = sobel_operator(((i-2)%4)*1920 + j, superCache);
+    surroundingPix[0] = cache1[((i-3)%4)*1920 + (j-1)];
+    surroundingPix[1] = cache1[((i-3)%4)*1920 + (j)];
+    surroundingPix[2] = cache1[((i-3)%4)*1920 + (j+1)];
+    surroundingPix[3] = cache1[((i-2)%4)*1920 + (j-1)];
+    surroundingPix[4] = cache1[((i-2)%4)*1920 + (j)];
+    surroundingPix[5] = cache1[((i-2)%4)*1920 + (j+1)];
+    surroundingPix[6] = cache1[((i-1)%4)*1920 + (j-1)];
+    surroundingPix[7] = cache1[((i-1)%4)*1920 + (j)];
+    surroundingPix[8] = cache1[((i-1)%4)*1920 + (j+1)];
+
+    val = sobel_operator(4, surroundingPix);
    }
+   for (int j = 0; j < 4; ++j)
+    fourWide.pix[j] = val;
+   out_pix[(i-2)*1920 + j] = fourWide.full;
+
   }
-# 176 "SobelLab4/Sobel.cpp"
  }
 
- ZerosFirstRow: for (unsigned int i = 0; i < 1920; ++i)
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- out_pix[i] = 0;
- ZerosLastRow: for (unsigned int i = (1920 * 1080) - 1920; i < (1920 * 1080); ++i)
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- out_pix[i] = 0;
- ZerosFirstLine: for (unsigned int i = 0; i < (1920 * 1080); i += 1920)
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- out_pix[i] = 0;
- ZerosLastLine: for (unsigned int i = 1920 - 1; i < (1920 * 1080); i += 1920)
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- out_pix[i] = 0;
-
- IMG: for (int i = 0; i < 1920 * 1080; ++i) {
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
-
- uint8_t val = out_pix[i];
-   OneToFourPixels fourWide;
- OneTo4: for (int j = 0; j < 4; ++j)
-    fourWide.pix[j] = val;
-   out_pix[i] = fourWide.full;
-  }
 
 }

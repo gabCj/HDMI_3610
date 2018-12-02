@@ -1,9 +1,9 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sobel_filter'" level="0">
-<item name = "Date">Fri Nov 30 12:07:10 2018
+<item name = "Date">Sat Dec  1 20:58:13 2018
 </item>
-<item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
+<item name = "Version">2017.3 (Build 2018833 on Wed Oct 04 20:30:40 MDT 2017)</item>
 <item name = "Project">sobellab4</item>
 <item name = "Solution">solution1</item>
 <item name = "Product family">zynq</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 9.81, 1.25</column>
+<column name="ap_clk">10.00, 8.75, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,24 +24,20 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">53967659, 53967659, 53967659, 53967659, none</column>
+<column name="">4161625, 4161625, 4161626, 4161626, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_getVal_fu_444">getVal, 2, 2, 1, 1, function</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- OperatorLines_OperatorRows1">51888016, 51888016, 42, 25, 25, 2075520, yes</column>
-<column name="- ZerosFirstRow">1920, 1920, 2, 1, 1, 1920, yes</column>
-<column name="- ZerosLastRow">1920, 1920, 2, 1, 1, 1920, yes</column>
-<column name="- ZerosFirstLine">1086, 1086, 8, 1, 1, 1080, yes</column>
-<column name="- ZerosLastLine">1086, 1086, 8, 1, 1, 1080, yes</column>
-<column name="- IMG">2073601, 2073601, 3, 1, 1, 2073600, yes</column>
+<column name="- OperatorLines">4155840, 4155840, 3848, -, -, 1080, no</column>
+<column name=" + OperatorRows">3840, 3840, 2, 2, 2, 1920, yes</column>
+<column name="- lastLines_lastPixels">5782, 5782, 24, 1, 1, 5760, yes</column>
 </table>
 </item>
 </section>
