@@ -2,11 +2,11 @@
 # Webtalk v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # 
-# Start of session at: Fri Nov 30 12:48:47 2018
-# Process ID: 24512
-# Current directory: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/webtalk
+# Start of session at: Sun Dec  2 15:15:13 2018
+# Process ID: 101808
+# Current directory: C:/TEMP/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/webtalk
 # Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
-# Log file: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/webtalk/webtalk.log
-# Journal file: X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/webtalk\webtalk.jou
+# Log file: C:/TEMP/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/webtalk/webtalk.log
+# Journal file: C:/TEMP/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.sdk/webtalk\webtalk.jou
 #-----------------------------------------------------------
 source sdk_webtalk.tcl

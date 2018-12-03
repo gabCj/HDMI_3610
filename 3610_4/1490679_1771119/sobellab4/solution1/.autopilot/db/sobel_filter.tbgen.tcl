@@ -1,9 +1,9 @@
 set C_TypeInfoList {{ 
 "sobel_filter" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"inter_pix": [[], {"array": ["0", [2073600]]}] }, {"out_pix": [[], {"array": [ {"scalar": "unsigned int"}, [2073600]]}] }],[],""], 
-"0": [ "uint8_t", {"typedef": [[[],"1"],""]}], 
-"1": [ "__uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}]
+"0": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}]
 }}
 set moduleName sobel_filter
+set isTaskLevelControl 1
 set isCombinational 0
 set isDatapathOnly 0
 set isPipelined 0
@@ -16,13 +16,13 @@ set C_modelName {sobel_filter}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ gmem0 int 8 unused {axi_master 0}  }
-	{ gmem1 int 32 regular {axi_master 1}  }
+	{ gmem1 int 32 unused {axi_master 0}  }
 	{ inter_pix int 32 unused {axi_slave 0}  }
-	{ out_pix int 32 regular {axi_slave 0}  }
+	{ out_pix int 32 unused {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "gmem0", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "inter_pix","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "inter_pix","bundle": "AXILiteS"},"cArray": [{"low" : 0,"up" : 2073599,"step" : 1}]}]}]} , 
- 	{ "Name" : "gmem1", "interface" : "axi_master", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "out_pix","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "out_pix","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 2073599,"step" : 1}]}]}]} , 
+ 	{ "Name" : "gmem1", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "out_pix","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "out_pix","bundle": "AXILiteS"},"cArray": [{"low" : 0,"up" : 2073599,"step" : 1}]}]}]} , 
  	{ "Name" : "inter_pix", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":23}} , 
  	{ "Name" : "out_pix", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} ]}
 # RTL Port declarations: 
@@ -252,45 +252,40 @@ set NewPortList {[
  	{ "name": "m_axi_gmem1_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem1", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
 		"CDFG" : "sobel_filter",
+		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
-		"FunctionPipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "2080688", "EstimateLatencyMax" : "2080688",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
-		"VariableLatency" : "1",
+		"InDataflowNetwork" : "0",
 		"Port" : [
 			{"Name" : "gmem0", "Type" : "MAXI", "Direction" : "I"},
-			{"Name" : "gmem1", "Type" : "MAXI", "Direction" : "O",
-				"BlockSignal" : [
-					{"Name" : "gmem1_blk_n_AW", "Type" : "RtlSignal"},
-					{"Name" : "gmem1_blk_n_W", "Type" : "RtlSignal"},
-					{"Name" : "gmem1_blk_n_B", "Type" : "RtlSignal"}]},
+			{"Name" : "gmem1", "Type" : "MAXI", "Direction" : "I"},
 			{"Name" : "inter_pix", "Type" : "None", "Direction" : "I"},
 			{"Name" : "out_pix", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_AXILiteS_s_axi_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem1_m_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_urembkb_U1", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_urembkb_U2", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_AXILiteS_s_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	sobel_filter {
 		gmem0 {Type I LastRead -1 FirstWrite -1}
-		gmem1 {Type O LastRead 21 FirstWrite 4}
+		gmem1 {Type I LastRead -1 FirstWrite -1}
 		inter_pix {Type I LastRead -1 FirstWrite -1}
-		out_pix {Type I LastRead 0 FirstWrite -1}}}
+		out_pix {Type I LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "4161625", "Max" : "4161625"}
-	, {"Name" : "Interval", "Min" : "4161626", "Max" : "4161626"}
+	{"Name" : "Latency", "Min" : "2080688", "Max" : "2080688"}
+	, {"Name" : "Interval", "Min" : "2080689", "Max" : "2080689"}
 ]}
 
 set PipelineEnableSignalInfo {[
-	{"Pipeline" : "1", "EnableSignal" : "ap_enable_pp1"}
 ]}
 
 set Spec2ImplPortList { 

@@ -1,6 +1,6 @@
 
 set TopModule "sobel_filter"
-set ClockPeriod "10.000000"
+set ClockPeriod "6.700000"
 set ClockList {ap_clk}
 set multiClockList {}
 set PortClockMap {}
@@ -43,7 +43,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../Sobel.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {/home/gabriel/Documents/INF3610/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/solution1.directive}
+set DirectiveFile {X:/Bureau/HDMI_3610/3610_4/1490679_1771119/sobellab4/solution1/solution1.directive}
 set TBFiles {verilog {../ap_bmp.cpp ../sobel_test.cpp} bc {../ap_bmp.cpp ../sobel_test.cpp} sc {../ap_bmp.cpp ../sobel_test.cpp} vhdl {../ap_bmp.cpp ../sobel_test.cpp} c {} cas {../ap_bmp.cpp ../sobel_test.cpp}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

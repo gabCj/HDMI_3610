@@ -1,9 +1,9 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sobel_filter'" level="0">
-<item name = "Date">Sat Dec  1 20:58:13 2018
+<item name = "Date">Sun Dec  2 22:39:04 2018
 </item>
-<item name = "Version">2017.3 (Build 2018833 on Wed Oct 04 20:30:40 MDT 2017)</item>
+<item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
 <item name = "Project">sobellab4</item>
 <item name = "Solution">solution1</item>
 <item name = "Product family">zynq</item>
@@ -13,16 +13,16 @@
 <section name = "Performance Estimates" level="0">
 <item name = "Timing (ns)">
 <section name = "" level="1">
-<item name = "Target clock period (ns)">10.00</item>
-<item name = "Clock uncertainty (ns)">1.25</item>
-<item name = "Estimated clock period (ns)">8.75</item>
+<item name = "Target clock period (ns)">6.70</item>
+<item name = "Clock uncertainty (ns)">0.84</item>
+<item name = "Estimated clock period (ns)">1.88</item>
 </section>
 </item>
 <item name = "Latency (clock cycles)">
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">4161625, 4161625, 4161626, 4161626, none</column>
+<column name="">2080688, 2080688, 2080688, 2080688, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -33,9 +33,10 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- OperatorLines">4155840, 4155840, 3848, -, -, 1080, no</column>
-<column name=" + OperatorRows">3840, 3840, 2, 2, 2, 1920, yes</column>
-<column name="- lastLines_lastPixels">5782, 5782, 24, 1, 1, 5760, yes</column>
+<column name="- FillCacheRows">3846, 3846, 1923, -, -, 2, no</column>
+<column name=" + FillCacheCols">1920, 1920, 1, 1, 1, 1920, yes</column>
+<column name="- FilterRows">2076840, 2076840, 1923, -, -, 1080, no</column>
+<column name=" + FilterCols">1920, 1920, 1, 1, 1, 1920, yes</column>
 </table>
 </item>
 </section>
@@ -48,14 +49,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 442</column>
+<column name="Expression">-, -, 0, 97</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">2, -, 1546, 1434</column>
+<column name="Instance">0, -, 112, 168</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 188</column>
-<column name="Register">0, -, 417, 96</column>
+<column name="Multiplexer">-, -, -, 77</column>
+<column name="Register">-, -, 55, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">~0, 0, 1, 4</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -63,9 +64,6 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="sobel_filter_AXILiteS_s_axi_U">sobel_filter_AXILiteS_s_axi, 0, 0, 112, 168</column>
-<column name="sobel_filter_gmem1_m_axi_U">sobel_filter_gmem1_m_axi, 2, 0, 512, 580</column>
-<column name="sobel_filter_urembkb_U1">sobel_filter_urembkb, 0, 0, 461, 343</column>
-<column name="sobel_filter_urembkb_U2">sobel_filter_urembkb, 0, 0, 461, 343</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -82,103 +80,34 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="grp_fu_439_p0">+, 0, 0, 20, 13, 1</column>
-<column name="i_1_fu_236_p2">+, 0, 0, 18, 11, 1</column>
-<column name="i_s_fu_361_p2">+, 0, 0, 10, 2, 1</column>
-<column name="j3_op_fu_425_p2">+, 0, 0, 18, 11, 1</column>
-<column name="j_1_fu_307_p2">+, 0, 0, 18, 11, 1</column>
-<column name="out_pix4_sum7_fu_452_p2">+, 0, 0, 40, 33, 33</column>
-<column name="out_pix4_sum_fu_286_p2">+, 0, 0, 40, 33, 33</column>
-<column name="tmp_25_mid2_v_v_fu_405_p2">+, 0, 0, 21, 14, 13</column>
-<column name="tmp_4_fu_272_p2">+, 0, 0, 23, 23, 13</column>
-<column name="tmp_2_fu_266_p2">-, 0, 0, 23, 23, 23</column>
-<column name="tmp_7_fu_337_p2">-, 0, 0, 21, 14, 14</column>
-<column name="tmp_7_mid1_fu_391_p2">-, 0, 0, 21, 14, 14</column>
-<column name="ap_block_pp1_stage0_01001">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state28_io">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state29_io">and, 0, 0, 8, 1, 1</column>
-<column name="ap_block_state34_pp1_stage0_iter23">and, 0, 0, 8, 1, 1</column>
-<column name="ap_condition_582">and, 0, 0, 8, 1, 1</column>
-<column name="exitcond_flatten_fu_343_p2">icmp, 0, 0, 13, 13, 13</column>
-<column name="tmp_11_fu_467_p2">icmp, 0, 0, 13, 13, 1</column>
-<column name="tmp_13_fu_473_p2">icmp, 0, 0, 13, 13, 1</column>
-<column name="tmp_1_fu_230_p2">icmp, 0, 0, 13, 11, 11</column>
-<column name="tmp_3_fu_355_p2">icmp, 0, 0, 13, 11, 9</column>
-<column name="tmp_5_fu_301_p2">icmp, 0, 0, 13, 11, 9</column>
-<column name="ap_block_pp1_stage0_11001">or, 0, 0, 8, 1, 1</column>
-<column name="i2_mid2_fu_411_p3">select, 0, 0, 2, 1, 2</column>
-<column name="j_2_fu_431_p3">select, 0, 0, 11, 1, 1</column>
-<column name="tmp_7_mid2_fu_397_p3">select, 0, 0, 14, 1, 14</column>
-<column name="ap_enable_pp1">xor, 0, 0, 8, 1, 2</column>
-<column name="ap_enable_reg_pp1_iter1">xor, 0, 0, 8, 1, 2</column>
+<column name="i_1_fu_132_p2">+, 0, 0, 10, 2, 1</column>
+<column name="i_2_fu_156_p2">+, 0, 0, 13, 11, 1</column>
+<column name="j_1_fu_144_p2">+, 0, 0, 13, 11, 1</column>
+<column name="j_2_fu_168_p2">+, 0, 0, 13, 11, 1</column>
+<column name="tmp_3_fu_150_p2">icmp, 0, 0, 13, 11, 11</column>
+<column name="tmp_4_fu_138_p2">icmp, 0, 0, 13, 11, 9</column>
+<column name="tmp_fu_126_p2">icmp, 0, 0, 9, 2, 3</column>
+<column name="tmp_s_fu_162_p2">icmp, 0, 0, 13, 11, 9</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">56, 13, 1, 13</column>
-<column name="ap_enable_reg_pp1_iter1">9, 2, 1, 2</column>
-<column name="ap_enable_reg_pp1_iter23">9, 2, 1, 2</column>
-<column name="ap_phi_mux_indvar_flatten_phi_fu_186_p4">9, 2, 13, 26</column>
-<column name="ap_sig_ioackin_gmem1_AWREADY">9, 2, 1, 2</column>
-<column name="ap_sig_ioackin_gmem1_WREADY">9, 2, 1, 2</column>
-<column name="gmem1_AWADDR">15, 3, 32, 96</column>
-<column name="gmem1_blk_n_AW">9, 2, 1, 2</column>
-<column name="gmem1_blk_n_B">9, 2, 1, 2</column>
-<column name="gmem1_blk_n_W">9, 2, 1, 2</column>
-<column name="i2_reg_194">9, 2, 2, 4</column>
-<column name="i_reg_160">9, 2, 11, 22</column>
-<column name="indvar_flatten_reg_182">9, 2, 13, 26</column>
-<column name="j3_reg_205">9, 2, 11, 22</column>
-<column name="j_reg_171">9, 2, 11, 22</column>
+<column name="ap_NS_fsm">41, 8, 1, 8</column>
+<column name="i1_reg_104">9, 2, 11, 22</column>
+<column name="i_reg_82">9, 2, 2, 4</column>
+<column name="j2_reg_115">9, 2, 11, 22</column>
+<column name="j_reg_93">9, 2, 11, 22</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">12, 0, 12, 0</column>
-<column name="ap_enable_reg_pp1_iter0">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter1">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter10">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter11">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter12">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter13">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter14">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter15">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter16">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter17">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter18">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter19">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter2">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter20">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter21">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter22">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter23">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter3">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter4">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter5">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter6">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter7">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter8">1, 0, 1, 0</column>
-<column name="ap_enable_reg_pp1_iter9">1, 0, 1, 0</column>
-<column name="ap_reg_ioackin_gmem1_AWREADY">1, 0, 1, 0</column>
-<column name="ap_reg_ioackin_gmem1_WREADY">1, 0, 1, 0</column>
-<column name="exitcond_flatten_reg_508">1, 0, 1, 0</column>
-<column name="gmem1_addr_1_reg_533">32, 0, 32, 0</column>
-<column name="gmem1_addr_reg_494">32, 0, 32, 0</column>
-<column name="i2_reg_194">2, 0, 2, 0</column>
-<column name="i_1_reg_489">11, 0, 11, 0</column>
-<column name="i_reg_160">11, 0, 11, 0</column>
-<column name="indvar_flatten_next_reg_512">13, 0, 13, 0</column>
-<column name="indvar_flatten_reg_182">13, 0, 13, 0</column>
-<column name="j3_reg_205">11, 0, 11, 0</column>
-<column name="j_1_reg_503">11, 0, 11, 0</column>
-<column name="j_reg_171">11, 0, 11, 0</column>
-<column name="tmp_11_reg_539">1, 0, 1, 0</column>
-<column name="tmp_13_reg_543">1, 0, 1, 0</column>
-<column name="tmp_25_mid2_v_v_reg_518">7, 0, 14, 7</column>
-<column name="tmp_3_cast_reg_479">30, 0, 33, 3</column>
-<column name="exitcond_flatten_reg_508">64, 32, 1, 0</column>
-<column name="tmp_13_reg_543">64, 32, 1, 0</column>
-<column name="tmp_25_mid2_v_v_reg_518">64, 32, 14, 7</column>
+<column name="ap_CS_fsm">7, 0, 7, 0</column>
+<column name="i1_reg_104">11, 0, 11, 0</column>
+<column name="i_1_reg_178">2, 0, 2, 0</column>
+<column name="i_2_reg_195">11, 0, 11, 0</column>
+<column name="i_reg_82">2, 0, 2, 0</column>
+<column name="j2_reg_115">11, 0, 11, 0</column>
+<column name="j_reg_93">11, 0, 11, 0</column>
 </table>
 </item>
 </section>
@@ -303,10 +232,11 @@
 </section>
 
 <section name = "Critical Path" level="0">
-<item name = "Max Delay">8.75</item>
+<item name = "Max Delay">1.88</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'gmem1_addr_wr_req', sobellab4/Sobel.cpp:196">writereq, 8.75, 8.75, -, -, -, m_axi, request, &apos;gmem1&apos;, -, -, -, -, -</column>
+<column name="'j'">phi, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, &apos;j&apos;, sobellab4/Sobel.cpp:110</column>
+<column name="'tmp_4', sobellab4/Sobel.cpp:110">icmp, 1.88, 1.88, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
 </section>

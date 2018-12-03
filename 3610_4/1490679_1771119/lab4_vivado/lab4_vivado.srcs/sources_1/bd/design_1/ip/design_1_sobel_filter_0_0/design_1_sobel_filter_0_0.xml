@@ -2102,11 +2102,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Nov 30 17:11:40 UTC 2018</spirit:value>
+            <spirit:value>Sun Dec 02 19:41:27 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:be8152bf</spirit:value>
+            <spirit:value>8:ad133dbf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2122,11 +2122,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Nov 30 17:11:40 UTC 2018</spirit:value>
+            <spirit:value>Sun Dec 02 19:41:27 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:be8152bf</spirit:value>
+            <spirit:value>8:ad133dbf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2142,11 +2142,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Nov 30 17:11:40 UTC 2018</spirit:value>
+            <spirit:value>Sun Dec 02 19:41:27 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:fda2a767</spirit:value>
+            <spirit:value>8:cddb033b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2162,11 +2162,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Nov 30 17:11:40 UTC 2018</spirit:value>
+            <spirit:value>Sun Dec 02 19:41:27 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:fda2a767</spirit:value>
+            <spirit:value>8:cddb033b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2180,11 +2180,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Nov 30 17:15:05 UTC 2018</spirit:value>
+            <spirit:value>Sun Dec 02 19:43:50 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:be8152bf</spirit:value>
+            <spirit:value>8:ad133dbf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4282,27 +4282,47 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/getVal.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/getVal.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter_AXILiteS_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_AXILiteS_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter_gmem0_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_cache1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter_gmem1_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_gmem0_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter_supebkb.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_gmem1_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mac_dEe.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mac_eOg.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mac_fYi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mux_bkb.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mux_cud.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -4317,32 +4337,57 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/getVal.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/getVal.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter_AXILiteS_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_AXILiteS_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter_gmem0_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_cache1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter_gmem1_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_gmem0_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter_supebkb.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_gmem1_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e746/hdl/verilog/sobel_filter.v</spirit:name>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mac_dEe.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mac_eOg.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mac_fYi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mux_bkb.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter_mux_cud.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/a799/hdl/verilog/sobel_filter.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4651,7 +4696,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="29">53967659</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="29">10395607</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -4675,7 +4720,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>Sobel</xilinx:displayName>
-      <xilinx:coreRevision>1811301208</xilinx:coreRevision>
+      <xilinx:coreRevision>1812021436</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
@@ -4742,10 +4787,10 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="aed89e6a"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="896e2658"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="61291741"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4fdba01c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="15c7f992"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="b65f911f"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="34368edc"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="7f53c452"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="5690199b"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

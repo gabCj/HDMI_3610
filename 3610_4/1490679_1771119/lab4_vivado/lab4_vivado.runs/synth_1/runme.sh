@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='X:/Bureau/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1'
+HD_PWD='C:/TEMP/HDMI_3610/3610_4/1490679_1771119/lab4_vivado/lab4_vivado.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
