@@ -631,52 +631,6 @@ _ssdm_SpecConstant(y_op);
  return edge_val;
 }
 
-uint8_t sobel_operator2(uint8_t image[3][3])
-{_ssdm_SpecArrayDimSize(image,3);
-#pragma HLS inline
-
-
- unsigned edge_weight;
- uint8_t edge_val;
-
- const char x_op[3][3] = { { -1,0,1 },
-        { -2,0,2 },
-        { -1,0,1 } };
-_ssdm_SpecConstant(x_op);
-#64 "sobellab4/Sobel.cpp"
-
-
- const char y_op[3][3] = { { 1,2,1 },
-        { 0,0,0 },
-        { -1,-2,-1 } };
-_ssdm_SpecConstant(y_op);
-#68 "sobellab4/Sobel.cpp"
-
-
- int x_weight = 0;
- int y_weight = 0;
- OpRows: for(int j = 0; j < 3; j++) {
-  OpCols: for(int i = 0; i < 3; i++) {
-
-   x_weight = x_weight + (image[1+i-1][1+j-1] * x_op[i][j]);
-
-
-   y_weight = y_weight + (image[1+i-1][1+j-1] * y_op[i][j]);
-  }
- }
-
- edge_weight = ((x_weight>0)? x_weight : -x_weight) + ((y_weight>0)? y_weight : -y_weight);
-
- edge_val = (255 - (uint8_t)(edge_weight));
-
-
- if (edge_val > 200)
-  edge_val = 255;
- else if (edge_val < 100)
-  edge_val = 0;
-
- return edge_val;
-}
 
 void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 {_ssdm_SpecArrayDimSize(out_pix,1920 * 1080);_ssdm_SpecArrayDimSize(inter_pix,1920 * 1080);
@@ -687,8 +641,6 @@ void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 
  uint8_t cache[4][1920];
 #pragma HLS array_partition variable=cache complete dim=1
- uint8_t matrix[3][3];
-#pragma HLS array_partition variable=matrix complete dim=0
  uint8_t val;
  OneToFourPixels fourWide;
 
@@ -703,19 +655,18 @@ void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 
   FilterRows: for (unsigned int i = 0; i < 1080; ++i) {
    FilterCols: for (unsigned int j = 0; j < 1920; ++j) {
-#pragma HLS pipeline
+#pragma HLS pipeline II=2
 #pragma HLS loop_flatten off
 
  if (j == 0 || j == 1920 - 1 || i == 0 || i == 1080 - 1) {
      val = 0;
     }
     else {
-
-     val = sobel_operator2(matrix);
+     val = sobel_operator(i, j, cache);
     }
 
-
-
+    OneTo4: for (int k = 0; k < 4; ++k)
+     fourWide.pix[k] = val;
     out_pix[i*1920 + j] = fourWide.full;
 
     cache[(i+2)%4][j] = inter_pix[((i+2)%1080)*1920 + j];

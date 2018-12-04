@@ -1,2 +1,7 @@
+sobel_filter_mux_fYi
+sobel_filter_cachbkb
+sobel_filter_cachdEe
 sobel_filter_AXILiteS_s_axi
+sobel_filter_gmem0_m_axi
+sobel_filter_gmem1_m_axi
 sobel_filter

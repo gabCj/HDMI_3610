@@ -66,7 +66,7 @@ void sobel_filter(uint8_t inter_pix[IMG_WIDTH * IMG_HEIGHT], unsigned out_pix[IM
 
 	FillCacheRows: for (unsigned int i = 0; i < 2; i++) {
 		FillCacheCols: for (unsigned int j = 0; j < IMG_WIDTH; j++) {
-#pragma HLS pipeline II=2
+#pragma HLS pipeline
 #pragma HLS loop_flatten off
 			cache[i][j] = inter_pix[i*IMG_WIDTH + j];
 		}
@@ -75,7 +75,7 @@ void sobel_filter(uint8_t inter_pix[IMG_WIDTH * IMG_HEIGHT], unsigned out_pix[IM
 
   FilterRows: for (unsigned int i = 0; i < IMG_HEIGHT; ++i) {
 			FilterCols: for (unsigned int j = 0; j < IMG_WIDTH; ++j) {
-#pragma HLS pipeline
+#pragma HLS pipeline II=2
 #pragma HLS loop_flatten off
 
 				if (j == 0 || j == IMG_WIDTH - 1 || i == 0 || i == IMG_HEIGHT - 1) {

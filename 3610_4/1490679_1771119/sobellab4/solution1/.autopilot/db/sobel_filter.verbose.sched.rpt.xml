@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sobel_filter'" level="0">
-<item name = "Date">Sun Dec  2 22:38:58 2018
+<item name = "Date">Mon Dec  3 17:45:23 2018
 </item>
 <item name = "Version">2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)</item>
 <item name = "Project">sobellab4</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">6.70, 1.88, 0.84</column>
+<column name="ap_clk">6.70, 5.86, 0.84</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">2080688, 2080688, 2080688, 2080688, none</column>
+<column name="">4171584, 4171584, 4171584, 4171584, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,10 +35,10 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- FillCacheRows">3846, 3846, 1923, -, -, 2, no</column>
-<column name=" + FillCacheCols">1920, 1920, 1, 1, 1, 1920, yes</column>
-<column name="- FilterRows">2076840, 2076840, 1923, -, -, 1080, no</column>
-<column name=" + FilterCols">1920, 1920, 1, 1, 1, 1920, yes</column>
+<column name="- FillCacheRows">3862, 3862, 1931, -, -, 2, no</column>
+<column name=" + FillCacheCols">1921, 1921, 3, 1, 1, 1920, yes</column>
+<column name="- FilterRows">4167720, 4167720, 3859, -, -, 1080, no</column>
+<column name=" + FilterCols">3844, 3844, 7, 2, 2, 1920, yes</column>
 </table>
 </item>
 </section>

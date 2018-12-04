@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'sobel_filter'
 ================================================================
-* Date:           Sun Dec  2 22:38:58 2018
+* Date:           Mon Dec  3 17:45:23 2018
 
 * Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
 * Project:        sobellab4
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |   6.70|      1.88|        0.84|
+    |ap_clk  |   6.70|      5.86|        0.84|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |      Latency      |      Interval     | Pipeline|
     |   min   |   max   |   min   |   max   |   Type  |
     +---------+---------+---------+---------+---------+
-    |  2080688|  2080688|  2080688|  2080688|   none  |
+    |  4171584|  4171584|  4171584|  4171584|   none  |
     +---------+---------+---------+---------+---------+
 
     + Detail: 
@@ -41,10 +41,10 @@
         |                  |      Latency      | Iteration|  Initiation Interval  | Trip |          |
         |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- FillCacheRows   |     3846|     3846|      1923|          -|          -|     2|    no    |
-        | + FillCacheCols  |     1920|     1920|         1|          1|          1|  1920|    yes   |
-        |- FilterRows      |  2076840|  2076840|      1923|          -|          -|  1080|    no    |
-        | + FilterCols     |     1920|     1920|         1|          1|          1|  1920|    yes   |
+        |- FillCacheRows   |     3862|     3862|      1931|          -|          -|     2|    no    |
+        | + FillCacheCols  |     1921|     1921|         3|          1|          1|  1920|    yes   |
+        |- FilterRows      |  4167720|  4167720|      3859|          -|          -|  1080|    no    |
+        | + FilterCols     |     3844|     3844|         7|          2|          2|  1920|    yes   |
         +------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
@@ -70,17 +70,17 @@ HasImplIP: 0
 IsGatedGlobalClock: 0
 
 + Individual pipeline summary: 
-  * Pipeline-0: initiation interval (II) = 1, depth = 1
-  * Pipeline-1: initiation interval (II) = 1, depth = 1
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+  * Pipeline-1: initiation interval (II) = 2, depth = 7
 
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 7
+* Number of FSM states : 34
 * Pipeline : 2
-  Pipeline-0 : II = 1, D = 1, States = { 3 }
-  Pipeline-1 : II = 1, D = 1, States = { 6 }
+  Pipeline-0 : II = 1, D = 3, States = { 10 11 12 }
+  Pipeline-1 : II = 2, D = 7, States = { 23 24 25 26 27 28 29 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
@@ -88,86 +88,397 @@ IsGatedGlobalClock: 0
 	2  / true
 2 --> 
 	3  / (!tmp)
-	5  / (tmp)
+	14  / (tmp)
 3 --> 
-	4  / (tmp_4)
-	3  / (!tmp_4)
+	4  / true
 4 --> 
-	2  / true
-5 --> 
-	6  / (!tmp_3)
-6 --> 
-	7  / (tmp_s)
-	6  / (!tmp_s)
-7 --> 
 	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	13  / (tmp_5)
+	11  / (!tmp_5)
+11 --> 
+	12  / true
+12 --> 
+	10  / true
+13 --> 
+	2  / true
+14 --> 
+	15  / (!tmp_4)
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	30  / (tmp_16)
+	24  / (!tmp_16)
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	23  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	14  / true
 
 * FSM state operations: 
 
  <State 1> : 1.77ns
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %gmem1), !map !23"
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem0), !map !29"
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @sobel_filter_str) nounwind"
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %gmem0, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [6 x i8]* @p_str4, [6 x i8]* @p_str5, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %inter_pix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @bundle, [6 x i8]* @p_str5, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %gmem1, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [6 x i8]* @p_str6, [6 x i8]* @p_str5, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %out_pix, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @bundle4, [6 x i8]* @p_str5, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [sobellab4/Sobel.cpp:99]
-ST_1 : Operation 16 [1/1] (1.76ns)   --->   "br label %1" [sobellab4/Sobel.cpp:109]
+ST_1 : Operation 35 [1/1] (1.00ns)   --->   "%out_pix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %out_pix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 36 [1/1] (1.00ns)   --->   "%inter_pix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %inter_pix)"   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %out_pix_read, i32 2, i32 31)"
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_1_cast = zext i30 %tmp_1 to i33"
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_27_cast = sext i32 %inter_pix_read to i34"
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %gmem1), !map !17"
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem0), !map !23"
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @sobel_filter_str) nounwind"
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%cache_0 = alloca [1920 x i8], align 1" [sobellab4/Sobel.cpp:62]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%cache_1 = alloca [1920 x i8], align 1" [sobellab4/Sobel.cpp:62]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%cache_2 = alloca [1920 x i8], align 1" [sobellab4/Sobel.cpp:62]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%cache_3 = alloca [1920 x i8], align 1" [sobellab4/Sobel.cpp:62]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %gmem0, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [6 x i8]* @p_str4, [6 x i8]* @p_str5, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %inter_pix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @bundle, [6 x i8]* @p_str5, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %gmem1, [6 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [6 x i8]* @p_str6, [6 x i8]* @p_str5, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %out_pix, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @bundle4, [6 x i8]* @p_str5, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind" [sobellab4/Sobel.cpp:59]
+ST_1 : Operation 52 [1/1] (1.76ns)   --->   "br label %1" [sobellab4/Sobel.cpp:67]
 
- <State 2> : 1.77ns
-ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%i = phi i2 [ 0, %0 ], [ %i_1, %4 ]"
-ST_2 : Operation 18 [1/1] (0.95ns)   --->   "%tmp = icmp eq i2 %i, -2" [sobellab4/Sobel.cpp:109]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind"
-ST_2 : Operation 20 [1/1] (1.56ns)   --->   "%i_1 = add i2 %i, 1" [sobellab4/Sobel.cpp:109]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 21 [1/1] (0.00ns)   --->   "br i1 %tmp, label %.preheader.preheader, label %2" [sobellab4/Sobel.cpp:109]
-ST_2 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str9) nounwind" [sobellab4/Sobel.cpp:109]
-ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str9) nounwind" [sobellab4/Sobel.cpp:109]
-ST_2 : Operation 24 [1/1] (1.76ns)   --->   "br label %3" [sobellab4/Sobel.cpp:110]
-ST_2 : Operation 25 [1/1] (1.76ns)   --->   "br label %.preheader" [sobellab4/Sobel.cpp:118]
+ <State 2> : 4.10ns
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%i = phi i2 [ 0, %0 ], [ %i_1, %6 ]"
+ST_2 : Operation 54 [1/1] (0.95ns)   --->   "%tmp = icmp eq i2 %i, -2" [sobellab4/Sobel.cpp:67]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2) nounwind"
+ST_2 : Operation 56 [1/1] (1.56ns)   --->   "%i_1 = add i2 %i, 1" [sobellab4/Sobel.cpp:67]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "br i1 %tmp, label %.preheader.preheader, label %2" [sobellab4/Sobel.cpp:67]
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_12 = trunc i2 %i to i1" [sobellab4/Sobel.cpp:67]
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%p_shl = call i12 @_ssdm_op_BitConcatenate.i12.i1.i11(i1 %tmp_12, i11 0)" [sobellab4/Sobel.cpp:71]
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i12 %p_shl to i13" [sobellab4/Sobel.cpp:71]
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%p_shl9 = call i8 @_ssdm_op_BitConcatenate.i8.i1.i7(i1 %tmp_12, i7 0)" [sobellab4/Sobel.cpp:71]
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%p_shl9_cast = zext i8 %p_shl9 to i13" [sobellab4/Sobel.cpp:71]
+ST_2 : Operation 63 [1/1] (1.54ns)   --->   "%tmp_2 = sub i13 %p_shl_cast, %p_shl9_cast" [sobellab4/Sobel.cpp:71]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 64 [1/1] (0.95ns)   --->   "%cond = icmp eq i2 %i, 0" [sobellab4/Sobel.cpp:71]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_13 = sext i13 %tmp_2 to i32" [sobellab4/Sobel.cpp:71]
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_29_cast = zext i32 %tmp_13 to i34" [sobellab4/Sobel.cpp:71]
+ST_2 : Operation 67 [1/1] (2.55ns)   --->   "%inter_pix2_sum = add i34 %tmp_27_cast, %tmp_29_cast" [sobellab4/Sobel.cpp:71]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%inter_pix2_sum_cast = sext i34 %inter_pix2_sum to i64" [sobellab4/Sobel.cpp:71]
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i8* %gmem0, i64 %inter_pix2_sum_cast" [sobellab4/Sobel.cpp:71]
+ST_2 : Operation 70 [1/1] (1.76ns)   --->   "br label %.preheader" [sobellab4/Sobel.cpp:13->sobellab4/Sobel.cpp:85]
 
- <State 3> : 1.88ns
-ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%j = phi i11 [ 0, %2 ], [ %j_1, %branch4 ]"
-ST_3 : Operation 27 [1/1] (1.88ns)   --->   "%tmp_4 = icmp eq i11 %j, -128" [sobellab4/Sobel.cpp:110]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1920, i64 1920, i64 1920) nounwind"
-ST_3 : Operation 29 [1/1] (1.63ns)   --->   "%j_1 = add i11 %j, 1" [sobellab4/Sobel.cpp:110]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 30 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %4, label %branch4" [sobellab4/Sobel.cpp:110]
-ST_3 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str10) nounwind" [sobellab4/Sobel.cpp:110]
-ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str10) nounwind" [sobellab4/Sobel.cpp:110]
-ST_3 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind" [sobellab4/Sobel.cpp:111]
-ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str10, i32 %tmp_6) nounwind" [sobellab4/Sobel.cpp:114]
-ST_3 : Operation 35 [1/1] (0.00ns)   --->   "br label %3" [sobellab4/Sobel.cpp:110]
+ <State 3> : 5.86ns
+ST_3 : Operation 71 [7/7] (5.86ns)   --->   "%gmem0_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr, i32 1920)" [sobellab4/Sobel.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
- <State 4> : 0.00ns
-ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str9, i32 %tmp_2) nounwind" [sobellab4/Sobel.cpp:115]
-ST_4 : Operation 37 [1/1] (0.00ns)   --->   "br label %1" [sobellab4/Sobel.cpp:109]
+ <State 4> : 5.86ns
+ST_4 : Operation 72 [6/7] (5.86ns)   --->   "%gmem0_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr, i32 1920)" [sobellab4/Sobel.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
- <State 5> : 1.88ns
-ST_5 : Operation 38 [1/1] (0.00ns)   --->   "%i1 = phi i11 [ %i_2, %7 ], [ 0, %.preheader.preheader ]"
-ST_5 : Operation 39 [1/1] (1.88ns)   --->   "%tmp_3 = icmp eq i11 %i1, -968" [sobellab4/Sobel.cpp:118]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 40 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1080, i64 1080, i64 1080) nounwind"
-ST_5 : Operation 41 [1/1] (1.63ns)   --->   "%i_2 = add i11 %i1, 1" [sobellab4/Sobel.cpp:118]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 42 [1/1] (0.00ns)   --->   "br i1 %tmp_3, label %8, label %5" [sobellab4/Sobel.cpp:118]
-ST_5 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str11) nounwind" [sobellab4/Sobel.cpp:118]
-ST_5 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str11) nounwind" [sobellab4/Sobel.cpp:118]
-ST_5 : Operation 45 [1/1] (1.76ns)   --->   "br label %6" [sobellab4/Sobel.cpp:119]
-ST_5 : Operation 46 [1/1] (0.00ns)   --->   "ret void" [sobellab4/Sobel.cpp:141]
+ <State 5> : 5.86ns
+ST_5 : Operation 73 [5/7] (5.86ns)   --->   "%gmem0_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr, i32 1920)" [sobellab4/Sobel.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
- <State 6> : 1.88ns
-ST_6 : Operation 47 [1/1] (0.00ns)   --->   "%j2 = phi i11 [ 0, %5 ], [ %j_2, %._crit_edge ]"
-ST_6 : Operation 48 [1/1] (1.88ns)   --->   "%tmp_s = icmp eq i11 %j2, -128" [sobellab4/Sobel.cpp:119]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 49 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1920, i64 1920, i64 1920) nounwind"
-ST_6 : Operation 50 [1/1] (1.63ns)   --->   "%j_2 = add i11 %j2, 1" [sobellab4/Sobel.cpp:119]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 51 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %7, label %._crit_edge" [sobellab4/Sobel.cpp:119]
-ST_6 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str12) nounwind" [sobellab4/Sobel.cpp:119]
-ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str12) nounwind" [sobellab4/Sobel.cpp:119]
-ST_6 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind" [sobellab4/Sobel.cpp:120]
-ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str12, i32 %tmp_1) nounwind" [sobellab4/Sobel.cpp:137]
-ST_6 : Operation 56 [1/1] (0.00ns)   --->   "br label %6" [sobellab4/Sobel.cpp:119]
+ <State 6> : 5.86ns
+ST_6 : Operation 74 [4/7] (5.86ns)   --->   "%gmem0_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr, i32 1920)" [sobellab4/Sobel.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
- <State 7> : 0.00ns
-ST_7 : Operation 57 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str11, i32 %tmp_5) nounwind" [sobellab4/Sobel.cpp:138]
-ST_7 : Operation 58 [1/1] (0.00ns)   --->   "br label %.preheader" [sobellab4/Sobel.cpp:118]
+ <State 7> : 5.86ns
+ST_7 : Operation 75 [3/7] (5.86ns)   --->   "%gmem0_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr, i32 1920)" [sobellab4/Sobel.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 8> : 5.86ns
+ST_8 : Operation 76 [2/7] (5.86ns)   --->   "%gmem0_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr, i32 1920)" [sobellab4/Sobel.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 9> : 5.86ns
+ST_9 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str9) nounwind" [sobellab4/Sobel.cpp:67]
+ST_9 : Operation 78 [1/1] (0.00ns)   --->   "%tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str9) nounwind" [sobellab4/Sobel.cpp:67]
+ST_9 : Operation 79 [1/7] (5.86ns)   --->   "%gmem0_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr, i32 1920)" [sobellab4/Sobel.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 80 [1/1] (1.76ns)   --->   "br label %3" [sobellab4/Sobel.cpp:68]
+
+ <State 10> : 2.86ns
+ST_10 : Operation 81 [1/1] (0.00ns)   --->   "%j = phi i11 [ 0, %2 ], [ %j_1, %5 ]"
+ST_10 : Operation 82 [1/1] (1.88ns)   --->   "%tmp_5 = icmp eq i11 %j, -128" [sobellab4/Sobel.cpp:68]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 83 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1920, i64 1920, i64 1920) nounwind"
+ST_10 : Operation 84 [1/1] (1.63ns)   --->   "%j_1 = add i11 %j, 1" [sobellab4/Sobel.cpp:68]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 85 [1/1] (0.00ns)   --->   "br i1 %tmp_5, label %6, label %4" [sobellab4/Sobel.cpp:68]
+ST_10 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_15 = zext i11 %j to i64" [sobellab4/Sobel.cpp:71]
+ST_10 : Operation 87 [1/1] (0.00ns)   --->   "%cache_0_addr = getelementptr [1920 x i8]* %cache_0, i64 0, i64 %tmp_15" [sobellab4/Sobel.cpp:71]
+ST_10 : Operation 88 [1/1] (0.00ns)   --->   "%cache_1_addr = getelementptr [1920 x i8]* %cache_1, i64 0, i64 %tmp_15" [sobellab4/Sobel.cpp:71]
+ST_10 : Operation 89 [1/1] (0.00ns)   --->   "br i1 %cond, label %branch4, label %branch5" [sobellab4/Sobel.cpp:71]
+
+ <State 11> : 5.86ns
+ST_11 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str10) nounwind" [sobellab4/Sobel.cpp:68]
+ST_11 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_20 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str10) nounwind" [sobellab4/Sobel.cpp:68]
+ST_11 : Operation 92 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind" [sobellab4/Sobel.cpp:69]
+ST_11 : Operation 93 [1/1] (5.86ns)   --->   "%gmem0_addr_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %gmem0_addr)" [sobellab4/Sobel.cpp:71]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 94 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str10, i32 %tmp_20) nounwind" [sobellab4/Sobel.cpp:72]
+ST_11 : Operation 95 [1/1] (0.00ns)   --->   "br label %3" [sobellab4/Sobel.cpp:68]
+
+ <State 12> : 3.25ns
+ST_12 : Operation 96 [1/1] (3.25ns)   --->   "store i8 %gmem0_addr_read, i8* %cache_1_addr, align 1" [sobellab4/Sobel.cpp:71]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_12 : Operation 97 [1/1] (0.00ns)   --->   "br label %5" [sobellab4/Sobel.cpp:71]
+ST_12 : Operation 98 [1/1] (3.25ns)   --->   "store i8 %gmem0_addr_read, i8* %cache_0_addr, align 1" [sobellab4/Sobel.cpp:71]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_12 : Operation 99 [1/1] (0.00ns)   --->   "br label %5" [sobellab4/Sobel.cpp:71]
+
+ <State 13> : 0.00ns
+ST_13 : Operation 100 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str9, i32 %tmp_3) nounwind" [sobellab4/Sobel.cpp:73]
+ST_13 : Operation 101 [1/1] (0.00ns)   --->   "br label %1" [sobellab4/Sobel.cpp:67]
+
+ <State 14> : 4.81ns
+ST_14 : Operation 102 [1/1] (0.00ns)   --->   "%rows_assign = phi i11 [ %i_2, %9 ], [ 0, %.preheader.preheader ]"
+ST_14 : Operation 103 [1/1] (1.88ns)   --->   "%tmp_4 = icmp eq i11 %rows_assign, -968" [sobellab4/Sobel.cpp:76]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 104 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1080, i64 1080, i64 1080) nounwind"
+ST_14 : Operation 105 [1/1] (1.63ns)   --->   "%i_2 = add i11 %rows_assign, 1" [sobellab4/Sobel.cpp:76]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 106 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %10, label %7" [sobellab4/Sobel.cpp:76]
+ST_14 : Operation 107 [1/1] (1.88ns)   --->   "%tmp_6 = icmp eq i11 %rows_assign, 0" [sobellab4/Sobel.cpp:81]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 108 [1/1] (1.88ns)   --->   "%tmp_7 = icmp eq i11 %rows_assign, -969" [sobellab4/Sobel.cpp:81]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 109 [1/1] (0.00ns)   --->   "%p_shl1 = call i22 @_ssdm_op_BitConcatenate.i22.i11.i11(i11 %rows_assign, i11 0)" [sobellab4/Sobel.cpp:90]
+ST_14 : Operation 110 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i22 %p_shl1 to i23" [sobellab4/Sobel.cpp:90]
+ST_14 : Operation 111 [1/1] (0.00ns)   --->   "%p_shl2 = call i18 @_ssdm_op_BitConcatenate.i18.i11.i7(i11 %rows_assign, i7 0)" [sobellab4/Sobel.cpp:90]
+ST_14 : Operation 112 [1/1] (0.00ns)   --->   "%p_shl2_cast = zext i18 %p_shl2 to i23" [sobellab4/Sobel.cpp:90]
+ST_14 : Operation 113 [1/1] (2.25ns)   --->   "%tmp_8 = sub i23 %p_shl1_cast, %p_shl2_cast" [sobellab4/Sobel.cpp:90]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_14 = trunc i11 %rows_assign to i2" [sobellab4/Sobel.cpp:76]
+ST_14 : Operation 115 [1/1] (1.63ns)   --->   "%tmp_9 = add i11 2, %rows_assign" [sobellab4/Sobel.cpp:92]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 116 [1/1] (1.88ns)   --->   "%tmp_27 = icmp ult i11 %tmp_9, -968" [sobellab4/Sobel.cpp:92]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 117 [1/1] (1.63ns)   --->   "%tmp_28 = add i11 970, %rows_assign" [sobellab4/Sobel.cpp:92]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 118 [1/1] (0.69ns)   --->   "%tmp_s = select i1 %tmp_27, i11 %tmp_9, i11 %tmp_28" [sobellab4/Sobel.cpp:92]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_29 = sext i23 %tmp_8 to i32" [sobellab4/Sobel.cpp:90]
+ST_14 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_35_cast = zext i32 %tmp_29 to i33" [sobellab4/Sobel.cpp:92]
+ST_14 : Operation 121 [1/1] (2.55ns)   --->   "%out_pix4_sum = add i33 %tmp_1_cast, %tmp_35_cast" [sobellab4/Sobel.cpp:92]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 122 [1/1] (0.00ns)   --->   "%out_pix4_sum_cast = zext i33 %out_pix4_sum to i64" [sobellab4/Sobel.cpp:92]
+ST_14 : Operation 123 [1/1] (0.00ns)   --->   "%gmem1_addr = getelementptr i32* %gmem1, i64 %out_pix4_sum_cast" [sobellab4/Sobel.cpp:92]
+ST_14 : Operation 124 [1/1] (0.00ns)   --->   "ret void" [sobellab4/Sobel.cpp:98]
+
+ <State 15> : 4.81ns
+ST_15 : Operation 125 [1/1] (0.00ns)   --->   "%p_shl3 = call i22 @_ssdm_op_BitConcatenate.i22.i11.i11(i11 %tmp_s, i11 0)" [sobellab4/Sobel.cpp:92]
+ST_15 : Operation 126 [1/1] (0.00ns)   --->   "%p_shl3_cast = zext i22 %p_shl3 to i23" [sobellab4/Sobel.cpp:92]
+ST_15 : Operation 127 [1/1] (0.00ns)   --->   "%p_shl4 = call i18 @_ssdm_op_BitConcatenate.i18.i11.i7(i11 %tmp_s, i7 0)" [sobellab4/Sobel.cpp:92]
+ST_15 : Operation 128 [1/1] (0.00ns)   --->   "%p_shl4_cast = zext i18 %p_shl4 to i23" [sobellab4/Sobel.cpp:92]
+ST_15 : Operation 129 [1/1] (2.25ns)   --->   "%tmp_10 = sub i23 %p_shl3_cast, %p_shl4_cast" [sobellab4/Sobel.cpp:92]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 130 [1/1] (0.00ns)   --->   "%tmp_30 = sext i23 %tmp_10 to i32" [sobellab4/Sobel.cpp:92]
+ST_15 : Operation 131 [1/1] (0.00ns)   --->   "%tmp_46_cast = zext i32 %tmp_30 to i34" [sobellab4/Sobel.cpp:92]
+ST_15 : Operation 132 [1/1] (2.55ns)   --->   "%inter_pix2_sum6 = add i34 %tmp_27_cast, %tmp_46_cast" [sobellab4/Sobel.cpp:92]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 133 [1/1] (0.00ns)   --->   "%inter_pix2_sum6_cast = sext i34 %inter_pix2_sum6 to i64" [sobellab4/Sobel.cpp:92]
+ST_15 : Operation 134 [1/1] (0.00ns)   --->   "%gmem0_addr_1 = getelementptr i8* %gmem0, i64 %inter_pix2_sum6_cast" [sobellab4/Sobel.cpp:92]
+
+ <State 16> : 5.86ns
+ST_16 : Operation 135 [7/7] (5.86ns)   --->   "%gmem0_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr_1, i32 1920)" [sobellab4/Sobel.cpp:92]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 17> : 5.86ns
+ST_17 : Operation 136 [6/7] (5.86ns)   --->   "%gmem0_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr_1, i32 1920)" [sobellab4/Sobel.cpp:92]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 18> : 5.86ns
+ST_18 : Operation 137 [5/7] (5.86ns)   --->   "%gmem0_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr_1, i32 1920)" [sobellab4/Sobel.cpp:92]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 19> : 5.86ns
+ST_19 : Operation 138 [4/7] (5.86ns)   --->   "%gmem0_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr_1, i32 1920)" [sobellab4/Sobel.cpp:92]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 20> : 5.86ns
+ST_20 : Operation 139 [3/7] (5.86ns)   --->   "%gmem0_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr_1, i32 1920)" [sobellab4/Sobel.cpp:92]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 21> : 5.86ns
+ST_21 : Operation 140 [2/7] (5.86ns)   --->   "%gmem0_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr_1, i32 1920)" [sobellab4/Sobel.cpp:92]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 22> : 5.86ns
+ST_22 : Operation 141 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str11) nounwind" [sobellab4/Sobel.cpp:76]
+ST_22 : Operation 142 [1/1] (0.00ns)   --->   "%tmp_11 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str11) nounwind" [sobellab4/Sobel.cpp:76]
+ST_22 : Operation 143 [1/1] (0.97ns)   --->   "%tmp_11_t = xor i2 %tmp_14, -2" [sobellab4/Sobel.cpp:76]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 144 [1/1] (1.56ns)   --->   "%tmp_34_0_0_t = add i2 -1, %tmp_14" [sobellab4/Sobel.cpp:76]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 145 [1/1] (1.56ns)   --->   "%tmp_34_0_2_t = add i2 1, %tmp_14" [sobellab4/Sobel.cpp:76]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 146 [1/1] (5.86ns)   --->   "%gmem1_addr_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %gmem1_addr, i32 1920)" [sobellab4/Sobel.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 147 [1/7] (5.86ns)   --->   "%gmem0_addr_1_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem0_addr_1, i32 1920)" [sobellab4/Sobel.cpp:92]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 148 [1/1] (1.76ns)   --->   "br label %8" [sobellab4/Sobel.cpp:77]
+
+ <State 23> : 3.25ns
+ST_23 : Operation 149 [1/1] (0.00ns)   --->   "%cols_assign = phi i11 [ 0, %7 ], [ %j_2, %._crit_edge67 ]"
+ST_23 : Operation 150 [1/1] (0.00ns)   --->   "%cols_assign_cast = zext i11 %cols_assign to i12" [sobellab4/Sobel.cpp:13->sobellab4/Sobel.cpp:85]
+ST_23 : Operation 151 [1/1] (1.88ns)   --->   "%tmp_16 = icmp eq i11 %cols_assign, -128" [sobellab4/Sobel.cpp:77]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 152 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1920, i64 1920, i64 1920) nounwind"
+ST_23 : Operation 153 [1/1] (1.63ns)   --->   "%j_2 = add i11 %cols_assign, 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 154 [1/1] (0.00ns)   --->   "br i1 %tmp_16, label %9, label %_ifconv" [sobellab4/Sobel.cpp:77]
+ST_23 : Operation 155 [1/1] (1.88ns)   --->   "%tmp_17 = icmp eq i11 %cols_assign, 0" [sobellab4/Sobel.cpp:81]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 156 [1/1] (1.88ns)   --->   "%tmp_18 = icmp eq i11 %cols_assign, -129" [sobellab4/Sobel.cpp:81]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 157 [1/1] (0.00ns) (grouped into LUT with out node or_cond2)   --->   "%tmp15 = or i1 %tmp_18, %tmp_6" [sobellab4/Sobel.cpp:81]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 158 [1/1] (0.00ns) (grouped into LUT with out node or_cond2)   --->   "%tmp16 = or i1 %tmp_17, %tmp_7" [sobellab4/Sobel.cpp:81]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 159 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_cond2 = or i1 %tmp16, %tmp15" [sobellab4/Sobel.cpp:81]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 160 [1/1] (0.00ns)   --->   "%tmp_29_1 = zext i11 %cols_assign to i64" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_23 : Operation 161 [1/1] (0.00ns)   --->   "%cache_0_addr_2 = getelementptr [1920 x i8]* %cache_0, i64 0, i64 %tmp_29_1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_23 : Operation 162 [2/2] (3.25ns)   --->   "%cache_0_load_1 = load i8* %cache_0_addr_2, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_23 : Operation 163 [1/1] (0.00ns)   --->   "%cache_1_addr_2 = getelementptr [1920 x i8]* %cache_1, i64 0, i64 %tmp_29_1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_23 : Operation 164 [2/2] (3.25ns)   --->   "%cache_1_load_1 = load i8* %cache_1_addr_2, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_23 : Operation 165 [1/1] (0.00ns)   --->   "%cache_2_addr_1 = getelementptr [1920 x i8]* %cache_2, i64 0, i64 %tmp_29_1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_23 : Operation 166 [2/2] (3.25ns)   --->   "%cache_2_load_1 = load i8* %cache_2_addr_1, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_23 : Operation 167 [1/1] (0.00ns)   --->   "%cache_3_addr_1 = getelementptr [1920 x i8]* %cache_3, i64 0, i64 %tmp_29_1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_23 : Operation 168 [2/2] (3.25ns)   --->   "%cache_3_load_1 = load i8* %cache_3_addr_1, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_23 : Operation 169 [1/1] (1.30ns)   --->   "switch i2 %tmp_11_t, label %branch3 [
+    i2 0, label %branch0
+    i2 1, label %branch1
+    i2 -2, label %branch2
+  ]" [sobellab4/Sobel.cpp:92]
+
+ <State 24> : 5.86ns
+ST_24 : Operation 170 [1/1] (1.63ns)   --->   "%tmp_23 = add i12 -1, %cols_assign_cast" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 171 [1/1] (0.00ns)   --->   "%tmp_23_cast = sext i12 %tmp_23 to i32" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 172 [1/1] (0.00ns)   --->   "%tmp_24 = zext i32 %tmp_23_cast to i64" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 173 [1/1] (0.00ns)   --->   "%cache_0_addr_1 = getelementptr [1920 x i8]* %cache_0, i64 0, i64 %tmp_24" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 174 [2/2] (3.25ns)   --->   "%cache_0_load = load i8* %cache_0_addr_1, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 175 [1/1] (0.00ns)   --->   "%cache_1_addr_1 = getelementptr [1920 x i8]* %cache_1, i64 0, i64 %tmp_24" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 176 [2/2] (3.25ns)   --->   "%cache_1_load = load i8* %cache_1_addr_1, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 177 [1/1] (0.00ns)   --->   "%cache_2_addr = getelementptr [1920 x i8]* %cache_2, i64 0, i64 %tmp_24" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 178 [2/2] (3.25ns)   --->   "%cache_2_load = load i8* %cache_2_addr, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 179 [1/1] (0.00ns)   --->   "%cache_3_addr = getelementptr [1920 x i8]* %cache_3, i64 0, i64 %tmp_24" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 180 [2/2] (3.25ns)   --->   "%cache_3_load = load i8* %cache_3_addr, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 181 [1/2] (3.25ns)   --->   "%cache_0_load_1 = load i8* %cache_0_addr_2, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 182 [1/2] (3.25ns)   --->   "%cache_1_load_1 = load i8* %cache_1_addr_2, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 183 [1/2] (3.25ns)   --->   "%cache_2_load_1 = load i8* %cache_2_addr_1, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 184 [1/2] (3.25ns)   --->   "%cache_3_load_1 = load i8* %cache_3_addr_1, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 185 [1/1] (1.95ns)   --->   "%tmp_35 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %cache_0_load_1, i8 %cache_1_load_1, i8 %cache_2_load_1, i8 %cache_3_load_1, i2 %tmp_34_0_0_t) nounwind" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 186 [1/1] (1.95ns)   --->   "%tmp_36 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %cache_0_load_1, i8 %cache_1_load_1, i8 %cache_2_load_1, i8 %cache_3_load_1, i2 %tmp_34_0_2_t) nounwind" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 187 [1/1] (0.00ns)   --->   "%tmp_29_2 = zext i11 %j_2 to i64" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 188 [1/1] (0.00ns)   --->   "%cache_0_addr_3 = getelementptr [1920 x i8]* %cache_0, i64 0, i64 %tmp_29_2" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 189 [2/2] (3.25ns)   --->   "%cache_0_load_2 = load i8* %cache_0_addr_3, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 190 [1/1] (0.00ns)   --->   "%cache_1_addr_3 = getelementptr [1920 x i8]* %cache_1, i64 0, i64 %tmp_29_2" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 191 [2/2] (3.25ns)   --->   "%cache_1_load_2 = load i8* %cache_1_addr_3, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 192 [1/1] (0.00ns)   --->   "%cache_2_addr_2 = getelementptr [1920 x i8]* %cache_2, i64 0, i64 %tmp_29_2" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 193 [2/2] (3.25ns)   --->   "%cache_2_load_2 = load i8* %cache_2_addr_2, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 194 [1/1] (0.00ns)   --->   "%cache_3_addr_2 = getelementptr [1920 x i8]* %cache_3, i64 0, i64 %tmp_29_2" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_24 : Operation 195 [2/2] (3.25ns)   --->   "%cache_3_load_2 = load i8* %cache_3_addr_2, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_24 : Operation 196 [1/1] (5.86ns)   --->   "%gmem0_addr_1_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %gmem0_addr_1)" [sobellab4/Sobel.cpp:92]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 25> : 5.21ns
+ST_25 : Operation 197 [1/2] (3.25ns)   --->   "%cache_0_load = load i8* %cache_0_addr_1, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 198 [1/2] (3.25ns)   --->   "%cache_1_load = load i8* %cache_1_addr_1, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 199 [1/2] (3.25ns)   --->   "%cache_2_load = load i8* %cache_2_addr, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 200 [1/2] (3.25ns)   --->   "%cache_3_load = load i8* %cache_3_addr, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 201 [1/1] (1.95ns)   --->   "%tmp_32 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %cache_0_load, i8 %cache_1_load, i8 %cache_2_load, i8 %cache_3_load, i2 %tmp_34_0_0_t) nounwind" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 202 [1/1] (1.95ns)   --->   "%tmp_33 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %cache_0_load, i8 %cache_1_load, i8 %cache_2_load, i8 %cache_3_load, i2 %tmp_14) nounwind" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 203 [1/1] (1.95ns)   --->   "%tmp_34 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %cache_0_load, i8 %cache_1_load, i8 %cache_2_load, i8 %cache_3_load, i2 %tmp_34_0_2_t) nounwind" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 204 [1/2] (3.25ns)   --->   "%cache_0_load_2 = load i8* %cache_0_addr_3, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 205 [1/2] (3.25ns)   --->   "%cache_1_load_2 = load i8* %cache_1_addr_3, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 206 [1/2] (3.25ns)   --->   "%cache_2_load_2 = load i8* %cache_2_addr_2, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 207 [1/2] (3.25ns)   --->   "%cache_3_load_2 = load i8* %cache_3_addr_2, align 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 208 [1/1] (3.25ns)   --->   "store i8 %gmem0_addr_1_read, i8* %cache_2_addr_1, align 1" [sobellab4/Sobel.cpp:92]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 209 [1/1] (0.00ns)   --->   "br label %._crit_edge67" [sobellab4/Sobel.cpp:92]
+ST_25 : Operation 210 [1/1] (3.25ns)   --->   "store i8 %gmem0_addr_1_read, i8* %cache_1_addr_2, align 1" [sobellab4/Sobel.cpp:92]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 211 [1/1] (0.00ns)   --->   "br label %._crit_edge67" [sobellab4/Sobel.cpp:92]
+ST_25 : Operation 212 [1/1] (3.25ns)   --->   "store i8 %gmem0_addr_1_read, i8* %cache_0_addr_2, align 1" [sobellab4/Sobel.cpp:92]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 213 [1/1] (0.00ns)   --->   "br label %._crit_edge67" [sobellab4/Sobel.cpp:92]
+ST_25 : Operation 214 [1/1] (3.25ns)   --->   "store i8 %gmem0_addr_1_read, i8* %cache_3_addr_1, align 1" [sobellab4/Sobel.cpp:92]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_25 : Operation 215 [1/1] (0.00ns)   --->   "br label %._crit_edge67" [sobellab4/Sobel.cpp:92]
+
+ <State 26> : 5.67ns
+ST_26 : Operation 216 [1/1] (0.00ns)   --->   "%tmp_361_cast1 = zext i8 %tmp_32 to i9" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 217 [1/1] (0.00ns)   --->   "%tmp_361_cast = zext i8 %tmp_32 to i11" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 218 [1/1] (0.00ns)   --->   "%p_shl5 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %tmp_33, i1 false)" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 219 [1/1] (0.00ns)   --->   "%p_shl5_cast = zext i9 %p_shl5 to i10" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 220 [1/1] (1.82ns)   --->   "%tmp_39_0_1 = sub i10 0, %p_shl5_cast" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 221 [1/1] (0.00ns)   --->   "%tmp_39_0_1_cast = sext i10 %tmp_39_0_1 to i11" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 222 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%x_weight_0_1 = sub i11 %tmp_39_0_1_cast, %tmp_361_cast" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 223 [1/1] (0.00ns)   --->   "%tmp_36_0_2_cast1 = zext i8 %tmp_34 to i9" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 224 [1/1] (0.00ns)   --->   "%tmp_36_0_2_cast = zext i8 %tmp_34 to i11" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 225 [1/1] (3.75ns) (root node of TernaryAdder)   --->   "%x_weight_0_2 = sub i11 %x_weight_0_1, %tmp_36_0_2_cast" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 226 [1/1] (1.91ns)   --->   "%y_weight_0_2 = sub i9 %tmp_361_cast1, %tmp_36_0_2_cast1" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 227 [1/1] (0.00ns)   --->   "%y_weight_0_2_cast = sext i9 %y_weight_0_2 to i11" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 228 [1/1] (0.00ns)   --->   "%tmp_41_1 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %tmp_35, i1 false)" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 229 [1/1] (0.00ns)   --->   "%tmp_41_1_cast = zext i9 %tmp_41_1 to i11" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 230 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%y_weight_1_1 = add i11 %y_weight_0_2_cast, %tmp_41_1_cast" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 231 [1/1] (0.00ns)   --->   "%p_shl6 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %tmp_36, i1 false)" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 232 [1/1] (0.00ns)   --->   "%p_shl6_cast = zext i9 %p_shl6 to i11" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 233 [1/1] (3.75ns) (root node of TernaryAdder)   --->   "%y_weight_1_2 = sub i11 %y_weight_1_1, %p_shl6_cast" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 234 [1/1] (1.95ns)   --->   "%tmp_37 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %cache_0_load_2, i8 %cache_1_load_2, i8 %cache_2_load_2, i8 %cache_3_load_2, i2 %tmp_34_0_0_t) nounwind" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 235 [1/1] (0.00ns)   --->   "%tmp_36_2_cast1 = zext i8 %tmp_37 to i9" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 236 [1/1] (0.00ns)   --->   "%tmp_38 = trunc i11 %x_weight_0_2 to i8" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 237 [1/1] (1.95ns)   --->   "%tmp_39 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %cache_0_load_2, i8 %cache_1_load_2, i8 %cache_2_load_2, i8 %cache_3_load_2, i2 %tmp_14) nounwind" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 238 [1/1] (0.00ns) (grouped into LUT with out node tmp20)   --->   "%tmp_42 = shl i8 %tmp_39, 1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 239 [1/1] (1.95ns)   --->   "%tmp_43 = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %cache_0_load_2, i8 %cache_1_load_2, i8 %cache_2_load_2, i8 %cache_3_load_2, i2 %tmp_34_0_2_t) nounwind" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 240 [1/1] (0.00ns)   --->   "%tmp_36_2_2_cast1 = zext i8 %tmp_43 to i9" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_26 : Operation 241 [1/1] (1.91ns)   --->   "%tmp19 = add i9 %tmp_36_2_2_cast1, %tmp_36_2_cast1" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 242 [1/1] (1.91ns) (out node of the LUT)   --->   "%tmp20 = add i8 %tmp_42, %tmp_37" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 27> : 5.67ns
+ST_27 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_36_2_cast = zext i8 %tmp_37 to i11" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_27 : Operation 244 [1/1] (0.00ns)   --->   "%tmp_39_2_1 = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %tmp_39, i1 false)" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_27 : Operation 245 [1/1] (0.00ns)   --->   "%tmp_39_2_1_cast = zext i9 %tmp_39_2_1 to i11" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_27 : Operation 246 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%y_weight_2_1 = add i11 %tmp_36_2_cast, %y_weight_1_2" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_27 : Operation 247 [1/1] (0.00ns)   --->   "%tmp_36_2_2_cast = zext i8 %tmp_43 to i11" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_27 : Operation 248 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp18 = add i11 %x_weight_0_2, %tmp_39_2_1_cast" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_27 : Operation 249 [1/1] (0.00ns)   --->   "%tmp19_cast = zext i9 %tmp19 to i11" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]
+ST_27 : Operation 250 [1/1] (3.75ns) (root node of TernaryAdder)   --->   "%x_weight_2_2 = add i11 %tmp18, %tmp19_cast" [sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_27 : Operation 251 [1/1] (3.75ns) (root node of TernaryAdder)   --->   "%y_weight_2_2 = sub i11 %y_weight_2_1, %tmp_36_2_2_cast" [sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_27 : Operation 252 [1/1] (1.88ns)   --->   "%tmp_19 = icmp sgt i11 %x_weight_2_2, 0" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 253 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp21 = add i8 %tmp_43, %tmp_38" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_27 : Operation 254 [1/1] (3.66ns) (root node of TernaryAdder)   --->   "%tmp_40 = add i8 %tmp20, %tmp21" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_27 : Operation 255 [1/1] (1.91ns)   --->   "%tmp_41 = sub i8 0, %tmp_40" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 256 [1/1] (1.88ns)   --->   "%tmp_22 = icmp sgt i11 %y_weight_2_2, 0" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 257 [1/1] (0.00ns)   --->   "%tmp_45 = trunc i11 %y_weight_2_2 to i8" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]
+ST_27 : Operation 258 [1/1] (1.91ns)   --->   "%tmp_46 = sub i8 0, %tmp_45" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 28> : 5.69ns
+ST_28 : Operation 259 [1/1] (0.00ns) (grouped into LUT with out node tmp_25)   --->   "%tmp_44 = select i1 %tmp_19, i8 %tmp_40, i8 %tmp_41" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_28 : Operation 260 [1/1] (0.00ns) (grouped into LUT with out node tmp_25)   --->   "%tmp_47 = select i1 %tmp_22, i8 %tmp_45, i8 %tmp_46" [sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_28 : Operation 261 [1/1] (1.91ns) (out node of the LUT)   --->   "%tmp_25 = add i8 %tmp_44, %tmp_47" [sobellab4/Sobel.cpp:43->sobellab4/Sobel.cpp:85]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 262 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%edge_val = xor i8 %tmp_25, -1" [sobellab4/Sobel.cpp:43->sobellab4/Sobel.cpp:85]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 263 [1/1] (1.55ns)   --->   "%tmp_26 = icmp ult i8 %tmp_25, 55" [sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 264 [1/1] (1.55ns)   --->   "%tmp_31 = icmp ugt i8 %tmp_25, -101" [sobellab4/Sobel.cpp:48->sobellab4/Sobel.cpp:85]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 265 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%p_i = select i1 %tmp_31, i8 0, i8 %edge_val" [sobellab4/Sobel.cpp:48->sobellab4/Sobel.cpp:85]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_28 : Operation 266 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp2)   --->   "%sel_tmp1 = xor i1 %or_cond2, true" [sobellab4/Sobel.cpp:81]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 267 [1/1] (0.97ns) (out node of the LUT)   --->   "%sel_tmp2 = and i1 %tmp_26, %sel_tmp1" [sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 268 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%sel_tmp = select i1 %sel_tmp2, i8 -1, i8 0" [sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_28 : Operation 269 [1/1] (0.00ns) (grouped into LUT with out node val)   --->   "%tmp_48 = or i1 %sel_tmp2, %or_cond2" [sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 270 [1/1] (1.24ns) (out node of the LUT)   --->   "%val = select i1 %tmp_48, i8 %sel_tmp, i8 %p_i" [sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+ <State 29> : 5.86ns
+ST_29 : Operation 271 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str12) nounwind" [sobellab4/Sobel.cpp:77]
+ST_29 : Operation 272 [1/1] (0.00ns)   --->   "%tmp_21 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str12) nounwind" [sobellab4/Sobel.cpp:77]
+ST_29 : Operation 273 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 2, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind" [sobellab4/Sobel.cpp:78]
+ST_29 : Operation 274 [1/1] (0.00ns)   --->   "%fourWide = call i32 @_ssdm_op_BitConcatenate.i32.i8.i8.i8.i8(i8 %val, i8 %val, i8 %val, i8 %val)" [sobellab4/Sobel.cpp:89]
+ST_29 : Operation 275 [1/1] (5.86ns)   --->   "call void @_ssdm_op_Write.m_axi.i32P(i32* %gmem1_addr, i32 %fourWide, i4 -1)" [sobellab4/Sobel.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_29 : Operation 276 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str12, i32 %tmp_21) nounwind" [sobellab4/Sobel.cpp:94]
+ST_29 : Operation 277 [1/1] (0.00ns)   --->   "br label %8" [sobellab4/Sobel.cpp:77]
+
+ <State 30> : 5.86ns
+ST_30 : Operation 278 [5/5] (5.86ns)   --->   "%gmem1_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem1_addr)" [sobellab4/Sobel.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 31> : 5.86ns
+ST_31 : Operation 279 [4/5] (5.86ns)   --->   "%gmem1_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem1_addr)" [sobellab4/Sobel.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 32> : 5.86ns
+ST_32 : Operation 280 [3/5] (5.86ns)   --->   "%gmem1_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem1_addr)" [sobellab4/Sobel.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 33> : 5.86ns
+ST_33 : Operation 281 [2/5] (5.86ns)   --->   "%gmem1_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem1_addr)" [sobellab4/Sobel.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+ <State 34> : 5.86ns
+ST_34 : Operation 282 [1/5] (5.86ns)   --->   "%gmem1_addr_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem1_addr)" [sobellab4/Sobel.cpp:90]   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_34 : Operation 283 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str11, i32 %tmp_11) nounwind" [sobellab4/Sobel.cpp:95]
+ST_34 : Operation 284 [1/1] (0.00ns)   --->   "br label %.preheader" [sobellab4/Sobel.cpp:76]
 
 
 ============================================================
@@ -177,32 +488,156 @@ Target clock period: 6.7ns, clock uncertainty: 0.837ns.
 
  <State 1>: 1.77ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('i') with incoming values : ('i', sobellab4/Sobel.cpp:109) [15]  (1.77 ns)
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', sobellab4/Sobel.cpp:67) [24]  (1.77 ns)
 
- <State 2>: 1.77ns
+ <State 2>: 4.1ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('j') with incoming values : ('j', sobellab4/Sobel.cpp:110) [25]  (1.77 ns)
+	'phi' operation ('i') with incoming values : ('i', sobellab4/Sobel.cpp:67) [24]  (0 ns)
+	'sub' operation ('tmp_2', sobellab4/Sobel.cpp:71) [37]  (1.55 ns)
+	'add' operation ('inter_pix2_sum', sobellab4/Sobel.cpp:71) [41]  (2.55 ns)
 
- <State 3>: 1.88ns
+ <State 3>: 5.86ns
 The critical path consists of the following:
-	'phi' operation ('j') with incoming values : ('j', sobellab4/Sobel.cpp:110) [25]  (0 ns)
-	'icmp' operation ('tmp_4', sobellab4/Sobel.cpp:110) [26]  (1.88 ns)
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:71) [44]  (5.86 ns)
 
- <State 4>: 0ns
+ <State 4>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:71) [44]  (5.86 ns)
+
+ <State 5>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:71) [44]  (5.86 ns)
+
+ <State 6>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:71) [44]  (5.86 ns)
+
+ <State 7>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:71) [44]  (5.86 ns)
+
+ <State 8>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:71) [44]  (5.86 ns)
+
+ <State 9>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:71) [44]  (5.86 ns)
+
+ <State 10>: 2.86ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_5', sobellab4/Sobel.cpp:68) [48]  (1.88 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 11>: 5.86ns
+The critical path consists of the following:
+	bus read on port 'gmem0' (sobellab4/Sobel.cpp:71) [56]  (5.86 ns)
+
+ <State 12>: 3.25ns
+The critical path consists of the following:
+	'store' operation (sobellab4/Sobel.cpp:71) of variable 'gmem0_addr_read', sobellab4/Sobel.cpp:71 on array 'cache[1]', sobellab4/Sobel.cpp:62 [62]  (3.25 ns)
+
+ <State 13>: 0ns
 The critical path consists of the following:
 
- <State 5>: 1.88ns
+ <State 14>: 4.81ns
 The critical path consists of the following:
-	'phi' operation ('i') with incoming values : ('i', sobellab4/Sobel.cpp:118) [42]  (0 ns)
-	'icmp' operation ('tmp_3', sobellab4/Sobel.cpp:118) [43]  (1.88 ns)
+	'phi' operation ('i') with incoming values : ('i', sobellab4/Sobel.cpp:76) [76]  (0 ns)
+	'sub' operation ('tmp_8', sobellab4/Sobel.cpp:90) [90]  (2.26 ns)
+	'add' operation ('out_pix4_sum', sobellab4/Sobel.cpp:92) [108]  (2.55 ns)
 
- <State 6>: 1.88ns
+ <State 15>: 4.81ns
 The critical path consists of the following:
-	'phi' operation ('j') with incoming values : ('j', sobellab4/Sobel.cpp:119) [52]  (0 ns)
-	'icmp' operation ('tmp_s', sobellab4/Sobel.cpp:119) [53]  (1.88 ns)
+	'sub' operation ('tmp_10', sobellab4/Sobel.cpp:92) [100]  (2.26 ns)
+	'add' operation ('inter_pix2_sum6', sobellab4/Sobel.cpp:92) [111]  (2.55 ns)
 
- <State 7>: 0ns
+ <State 16>: 5.86ns
 The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:92) [115]  (5.86 ns)
+
+ <State 17>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:92) [115]  (5.86 ns)
+
+ <State 18>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:92) [115]  (5.86 ns)
+
+ <State 19>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:92) [115]  (5.86 ns)
+
+ <State 20>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:92) [115]  (5.86 ns)
+
+ <State 21>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem0' (sobellab4/Sobel.cpp:92) [115]  (5.86 ns)
+
+ <State 22>: 5.86ns
+The critical path consists of the following:
+	bus request on port 'gmem1' (sobellab4/Sobel.cpp:90) [114]  (5.86 ns)
+
+ <State 23>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85) [118]  (0 ns)
+	'getelementptr' operation ('cache_3_addr_1', sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85) [166]  (0 ns)
+	'load' operation ('cache_3_load_1', sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85) on array 'cache[3]', sobellab4/Sobel.cpp:62 [167]  (3.25 ns)
+
+ <State 24>: 5.86ns
+The critical path consists of the following:
+	bus read on port 'gmem0' (sobellab4/Sobel.cpp:92) [224]  (5.86 ns)
+
+ <State 25>: 5.21ns
+The critical path consists of the following:
+	'load' operation ('cache_0_load', sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85) on array 'cache[0]', sobellab4/Sobel.cpp:62 [137]  (3.25 ns)
+	'mux' operation ('tmp_33', sobellab4/Sobel.cpp:34->sobellab4/Sobel.cpp:85) [147]  (1.96 ns)
+
+ <State 26>: 5.67ns
+The critical path consists of the following:
+	'sub' operation ('y_weight_0_2', sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85) [157]  (1.92 ns)
+	'add' operation ('y_weight_1_1', sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85) [171]  (0 ns)
+	'sub' operation ('y_weight_1_2', sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85) [175]  (3.76 ns)
+
+ <State 27>: 5.67ns
+The critical path consists of the following:
+	'add' operation ('y_weight_2_1', sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85) [193]  (0 ns)
+	'sub' operation ('y_weight_2_2', sobellab4/Sobel.cpp:37->sobellab4/Sobel.cpp:85) [201]  (3.76 ns)
+	'sub' operation ('tmp_46', sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85) [210]  (1.92 ns)
+
+ <State 28>: 5.69ns
+The critical path consists of the following:
+	'select' operation ('tmp_44', sobellab4/Sobel.cpp:41->sobellab4/Sobel.cpp:85) [207]  (0 ns)
+	'add' operation ('tmp_25', sobellab4/Sobel.cpp:43->sobellab4/Sobel.cpp:85) [212]  (1.92 ns)
+	'icmp' operation ('tmp_26', sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85) [214]  (1.55 ns)
+	'and' operation ('sel_tmp2', sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85) [218]  (0.978 ns)
+	'or' operation ('tmp_48', sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85) [220]  (0 ns)
+	'select' operation ('val', sobellab4/Sobel.cpp:46->sobellab4/Sobel.cpp:85) [221]  (1.25 ns)
+
+ <State 29>: 5.86ns
+The critical path consists of the following:
+	bus write on port 'gmem1' (sobellab4/Sobel.cpp:90) [223]  (5.86 ns)
+
+ <State 30>: 5.86ns
+The critical path consists of the following:
+	bus access on port 'gmem1' (sobellab4/Sobel.cpp:90) [242]  (5.86 ns)
+
+ <State 31>: 5.86ns
+The critical path consists of the following:
+	bus access on port 'gmem1' (sobellab4/Sobel.cpp:90) [242]  (5.86 ns)
+
+ <State 32>: 5.86ns
+The critical path consists of the following:
+	bus access on port 'gmem1' (sobellab4/Sobel.cpp:90) [242]  (5.86 ns)
+
+ <State 33>: 5.86ns
+The critical path consists of the following:
+	bus access on port 'gmem1' (sobellab4/Sobel.cpp:90) [242]  (5.86 ns)
+
+ <State 34>: 5.86ns
+The critical path consists of the following:
+	bus access on port 'gmem1' (sobellab4/Sobel.cpp:90) [242]  (5.86 ns)
 
 
 ============================================================
@@ -220,6 +655,33 @@ N/A
 	State 5
 	State 6
 	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
 
 
 ============================================================

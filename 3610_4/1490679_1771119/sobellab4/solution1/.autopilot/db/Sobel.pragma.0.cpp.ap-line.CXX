@@ -68,5 +68,3 @@
 #pragma line 3 "sobellab4/Sobel.cpp" 2 ::: 565
 #pragma line 23 "sobellab4/Sobel.cpp" ::: 588
 #pragma line 27 "sobellab4/Sobel.cpp" ::: 595
-#pragma line 64 "sobellab4/Sobel.cpp" ::: 635
-#pragma line 68 "sobellab4/Sobel.cpp" ::: 642

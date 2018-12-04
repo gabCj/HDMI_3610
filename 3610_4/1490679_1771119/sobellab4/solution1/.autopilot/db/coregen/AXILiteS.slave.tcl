@@ -1,0 +1,1 @@
+dict set slaves AXILiteS {ports {ap_start {type ap_ctrl width 1} ap_done {type ap_ctrl width 1} ap_ready {type ap_ctrl width 1} ap_idle {type ap_ctrl width 1} inter_pix {type i_ap_none width 32} out_pix {type i_ap_none width 32}} mems {} has_ctrl 1}

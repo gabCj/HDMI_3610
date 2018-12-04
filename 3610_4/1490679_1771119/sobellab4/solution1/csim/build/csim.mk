@@ -21,7 +21,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../sobel_test.cpp ../../../ap_bmp.cpp ../../../Sobel.cpp
+HLS_SOURCES = ../../../ap_bmp.cpp ../../../sobel_test.cpp ../../../Sobel.cpp
 
 TARGET := csim.exe
 
@@ -72,17 +72,17 @@ all: $(TARGET)
 
 
 
-$(ObjDir)/sobel_test.o: ../../../sobel_test.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../sobel_test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
-
--include $(ObjDir)/sobel_test.d
-
 $(ObjDir)/ap_bmp.o: ../../../ap_bmp.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../ap_bmp.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
 
 -include $(ObjDir)/ap_bmp.d
+
+$(ObjDir)/sobel_test.o: ../../../sobel_test.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../sobel_test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
+
+-include $(ObjDir)/sobel_test.d
 
 $(ObjDir)/Sobel.o: ../../../Sobel.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../Sobel.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)

@@ -3,9 +3,6 @@
 <directive functionLabel="" functionName="sobel_operator" label="">
 <pragma name="INLINE"/>
 </directive>
-<directive functionLabel="" functionName="sobel_operator2" label="">
-<pragma name="INLINE"/>
-</directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
 <pragma name="INTERFACE">
 <option name="m_axi" positionalBoolean="mode" value=""/>
@@ -36,13 +33,6 @@
 </pragma>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
-<pragma name="ARRAY_PARTITION">
-<option name="variable" positionalBoolean="4" value="matrix"/>
-<option name="complete" positionalBoolean="type" value=""/>
-<option name="dim" value="0"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="sobel_filter" label="">
 <pragma name="PIPELINE"/>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
@@ -51,7 +41,9 @@
 </pragma>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
-<pragma name="PIPELINE"/>
+<pragma name="PIPELINE">
+<option name="II" value="2"/>
+</pragma>
 </directive>
 <directive functionLabel="" functionName="sobel_filter" label="">
 <pragma name="LOOP_FLATTEN">

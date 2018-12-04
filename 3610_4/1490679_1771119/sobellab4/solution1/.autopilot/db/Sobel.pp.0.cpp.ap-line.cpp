@@ -625,46 +625,6 @@ uint8_t sobel_operator(const int rows, const int cols, uint8_t image[4][1920])
  return edge_val;
 }
 #pragma empty_line
-uint8_t sobel_operator2(uint8_t image[3][3])
-{
-#pragma HLS inline
-#pragma empty_line
-#pragma empty_line
- unsigned edge_weight;
- uint8_t edge_val;
-#pragma empty_line
- const char x_op[3][3] = { { -1,0,1 },
-        { -2,0,2 },
-        { -1,0,1 } };
-#pragma empty_line
- const char y_op[3][3] = { { 1,2,1 },
-        { 0,0,0 },
-        { -1,-2,-1 } };
-#pragma empty_line
- int x_weight = 0;
- int y_weight = 0;
- OpRows: for(int j = 0; j < 3; j++) {
-  OpCols: for(int i = 0; i < 3; i++) {
-#pragma empty_line
-   x_weight = x_weight + (image[1+i-1][1+j-1] * x_op[i][j]);
-#pragma empty_line
-#pragma empty_line
-   y_weight = y_weight + (image[1+i-1][1+j-1] * y_op[i][j]);
-  }
- }
-#pragma empty_line
- edge_weight = ((x_weight>0)? x_weight : -x_weight) + ((y_weight>0)? y_weight : -y_weight);
-#pragma empty_line
- edge_val = (255 - (uint8_t)(edge_weight));
-#pragma empty_line
-#pragma empty_line
- if (edge_val > 200)
-  edge_val = 255;
- else if (edge_val < 100)
-  edge_val = 0;
-#pragma empty_line
- return edge_val;
-}
 #pragma empty_line
 void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 {
@@ -675,8 +635,6 @@ void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 #pragma empty_line
  uint8_t cache[4][1920];
 #pragma HLS array_partition variable=cache complete dim=1
- uint8_t matrix[3][3];
-#pragma HLS array_partition variable=matrix complete dim=0
  uint8_t val;
  OneToFourPixels fourWide;
 #pragma empty_line
@@ -691,19 +649,18 @@ void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 #pragma empty_line
   FilterRows: for (unsigned int i = 0; i < 1080; ++i) {
    FilterCols: for (unsigned int j = 0; j < 1920; ++j) {
-#pragma HLS pipeline
+#pragma HLS pipeline II=2
 #pragma HLS loop_flatten off
 #pragma empty_line
  if (j == 0 || j == 1920 - 1 || i == 0 || i == 1080 - 1) {
      val = 0;
     }
     else {
-#pragma empty_line
-     val = sobel_operator2(matrix);
+     val = sobel_operator(i, j, cache);
     }
 #pragma empty_line
-#pragma empty_line
-#pragma empty_line
+    OneTo4: for (int k = 0; k < 4; ++k)
+     fourWide.pix[k] = val;
     out_pix[i*1920 + j] = fourWide.full;
 #pragma empty_line
     cache[(i+2)%4][j] = inter_pix[((i+2)%1080)*1920 + j];
